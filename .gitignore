@@ -72,3 +72,8 @@ atlassian*
 /generated/*
 !/generated/.htaccess
 .DS_Store
+
+# Pearl theme (from WeltPixel guide)
+!/pub/media/wysiwyg/pearl_theme
+!/pub/media/css_weltpixel
+!/pub/media/weltpixel
