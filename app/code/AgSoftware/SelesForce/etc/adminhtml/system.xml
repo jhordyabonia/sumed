@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+        <tab id="agsoftware_tab" translate="label" class="ag-software" sortOrder="70">
+            <label>Sumed</label>
+        </tab>
+		<section id="agsoftware" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+            <tab>agsoftware_tab</tab>
+            <label>Sales Force</label>
+			<group id="salesforce" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label comment">
+               <label>Sales Force</label>
+                <comment>An additional comment helping users to understand the effect when configuring the fields defined in this group.</comment>
+                <field id="rol" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="70" translate="label" type="select">
+					<label>Rol Sales Force</label>
+					<can_be_empty>1</can_be_empty>
+					<source_model>AgSoftware\SelesForce\Model\Attribute\Source\Role</source_model>
+				</field>
+			</group>
+            <resource>Magento_Sales::sales</resource>
+		</section>
+	</system>
+</config>

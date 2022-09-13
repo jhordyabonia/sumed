@@ -13,11 +13,13 @@ class CustomerCollection
     protected \Magento\Authorization\Model\RoleFactory $roleFactory;
 
     public function __construct(
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Framework\Api\Search\FilterGroup $filterGroups,
         \Magento\Framework\Api\Filter $filter,
         \Magento\Authorization\Model\RoleFactory $roleFactory,
         \Magento\Backend\Model\Auth\Session $authSession)
     {
+        $this->scopeConfig = $scopeConfig;
         $this->filterGroups = $filterGroups;
         $this->filter = $filter;
         $this->roleFactory = $roleFactory;
@@ -31,7 +33,8 @@ class CustomerCollection
             $vendor = $this->authSession->getUser()->getId();
             $rols = $this->authSession->getAcl()->getRoles();
             if(count($rols)==1){
-                if($this->roleFactory->create()->load($rols[0])->getRoleId()=='12'){
+                $rolSaleForce = $this->scopeConfig->getValue('agsoftware/salesforce/rol');
+                if($this->roleFactory->create()->load($rols[0])->getRoleId() == $rolSaleForce) {
                     //throw new \Exception( print_r($rols,true)." $vendor ---");
                     $this->filter->setField('telemarketers');
                     $this->filter->setValue("%,$vendor,%");
