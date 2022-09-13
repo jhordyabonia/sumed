@@ -26,7 +26,7 @@ class Telemarketers extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractS
     {
         $this->_options = [];
         foreach ($this->userFactory->create()->getCollection() as $user){
-            $this->_options[] =["value"=>$user->getId(),"label"=>$user->getUserName()];
+            $this->_options[] =["value"=>$user->getId(),"label"=>$user->getUserName(),"selected"=>1];
         }
         return $this->_options;
     }

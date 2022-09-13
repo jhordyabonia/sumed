@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
 	<menu>
-		<add id="AgSoftware::top_level" title="AgSoftware" module="AgSoftware_SelesForce" sortOrder="9999" resource="Magento_Backend::content"/>
-		<add id="AgSoftware_SelesForce::vendor_index" title="vendor index" module="AgSoftware_SelesForce" sortOrder="9999" resource="AgSoftware_SelesForce::vendor_index" parent="AgSoftware::top_level" action="salesforce/vendor/index"/>
+		<add id="AgSoftware::top_level" title="Summed" module="AgSoftware_SelesForce" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="AgSoftware_SelesForce::vendor_index" title="Sales Force" module="AgSoftware_SelesForce" sortOrder="9999" resource="AgSoftware_SelesForce::vendor_index" parent="AgSoftware::top_level" action="salesforce/vendor/index"/>
 	</menu>
 </config>

@@ -13,29 +13,34 @@ class CustomerCollection
     protected \Magento\Authorization\Model\RoleFactory $roleFactory;
 
     public function __construct(
+        \Magento\Framework\Api\Search\FilterGroup $filterGroups,
+        \Magento\Framework\Api\Filter $filter,
         \Magento\Authorization\Model\RoleFactory $roleFactory,
         \Magento\Backend\Model\Auth\Session $authSession)
     {
+        $this->filterGroups = $filterGroups;
+        $this->filter = $filter;
         $this->roleFactory = $roleFactory;
         $this->authSession = $authSession;
     }
 
-    public function afterGetData(
-        \Magento\Customer\Ui\Component\DataProvider $subject,
-        $result
+    public function beforeGetData(
+        \Magento\Customer\Ui\Component\DataProvider $subject
     ) {
         if($this->authSession->isLoggedIn()) {
             $vendor = $this->authSession->getUser()->getId();
             $rols = $this->authSession->getAcl()->getRoles();
-            //throw new \Exception( print_r($rols,true)." $vendor ---");
             if(count($rols)==1){
-                if($this->roleFactory->create()->load($rols[0])->getRoleType()=='S'){
-                    throw new \Exception( print_r($rols,true)." $vendor ---");
-                    $result->addAttrubuteTofilter(['telemarketers' => ['Like' => "%,$vendor,%"]]);
+                if($this->roleFactory->create()->load($rols[0])->getRoleId()=='12'){
+                    //throw new \Exception( print_r($rols,true)." $vendor ---");
+                    $this->filter->setField('telemarketers');
+                    $this->filter->setValue("%,$vendor,%");
+                    $this->filter->setConditionType('like');
+                    $subject->addFilter($this->filter);
                 }
             }
         }
-        return $result;
+        return [];
     }
 }
 
