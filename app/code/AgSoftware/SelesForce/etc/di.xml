@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Magento\User\Controller\Adminhtml\User\Role" type="AgSoftware\SelesForce\Controller\Adminhtml\User\Role" />
+
+    <preference for="Magento\Authorization\Model\ResourceModel\Role\Grid\Collection" type="AgSoftware\SelesForce\Plugin\Magento\Customer\Model\ResourceModel\Grid\Collection" />
+
+    <type name="Magento\Authorization\Model\ResourceModel\Role\Collection">
+        <plugin name="AgSoftware_SelesForce_Plugin_Magento_Auth"
+                type="AgSoftware\SelesForce\Plugin\Magento\Auth" sortOrder="10" disabled="false"/>
+    </type>
+
+    <type name="Magento\Customer\Ui\Component\DataProvider">
+        <plugin name="AgSoftware_SelesForce_Plugin_Magento_Customer_Model_ResourceModel_Customer"
+                type="AgSoftware\SelesForce\Plugin\Magento\Customer\Model\ResourceModel\CustomerCollection" sortOrder="10" disabled="false"/>
+    </type>
+</config>
