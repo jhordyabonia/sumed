@@ -14,4 +14,8 @@
         <plugin name="AgSoftware_SelesForce_Plugin_Magento_Customer_Model_ResourceModel_Customer"
                 type="AgSoftware\SelesForce\Plugin\Magento\Customer\Model\ResourceModel\CustomerCollection" sortOrder="10" disabled="false"/>
     </type>
+    <type name="Magento\Customer\Model\ResourceModel\Customer\Collection">
+        <plugin name="AgSoftware_SelesForce_Plugin_Magento_Customer_Model_ResourceModel_Customer"
+                type="AgSoftware\SelesForce\Plugin\Magento\Customer\Model\ResourceModel\CustomerCollection" sortOrder="10" disabled="false"/>
+    </type>
 </config>

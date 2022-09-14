@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction" >
+            <action name="assign_seller">
+                <settings>
+                    <confirm>
+                        <message translate="true">Are you sure you want to reassign the selected customers?</message>
+                        <title translate="true">Assign Customers</title>
+                    </confirm>
+                    <type>assign_to_seller</type>
+                    <label translate="true">Assign a Seller</label>
+                    <actions class="AgSoftware\SelesForce\Model\Options"/>
+                    <url path="salesforce/vendor/index"/>
+                </settings>
+            </action>
+        </massaction>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+</listing>
