@@ -1,0 +1,60 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    body{
+        &[class*="catalog-"] .product-item .tocart {
+            background: #193771;
+            border: 1px solid #103e7f;
+            font-size: 1.8rem;
+            border-radius: 4px;
+            line-height: 1;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            white-space: nowrap;
+        }
+        .product-item-link{
+            font-size: 20px;
+        }
+        .product-item-description{
+            margin: 10px 0;
+        }
+        .block-subtitle{
+            color: #103e7f;
+        }
+        .sidebar-additional{
+            .block-title{
+                color: #103e7f;
+            }
+        }
+
+        .filter-content{
+            .filter-options{
+                span.price {
+                    color: #103e7f;
+                }
+                span.count {
+                    color: #000;
+                }
+            }
+        }
+
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
