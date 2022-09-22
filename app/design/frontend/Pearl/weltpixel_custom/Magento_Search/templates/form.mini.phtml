@@ -65,7 +65,7 @@ $quickSearchUrl = $allowedSuggestion ? $escaper->escapeUrl($helper->getSuggestUr
                 >
                     <span><?= $escaper->escapeHtml(__('Search')) ?></span>
                 </button>
-            </div>               
+            </div>
             <div class="block welcome-loging" data-bind="scope: 'customer'">
                 <!-- ko if: customer().fullname  -->
                 <div class="logged-in"
@@ -74,7 +74,7 @@ $quickSearchUrl = $allowedSuggestion ? $escaper->escapeUrl($helper->getSuggestUr
                 <!-- /ko -->
                 <!-- ko ifnot: customer().fullname  -->
                 <div class="not-logged-in">
-                    <a class="link-button">
+                    <a class="link-button secound">
                         <span class=""><?=__("Registrarse")?></span>
                     </a>
                     <a class="link-button">
@@ -98,5 +98,5 @@ $quickSearchUrl = $allowedSuggestion ? $escaper->escapeUrl($helper->getSuggestUr
                 }
             </script>
         </form>
-    </div> 
+    </div>
 </div>

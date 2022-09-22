@@ -9,6 +9,9 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+    div.page-wrapper header.page-header .header.content, .page-wrapper .page-header .header_right {
+        max-width: 1264px;
+    }
     .page-wrapper {
         .block.welcome-loging {
             margin-bottom: 0;
@@ -17,10 +20,18 @@
             margin-right: -65%;
             a.link-button {
                 background: #0D717F;
-                padding: 10px 20px;
+                padding: 15px 25px;
                 margin-right: 25px;
-                border-radius: 18px;
+                border-radius: 25px;
                 gap: 10px;
+                &.secound{
+                    color: #0D717F;;
+                    background: white;
+                    span{
+                        color:#0D717F;
+                        border: 2px solid #0D717F;;
+                    }
+                }
                 &:hover{
                     color: white;
                     background: #0D717F;
