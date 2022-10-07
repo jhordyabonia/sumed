@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5027823659735657f6c149bc9de69ad5",
+    "content-hash": "6f8a2e1142e14406155bf2e5c43ec10a",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -50,6 +50,344 @@
                 "source": "https://github.com/2tvenom/CBOREncode/tree/1.0.2"
             },
             "time": "2020-10-27T07:22:41+00:00"
+        },
+        {
+            "name": "amasty/ajax-scroll",
+            "version": "1.4.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/ajax-scroll-1.4.7-ee.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.3",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\Scroll\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "AJAX Scroll by Amasty"
+        },
+        {
+            "name": "amasty/aminvisiblecaptcha",
+            "version": "2.4.6",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/aminvisiblecaptcha-2.4.6.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.5",
+                "php": ">=7.3.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\InvisibleCaptcha\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Amasty Google Invisible Captcha"
+        },
+        {
+            "name": "amasty/amp",
+            "version": "1.3.9",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/amp-1.3.9.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.6",
+                "mobiledetect/mobiledetectlib": "^2.8",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\Amp\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Accelerated Mobile Pages By Amasty"
+        },
+        {
+            "name": "amasty/base",
+            "version": "1.13.6",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/base-1.13.6.zip"
+            },
+            "require": {
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\Base\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Amasty Base"
+        },
+        {
+            "name": "amasty/cart",
+            "version": "1.10.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/cart-1.10.1.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.5",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\Cart\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Ajax Shopping Cart by Amasty"
+        },
+        {
+            "name": "amasty/module-image-optimizer",
+            "version": "1.1.6",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-image-optimizer-1.1.6.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.6",
+                "amasty/module-page-speed-tools": ">=1.0.8",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\ImageOptimizer\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Image Optimizer by Amasty"
+        },
+        {
+            "name": "amasty/module-image-optimizer-ui",
+            "version": "1.1.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-image-optimizer-ui-1.1.5.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.6",
+                "amasty/module-image-optimizer": ">=1.1.6",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\ImageOptimizerUi\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Image Optimizer Ui by Amasty"
+        },
+        {
+            "name": "amasty/module-lazy-load",
+            "version": "1.1.6",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-lazy-load-1.1.6.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.6",
+                "amasty/module-page-speed-tools": ">=1.0.8",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\LazyLoad\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Lazy Load by Amasty"
+        },
+        {
+            "name": "amasty/module-lazy-load-ui",
+            "version": "1.0.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-lazy-load-ui-1.0.2.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.6",
+                "amasty/module-lazy-load": ">=1.1.6",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\LazyLoadUi\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Lazy Load Admin Ui by Amasty"
+        },
+        {
+            "name": "amasty/module-optimizer-premium",
+            "version": "1.4.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-optimizer-premium-1.4.2.zip"
+            },
+            "require": {
+                "amasty/ajax-scroll": "*",
+                "amasty/amp": "*",
+                "amasty/base": ">=1.13.6",
+                "amasty/cart": "*",
+                "amasty/module-optimizer-premium-functionality": "*",
+                "amasty/module-page-speed-optimizer": "*",
+                "php": ">=7.3.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\PageSpeedOptimizerPremium\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Page Speed Optimizer Premium by Amasty"
+        },
+        {
+            "name": "amasty/module-optimizer-premium-functionality",
+            "version": "1.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-optimizer-premium-functionality-1.0.1-ee.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.3",
+                "amasty/module-page-speed-optimizer": ">=2.1.3",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\OptimizerPremiumFunctionality\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Page Speed Optimizer Premium Functionality by Amasty"
+        },
+        {
+            "name": "amasty/module-page-speed-optimizer",
+            "version": "2.2.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-page-speed-optimizer-2.2.2.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.6",
+                "amasty/module-image-optimizer-ui": ">=1.1.2",
+                "amasty/module-lazy-load-ui": "*",
+                "amasty/module-page-speed-tools": "*",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\PageSpeedOptimizer\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Google Page Speed Optimizer by Amasty"
+        },
+        {
+            "name": "amasty/module-page-speed-tools",
+            "version": "1.0.8",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-page-speed-tools-1.0.8.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.6",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\PageSpeedTools\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Google Page Speed Tools by Amasty"
         },
         {
             "name": "astock/stock-api-libphp",
@@ -22630,6 +22968,62 @@
                 "source": "https://github.com/magento/zf1/tree/1.15.1"
             },
             "time": "2022-06-21T01:22:39+00:00"
+        },
+        {
+            "name": "mobiledetect/mobiledetectlib",
+            "version": "2.8.39",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/serbanghita/Mobile-Detect.git",
+                "reference": "0fd6753003fc870f6e229bae869cc1337c99bc45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/0fd6753003fc870f6e229bae869cc1337c99bc45",
+                "reference": "0fd6753003fc870f6e229bae869cc1337c99bc45",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.35||~5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Detection": "namespaced/"
+                },
+                "classmap": [
+                    "Mobile_Detect.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Serban Ghita",
+                    "email": "serbanghita@gmail.com",
+                    "homepage": "http://mobiledetect.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+            "homepage": "https://github.com/serbanghita/Mobile-Detect",
+            "keywords": [
+                "detect mobile devices",
+                "mobile",
+                "mobile detect",
+                "mobile detector",
+                "php mobile detect"
+            ],
+            "support": {
+                "issues": "https://github.com/serbanghita/Mobile-Detect/issues",
+                "source": "https://github.com/serbanghita/Mobile-Detect/tree/2.8.39"
+            },
+            "time": "2022-02-17T19:24:25+00:00"
         },
         {
             "name": "monolog/monolog",
