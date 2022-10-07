@@ -129,8 +129,18 @@ $_helper = $block->getData('outputHelper');
                         <?php endif; ?>
                         <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
                         <?= /* @noEscape */ $block->getProductPrice($_product) ?>
-
                         
+                        <div class="container-input-card">
+                            <div class="arrow-input-container">
+                                <input type="number">
+                            </div>
+                            <div class="unit-selector-container">
+                                <select name="select" class="unit-selector">
+                                    <option value="value1">UNIDAD</option>
+                                    <option value="value2" selected>CAJA</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <?= $block->getProductDetailsHtml($_product) ?>
                         <div class="product-item-inner">
