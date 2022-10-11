@@ -60,10 +60,13 @@ $_helper = $block->getData('outputHelper');
                     }
                     ?>
                     <?php // Product Image ?>
+
+                    <!-- Etiqueta de descuento -->
                     <div class="discount-content">
                         <p class="discount-text">-30%</p>
                     </div>
 
+                    <!-- To whist list -->
                     <div data-role="add-to-links" class="actions-secondary">
                         <?php if ($addToBlock = $block->getChildBlock('addto')): ?>
                             <?= $addToBlock->setProduct($_product)->getChildHtml() ?>
@@ -75,6 +78,8 @@ $_helper = $block->getData('outputHelper');
                        tabindex="-1">
                         <?= $productImage->toHtml() ?>
                     </a>
+
+                    <!-- Attribute Stock -->
                     <div class="container-stock">
                         <span class="stock-image">
                             <img src="<?= $this->getViewFileUrl('images/plp/Vector.png') ?>" alt="">
@@ -82,6 +87,7 @@ $_helper = $block->getData('outputHelper');
                         <p class="stock-text"><?= $_product->getResource()->getAttribute('quantity_and_stock_status')->getFrontend()->getValue($_product) ?></p>
                     </div>
 
+                    <!-- collapsibles -->
                     <div class="container-dropdowns-attributes container-dropdowns" data-mage-init='{"accordion":{
                                 "openedState": "active",
                                 "collapsible": true,
@@ -126,20 +132,26 @@ $_helper = $block->getData('outputHelper');
                         
                         <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
                         <strong class="product name product-item-name">
+
+                            <!-- Name brach | part -->
                             <p class="text-sub-title">
                                 <span><?=__("Logo Brand Name")?></span>
                                 <span> | </span>
                                 <span><?=__("Part No. 234565")?></span>
                             </p>
+
                             <a class="product-item-link"
                                href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
                                 <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
                             </a>
+
+                            <!-- Atributtes -->
                             <div class="container-attributes">
                                 <p class="text-attribute"><?= $_product->getResource()->getAttribute('Btty')->getStoreLabel().": " ?><b><?= $_product->getResource()->getAttribute('Btty')->getFrontend()->getValue($_product) ?></b></p>
                                 <p class="text-attribute"><?= $_product->getResource()->getAttribute('Lflux')->getStoreLabel().": " ?><b><?= $_product->getResource()->getAttribute('Lflux')->getFrontend()->getValue($_product) ?></b></p>
                                 <p class="text-attribute"><?= $_product->getResource()->getAttribute('Mbpo')->getStoreLabel().": " ?><b><?= $_product->getResource()->getAttribute('Mbpo')->getFrontend()->getValue($_product) ?></b></p>
                             </div>
+
                         </strong>
                         
                         <?php if ($showDescription): ?>
@@ -163,6 +175,7 @@ $_helper = $block->getData('outputHelper');
                         <?= $block->getProductDetailsHtml($_product) ?>
                         <div class="product-item-inner">
 
+                            <!-- Input wicht arrow -->
                             <div class="arrow-input-container">
                                 <div class="increase" id="increaseBtnP">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
