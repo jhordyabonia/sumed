@@ -114,6 +114,11 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     protected $priceCurrency;
 
+    /**
+     * @var \Magento\Framework\DataObject\Factory
+     */
+    protected $objectFactory;
+
     protected const XML_PATH_DEV_MOVE_JS_TO_BOTTOM = 'dev/js/move_script_to_bottom';
 
     /**
@@ -137,6 +142,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      * @param \Magento\Framework\App\CacheInterface $cache
      * @param \Magento\Framework\App\Cache\StateInterface $cacheState
      * @param \Magento\Framework\Pricing\PriceCurrencyInterface $priceCurrency
+     * @param \Magento\Framework\DataObject\Factory $objectFactory
      */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
@@ -157,7 +163,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         \WeltPixel\GoogleTagManager\Model\Dimension $dimensionModel,
         \Magento\Framework\App\CacheInterface $cache,
         \Magento\Framework\App\Cache\StateInterface $cacheState,
-        \Magento\Framework\Pricing\PriceCurrencyInterface $priceCurrency
+        \Magento\Framework\Pricing\PriceCurrencyInterface $priceCurrency,
+        \Magento\Framework\DataObject\Factory $objectFactory
     ) {
         parent::__construct($context);
         $this->_gtmOptions = $this->scopeConfig->getValue('weltpixel_googletagmanager', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
@@ -180,6 +187,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $this->cache = $cache;
         $this->cacheState = $cacheState;
         $this->priceCurrency = $priceCurrency;
+        $this->objectFactory = $objectFactory;
     }
 
     /**
@@ -799,6 +807,20 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         $result = [];
 
+        $displayOption = $this->getParentOrChildIdUsage();
+        $productId = $this->getGtmProductId($product);
+
+        if ( ($displayOption == \WeltPixel\GoogleTagManager\Model\Config\Source\ParentVsChild::CHILD) && ($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE)) {
+            $canditatesRequest = $this->objectFactory->create($buyRequest);
+            $cartCandidates = $product->getTypeInstance()->prepareForCartAdvanced($canditatesRequest, $product);
+
+            foreach ($cartCandidates as $candidate) {
+                if ($candidate->getParentProductId())  {
+                    $productId = $this->getGtmProductId($candidate);
+                }
+            }
+        }
+
         $result['event'] = 'addToCart';
         $result['eventLabel'] = html_entity_decode($product->getName());
         $result['ecommerce'] = [];
@@ -808,7 +830,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
         $productData = [];
         $productData['name'] = html_entity_decode($product->getName());
-        $productData['id'] = $this->getGtmProductId($product);
+        $productData['id'] = $productId;
         if ($this->checkoutSession->getLastProductPrice()) {
             $productData['price'] = number_format($this->convertPriceToCurrentCurrency($this->checkoutSession->getLastProductPrice()), 2, '.', '');
             $this->checkoutSession->setLastProductPrice(null);
@@ -1067,6 +1089,18 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         $result = [];
 
+        $productId = $this->getGtmProductId($product);
+
+        $displayOption = $this->getParentOrChildIdUsage();
+        if ( ($displayOption == \WeltPixel\GoogleTagManager\Model\Config\Source\ParentVsChild::CHILD) && ($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE)) {
+            if ($quoteItem->getHasChildren()) {
+                foreach ($quoteItem->getChildren() as $child) {
+                    $childProduct = $child->getProduct();
+                    $productId = $this->getGtmProductId($childProduct);
+                }
+            }
+        }
+
         $result['event'] = 'removeFromCart';
         $result['eventLabel'] = html_entity_decode($product->getName());
         $result['ecommerce'] = [];
@@ -1076,7 +1110,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
         $productData = [];
         $productData['name'] = html_entity_decode($product->getName());
-        $productData['id'] = $this->getGtmProductId($product);
+        $productData['id'] = $productId;
         $productData['price'] = number_format($this->convertPriceToCurrentCurrency($quoteItem->getPrice()), 2, '.', '');
         if ($this->isBrandEnabled()) {
             $productData['brand'] = $this->getGtmBrand($product);
@@ -1190,6 +1224,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             'step' => $step,
             'option' => $checkoutOption
         ];
+
 
         $products = [];
         $checkoutBlock = $this->createBlock('Checkout', 'checkout.phtml');
@@ -1497,6 +1532,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isDevMoveJsBottomEnabled()
     {
-        return $this->scopeConfig->isSetFlag(self::XML_PATH_DEV_MOVE_JS_TO_BOTTOM, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        return !$this->_request->isAjax() && $this->scopeConfig->isSetFlag(self::XML_PATH_DEV_MOVE_JS_TO_BOTTOM, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 }

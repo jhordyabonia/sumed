@@ -1,0 +1,69 @@
+<section class="sections-footer-container">
+    <div class="section-newsletter-footer">
+        <h4 class="title-newsletter title"><?=__('Subscribe to our Newsletter')?></h4>
+        <p class="text-newsletter text">
+            <?=__('
+                Stay up to date with our latest releases. Learn more about our brands and receive the best promotions.
+            ')?>
+        </p>
+        <form action="{{store url='newsletter/subscriber/new/'}}" method="post"
+                          id="newsletter-footer" data-mage-init='{"validation": {"errorClass": "mage-error"}}'>
+            <div class="form-group content-suscribe">
+                <input name="email" type="email" id="newsletter-bottom" placeholder="<?=__('Your email')?>"
+                        data-validate="{required:true, 'validate-email':true}"
+                        class="input-text required-entry validate-email input-newsletter"/>
+                <button class="button button-newsletter" title="Subscribe" type="submit">
+                    <span><?=__('Sign up for the Newsletter')?></span>
+                </button>
+            </div>
+            <div class="checkbox-newsletter">
+                <input type="checkbox" class="input-checkbox">
+                <p class="text-checkbox text">
+                    <?=__('Accept')?>
+                    <a href="" class="terms-conditions"><?=__('terms and conditions')?></a>
+                </p>
+            </div>
+        </form>
+    </div>
+    <div class="link-sections-footer">   
+        <div class="sections section-how-buy">
+            <h4 class="title-category title buy-now-category"><?=__("How to buy")?></h4>
+            <ul class="links">
+                <li class="link-li"><a href="#" class="link"><?=__("Payment methods")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("withdrawal to deposit")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("Buy with shipping")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("Telephone purchases")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("returns")?></a></li>
+            </ul>
+        </div>
+        <div class="sections section-helps">
+            <h4 class="title-category title Ayuda-category"><?=__("Help")?></h4>
+            <ul class="links">
+                <li class="link-li"><a href="#" class="link"><?=__("Contact")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("Online Help")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("Our commitment")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("Give feedback")?></a></li>
+            </ul>
+        </div>
+        <div class="sections section-Services">
+            <h4 class="title-category title servicios-category"><?=__("Services")?></h4>
+            <ul class="links">
+                <li class="link-li"><a href="#" class="link"><?=__("Logistics")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("Customer Support")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("returns")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("Other services")?></a></li>
+            </ul>
+        </div>
+        <div class="sections section-us">
+            <h4 class="title-category title nosotros-category"><?=__("Us")?></h4>
+            <ul class="links">
+                <li class="link-li"><a href="#" class="link"><?=__("About us")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("Press")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("For providers")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("Regulations")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("Privacy")?></a></li>
+                <li class="link-li"><a href="#" class="link"><?=__("Cookies")?></a></li>
+            </ul>
+        </div>
+    </div>
+</section>

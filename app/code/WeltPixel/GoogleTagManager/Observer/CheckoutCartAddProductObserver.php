@@ -74,7 +74,13 @@ class CheckoutCartAddProductObserver implements ObserverInterface
                 }
             }
         } else {
-            $this->_checkoutSession->setAddToCartData($this->helper->addToCartPushData($qty, $product));
+            $displayOption = $this->helper->getParentOrChildIdUsage();
+            $requestParams = [];
+            if ( ($displayOption == \WeltPixel\GoogleTagManager\Model\Config\Source\ParentVsChild::CHILD) && ($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE)) {
+                $params['qty'] = $qty;
+                $requestParams = $params;
+            }
+            $this->_checkoutSession->setAddToCartData($this->helper->addToCartPushData($qty, $product, $requestParams));
         }
 
         return $this;
