@@ -1,0 +1,71 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-wrapper{
+div.nav-sections{
+    margin-bottom: 0;
+}
+        .page-main{
+            .display-sidebar-login{
+                .content-column-login{
+                    width: 293px;
+                    background: #D9D9D9;
+                    display: flex;
+                    list-style: none;
+                    justify-content: center;
+                    height: 833px;
+                    z-index: 100;
+                    position: absolute;
+                    float: left;
+                    left: 0;
+                    
+                
+                        .login-items-nav{
+                            list-style: none;
+                            display: flex;
+                            flex-direction: column;
+                            height: 560px;
+                            margin-top: 50px;
+                            padding: 0;
+                
+                            .list-style-nav{
+                                margin: 0;
+                
+                                p{
+                                    font-family: 'Barlow';
+                                    font-style: normal;
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                    margin: 0;
+                                    line-height: 400%;
+                                }
+                            }
+                        }
+                    }
+            }
+
+        }
+        
+        }
+        
+    }
+    
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
