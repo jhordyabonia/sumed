@@ -22,6 +22,7 @@
                                    name="qty"
                                    id="qty"
                                    min="0"
+                                   max="<?= $_helper->getProductMaxQty($_product) ?>"
                                    value="<?= $block->getProductDefaultQty() * 1 ?>"
                                    title="<?= $block->escapeHtmlAttr(__('Qty')) ?>"
                                    class="input-text qty plus-minus-input"

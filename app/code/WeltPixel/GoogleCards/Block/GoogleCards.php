@@ -2,6 +2,7 @@
 
 namespace WeltPixel\GoogleCards\Block;
 
+use Magento\Framework\App\ObjectManager;
 use Magento\Review\Model\ResourceModel\Review\CollectionFactory;
 
 class GoogleCards extends \Magento\Framework\View\Element\Template
@@ -115,11 +116,11 @@ class GoogleCards extends \Magento\Framework\View\Element\Template
     public function getDescription($product)
     {
         if ($this->_helper->getDescriptionType() == 1) {
-            return nl2br($product->getData('description'));
+            return nl2br($product->getData('description') ?? '');
         } elseif ($this->_helper->getDescriptionType() == 2) {
-            return nl2br($product->getData('meta_description'));
+            return nl2br($product->getData('meta_description') ?? '');
         } else {
-            return nl2br($product->getData('short_description'));
+            return nl2br($product->getData('short_description') ?? '');
         }
     }
 
@@ -158,6 +159,17 @@ class GoogleCards extends \Magento\Framework\View\Element\Template
     public function getBrand($product)
     {
         $brandAttribute = $this->_helper->getBrand();
+
+        if ($brandAttribute == 'category_ids') {
+            $categoryNames = [];
+            $categories = $product->getCategoryCollection()->addAttributeToSelect('name');
+            foreach ($categories as $category) {
+                $categoryNames[] = $category->getName();
+            }
+
+            return implode(',', $categoryNames);
+        }
+
         $brandName = '';
         if ($brandAttribute) {
             try {
@@ -169,6 +181,7 @@ class GoogleCards extends \Magento\Framework\View\Element\Template
                 $brandName = '';
             }
         }
+
         return $brandName;
     }
 

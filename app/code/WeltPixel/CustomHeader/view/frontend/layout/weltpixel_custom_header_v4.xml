@@ -21,6 +21,7 @@
 					<block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" after="-" template="Magento_Search::form.mini.phtml">
                         <arguments>
                             <argument name="configProvider" xsi:type="object">WeltPixel\CustomHeader\ViewModel\ConfigProvider</argument>
+                            <argument name="additionalSearchFormData" xsi:type="object">WeltPixel\CustomHeader\ViewModel\AdditionalSearchFormData</argument>
                         </arguments>
                     </block>
 				</container>

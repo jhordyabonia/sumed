@@ -1,9 +1,9 @@
 <?php
 $_product = $this->getProduct();
-$_brand = $this->getBrand($_product);
-$_sku = $this->getSku($_product);
-$_mpn = $this->getMpn($_product);
-$_gtin = $this->getGtin($_product);
+$_brand = $this->getBrand($_product) ?? '';
+$_sku = $this->getSku($_product) ?? '';
+$_mpn = $this->getMpn($_product) ?? '';
+$_gtin = $this->getGtin($_product) ?? '';
 $_itemCondition = $this->getItemCondition($_product);
 
 $reviewsFormat = $this->getReviewsFormat();

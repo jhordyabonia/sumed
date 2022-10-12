@@ -44,11 +44,11 @@ class FacebookOpenGraph extends GoogleCards
     public function getDescription($product)
     {
         if ($this->_helper->getFacebookDescriptionType() == 1) {
-            return nl2br($product->getData('description'));
+            return nl2br($product->getData('description') ?? '');
         } elseif ($this->_helper->getFacebookDescriptionType() == 2) {
-            return nl2br($product->getData('meta_description'));
+            return nl2br($product->getData('meta_description') ?? '');
         } else {
-            return nl2br($product->getData('short_description'));
+            return nl2br($product->getData('short_description') ?? '');
         }
     }
 

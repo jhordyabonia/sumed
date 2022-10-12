@@ -74,6 +74,9 @@ class Bundling extends AbstractHelper
     {
         $buildJsFile = 'advancedbundling_build.js';
         $magentoVersion = $this->productMetadata->getVersion();
+        if (version_compare($magentoVersion, '2.4.5', '<')) {
+            $buildJsFile = 'advancedbundling_build_2_4_4.js';
+        }
         if (version_compare($magentoVersion, '2.3.5', '<')) {
             $buildJsFile = 'advancedbundling_build_2_3_4.js';
         }
