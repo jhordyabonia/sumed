@@ -78,7 +78,9 @@ class CustomerGroup extends \Magento\Ui\Component\Listing\Columns\Column
         }
 
         array_walk($customerGroupdIds, function (&$item, $key) use ($customerGroupNames) {
-            $item = $customerGroupNames[$key];
+            if (isset($customerGroupNames[$key])) {
+                $item = $customerGroupNames[$item];
+            }
         });
 
         $content = implode(", ", $customerGroupdIds);

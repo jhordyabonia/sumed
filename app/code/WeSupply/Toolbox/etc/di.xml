@@ -74,4 +74,8 @@
         <plugin name="wesupply-subdomain-variable"
                 type="WeSupply\Toolbox\Plugin\Model\Source\VariablePlugin" sortOrder="1" />
     </type>
+    <type name="Magento\Sales\Controller\Adminhtml\Order\View\Giftmessage\Save">
+        <plugin name="wesupply-giftmessage-admin-save"
+                type="WeSupply\Toolbox\Plugin\Adminhtml\Order\View\Giftmessage\Save" sortOrder="1"/>
+    </type>
 </config>

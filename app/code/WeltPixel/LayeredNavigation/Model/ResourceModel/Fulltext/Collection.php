@@ -123,10 +123,8 @@ class Collection extends \Magento\Catalog\Model\ResourceModel\Product\Collection
         SearchResultFactory $searchResultFactory = null
     )
     {
-        if ($searchResultFactory === null) {
-            $this->searchResultFactory = \Magento\Framework\App\ObjectManager::getInstance()
+        $this->searchResultFactory = $searchResultFactory ?? \Magento\Framework\App\ObjectManager::getInstance()
                 ->get(\Magento\Framework\Api\Search\SearchResultFactory::class);
-        }
         parent::__construct(
             $entityFactory,
             $logger,

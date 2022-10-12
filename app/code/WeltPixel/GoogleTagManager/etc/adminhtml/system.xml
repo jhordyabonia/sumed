@@ -7,7 +7,11 @@
             <resource>WeltPixel_GoogleTagManager::GoogleTagManagerSettings</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General Configuration</label>
-                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="general_notice" translate="button_label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\GoogleTagManager\Block\Adminhtml\System\Config\SeparatorElement</frontend_model>
+                    <button_label><![CDATA[Universal Analytics will no longer process new data in standard properties beginning July 1, 2023. Prepare now by setting up and switching over to <a target="_blank" href="https://www.weltpixel.com/google-analytics-4-ga4-with-gtm-support-for-magento-2.html">Google Analytics 4.<a/>]]></button_label>
+                </field>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable GoogleTagManager</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
@@ -146,7 +150,7 @@ If Product Click Tracking is enabled this option rewrites Magento_Catalog::produ
                     <depends>
                         <field id="enable">1</field>
                     </depends>
-                    <comment>Send Parent Id or Child id cart, checkout and thank you page</comment>
+                    <comment>Send Parent Id or Child id cart, add to cart, remove from cart, checkout and thank you page</comment>
                 </field>
                 <field id="secure_cookies" translate="label comment" type="select" sortOrder="107" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Use Secure Cookies</label>

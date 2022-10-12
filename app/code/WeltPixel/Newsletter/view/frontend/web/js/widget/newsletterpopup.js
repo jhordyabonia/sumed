@@ -196,20 +196,20 @@ define([
         },
 
         getPageCount: function () {
-            return $.cookie(this.options.pageCounter) - 0;
+            return ($.cookie(this.options.pageCounter) ?? 0) - 0;
         },
 
         getNewsletterCookie: function () {
-            return $.cookie(this.options.cookieName);
+            return $.cookie(this.options.cookieName) ?? null;
         },
 
         getExitIntentCookie: function () {
-            return $.cookie(this.options.exitIntentCookieName);
+            return $.cookie(this.options.exitIntentCookieName) ?? null;
         },
 
         getExitIntentSubscribedCookie: function() {
             if (this.options.exitIntentDisplayUserSubscribed) return false;
-            return $.cookie(this.options.cookieNameSubscribed);
+            return $.cookie(this.options.cookieNameSubscribed) ?? null;
         },
 
         getExitIntentDisplayClose: function() {

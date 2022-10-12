@@ -61,6 +61,7 @@ class Cart extends \WeltPixel\GoogleTagManager\Block\Core
     public function getCartTotal()
     {
         $quote = $this->getQuote();
-        return $quote->getGrandTotal();
+        $grandTotal = $quote->getGrandTotal() ?? 0;
+        return $grandTotal;
     }
 }

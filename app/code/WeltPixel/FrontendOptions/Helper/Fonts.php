@@ -205,12 +205,16 @@ class Fonts extends \Magento\Framework\App\Helper\AbstractHelper
         foreach ($fontsArray as $fontKey => $fontOptions) {
             $tmpWeightArray = [];
             $tmpCharactersetArray = [];
-            foreach ($fontOptions['weight'] as $options) {
-                $tmpWeightArray = array_unique(array_merge($tmpWeightArray, $options));
+            if (isset($fontOptions['weight'])) {
+                foreach ($fontOptions['weight'] as $options) {
+                    $tmpWeightArray = array_unique(array_merge($tmpWeightArray, $options));
+                }
             }
 
-            foreach ($fontOptions['characterset'] as $options) {
-                $tmpCharactersetArray = array_unique(array_merge($tmpCharactersetArray, $options));
+            if (isset($fontOptions['characterset'])) {
+                foreach ($fontOptions['characterset'] as $options) {
+                    $tmpCharactersetArray = array_unique(array_merge($tmpCharactersetArray, $options));
+                }
             }
 
             $fontArrayOption = $fontKey . ":" . implode(',', $tmpWeightArray);
