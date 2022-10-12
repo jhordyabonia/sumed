@@ -42,6 +42,17 @@ define([
                 .on('click.' + this.namespace + 'productListToolbarForm', {}, $.proxy(this.applyFilterToProductsList, this))
             ;
 
+            var that = this;
+
+            window.onpopstate = function(event) {
+                var ignoredHashes = ['#search-mod'];
+                if (event && !ignoredHashes.includes(window.location.hash) && window.location.href.slice(-1) != '#') {
+                    var backUrl = event.target.location.origin + event.target.location.pathname;
+                    var paramData = event.target.location.search.replace(/^\?/, '')
+                    that.makeAjaxCall(backUrl, paramData, false);
+                }
+            }
+
             $('.item a.wp-filter-disabled').off('click');
             if (window.wp_ajax_useCustomPlaceholder == '1') {
                 $('.page-wrapper').loader({
@@ -118,7 +129,7 @@ define([
 
             self.elem = link;
 
-            this.makeAjaxCall(urlParts[0], mergedPath);
+            this.makeAjaxCall(urlParts[0], mergedPath, true);
             evt.preventDefault();
 
         },
@@ -179,7 +190,7 @@ define([
 
             return res;
         },
-        updateUrl: function (url, paramData) {
+        updateUrl: function (url, paramData, pushState) {
             if (!url) {
                 return;
             }
@@ -188,8 +199,8 @@ define([
             }
             url = this.removeQueryStringParameter('ajax', url);
             url = this.removeQueryStringParameter('_', url);
-            if (typeof history.replaceState === 'function') {
-                history.replaceState({}, null, url);
+            if (pushState && (typeof history.pushState === 'function')) {
+                history.pushState({}, null, url);
             }
         },
 
@@ -465,7 +476,7 @@ define([
             if( paramName == 'product_list_mode') {// paramName == 'product_list_order' - to remove adavancedsorting by ajax
                 location.href = baseUrl + (paramData.length ? '?' + paramData : '');
             } else {
-                this.makeAjaxCall(baseUrl, paramData);
+                this.makeAjaxCall(baseUrl, paramData, true);
             }
         },
 
@@ -482,7 +493,7 @@ define([
             }, 'slow');
         },
 
-        makeAjaxCall: function (baseUrl, paramData) {
+        makeAjaxCall: function (baseUrl, paramData, pushState) {
             var self = this;
             var isSlideIn = $('body').hasClass('slider-layer');
             var ajaxScrollTop = $('#layered-filter-block').hasClass('ajax-scroll-top');
@@ -510,7 +521,7 @@ define([
             }).done(function (response) {
                 if (response.success) {
                     $('.swatch-option-tooltip').hide();
-                    self.updateUrl(baseUrl, paramData);
+                    self.updateUrl(baseUrl, paramData, pushState);
                     self.updateContent(response.html);
                     self.slidersUpdate();
                 }

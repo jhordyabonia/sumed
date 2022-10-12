@@ -38,6 +38,8 @@ use WeSupply\Toolbox\Api\OrderInfoBuilderInterface;
 use WeSupply\Toolbox\Helper\Data;
 use WeSupply\Toolbox\Helper\WeSupplyMappings;
 use WeSupply\Toolbox\Logger\Logger;
+use \Magento\GiftMessage\Api\OrderRepositoryInterface as OrderGiftRepository;
+use \Magento\GiftMessage\Api\OrderItemRepositoryInterface as OrderItemGiftRepository;
 
 /**
  * Class OrderInfoBuilder
@@ -159,6 +161,16 @@ class OrderInfoBuilder implements OrderInfoBuilderInterface
     private $shipmentRepository;
 
     /**
+     * @var OrderGiftRepository
+     */
+    private $orderGiftRepository;
+
+    /**
+     * @var OrderItemGiftRepository
+     */
+    private $orderItemGiftRepository;
+
+    /**
      * Product image subdirectory
      * @var string
      */
@@ -230,6 +242,8 @@ class OrderInfoBuilder implements OrderInfoBuilderInterface
      * @param PurchasedCollection         $downloadableLinks
      * @param PurchasedItemCollection     $downloadableItemLinks
      * @param OrderStatusCollection       $orderStatusCollection
+     * @param OrderGiftRepository         $orderGiftRepository
+     * @param OrderItemGiftRepository     $orderItemGiftRepository
      */
     public function __construct(
         ProductRepositoryInterface $productRepositoryInterface,
@@ -251,7 +265,10 @@ class OrderInfoBuilder implements OrderInfoBuilderInterface
         Logger $logger,
         PurchasedCollection $downloadableLinks,
         PurchasedItemCollection $downloadableItemLinks,
-        OrderStatusCollection $orderStatusCollection
+        OrderStatusCollection $orderStatusCollection,
+        OrderGiftRepository $orderGiftRepository,
+        OrderItemGiftRepository $orderItemGiftRepository
+
     ) {
         $this->productRepositoryInterface = $productRepositoryInterface;
         $this->imageHelper = $imageHelper;
@@ -272,6 +289,8 @@ class OrderInfoBuilder implements OrderInfoBuilderInterface
         $this->logger = $logger;
         $this->downloadableLinks = $downloadableLinks;
         $this->downloadableItemLinks = $downloadableItemLinks;
+        $this->orderGiftRepository = $orderGiftRepository;
+        $this->orderItemGiftRepository = $orderItemGiftRepository;
 
         $this->availableOrderStatuses = $orderStatusCollection->getItems();
         $this->weSupplyStatusIdMappedArray = $weSupplyMappings->mapOrderStateToWeSupplyStatusId();
@@ -688,9 +707,10 @@ class OrderInfoBuilder implements OrderInfoBuilderInterface
      */
     protected function mapOrderDataToWeSupply($orderData, &$finalOrderData)
     {
+        $orderId = $this->_helper->recursivelyGetArrayData(['entity_id'], $orderData);
         $finalOrderData['OrderModified'] = date('Y-m-d H:i:s');
         $finalOrderData['StoreId'] = $this->_helper->recursivelyGetArrayData(['store_id'], $orderData);
-        $finalOrderData['OrderID'] = self::PREFIX . $this->_helper->recursivelyGetArrayData(['entity_id'], $orderData);
+        $finalOrderData['OrderID'] = self::PREFIX . $orderId;
         $finalOrderData['OrderNumber'] = $this->_helper->recursivelyGetArrayData(['increment_id'], $orderData);
         $finalOrderData['OrderExternalOrderID'] = $this->_helper->recursivelyGetArrayData(['increment_id'], $orderData);
         $finalOrderData['OrderDate'] = $this->modifyToLocalTimezone($orderData['created_at']);
@@ -713,6 +733,12 @@ class OrderInfoBuilder implements OrderInfoBuilderInterface
             $this->unifyDeliveryTimestamps($this->_helper->recursivelyGetArrayData(['delivery_timestamp'], $orderData, '')),
             $finalOrderData['EstimateUTCOffset']
         );
+
+        $giftMessageId = $this->_helper->recursivelyGetArrayData(['gift_message_id'], $orderData);
+        if ($giftMessageId) {
+            $orderGiftMessage = $this->orderGiftRepository->get($orderId);
+            $finalOrderData['OrderGiftWrappingMessage'] = $orderGiftMessage->getMessage();
+        }
     }
 
     /**
@@ -772,12 +798,13 @@ class OrderInfoBuilder implements OrderInfoBuilderInterface
 
         $itemFeeShipping = floatval($this->_helper->recursivelyGetArrayData(['base_shipping_amount'], $orderData, 0));
         $orderItemsData = $orderData['OrderItems'];
-        $initItemStatus = $this->orderOrigStatusCode;
 
         foreach ($orderItemsData as $item) {
 
+            $orderItemId =  $this->_helper->recursivelyGetArrayData(['item_id'], $item);
+            $orderId =  $this->_helper->recursivelyGetArrayData(['order_id'], $item);
             $generalData = [];
-            $generalData['ItemID'] = $this->_helper->recursivelyGetArrayData(['item_id'], $item);
+            $generalData['ItemID'] = $orderItemId;
             $generalData['ItemPrice'] = $this->_helper->recursivelyGetArrayData(['base_price'], $item);
             $generalData['ItemCost'] = $this->_helper->recursivelyGetArrayData(['base_cost'], $item, $generalData['ItemPrice']);
             $generalData['ItemAddressID'] = $this->_helper->recursivelyGetArrayData(['shippingAddressInfo', 'entity_id'], $orderData);
@@ -790,6 +817,13 @@ class OrderInfoBuilder implements OrderInfoBuilderInterface
             $generalData['ItemProduct']['ProductPartNo'] = $this->_helper->recursivelyGetArrayData(['sku'], $item);
             $generalData['ItemTitle'] = $this->_helper->recursivelyGetArrayData(['name'], $item);
 
+            $giftMessageId = $this->_helper->recursivelyGetArrayData(['gift_message_id'], $item);
+
+            if ($giftMessageId) {
+                $orderItemGiftMessage = $this->orderItemGiftRepository->get($orderId, $orderItemId);
+                $generalData['ItemGiftMessage'] = $orderItemGiftMessage->getMessage();
+            }
+
             /**
              * some item data needs to remain as it was at the place order moment
              * so, we are not allowed to update it
@@ -800,6 +834,7 @@ class OrderInfoBuilder implements OrderInfoBuilderInterface
             $itemTotals = $this->getItemTotals($item);
 
             $carrierCode = $orderData['carrier_code'];
+            $initItemStatus = $this->orderOrigStatusCode;
 
             /** Send information about downloadable items */
             $generalData['ItemDownloadUrl'] = '';
