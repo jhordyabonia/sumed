@@ -222,12 +222,12 @@ class SampleDataProvider
         $storeId = $this->_storeManager->getStore()->getId();
         $customers = $this->customerFactory->create()
             ->getCollection()
+            ->addAttributeToSelect('*')
             ->addAttributeToFilter("store_id", array("eq" => $storeId));
 
         if ($customers->getSize() > 0) {
             $customer = $customers->getFirstItem();
             if($customer->getEmail()) {
-                $customer = $this->_customerRepository->getById($customer->getId());
                 $customer = $this->_getCustomerObjectForEmail($customer);
             }
         }

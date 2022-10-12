@@ -230,18 +230,12 @@ class License extends \Magento\Framework\Model\AbstractModel
                     $isLRqd = $this->_isLRqd($path, $mdN);
                     if ($isLRqd) {
                         $lcK = $this->getLfM($mdN);
-
-                        $componentName = $mdN;
-                        if (substr($mdN, -4) == "\x5f\x50\x72\x6f") {
-                            $componentName = substr($mdN, 0, -4);
-                        }
-
                         $licenseModules[$mdN] = [
                             "\x6d\x6f\x64\x75\x6c\x65\x5f\x6e\x61\x6d\x65" => $mdN,
                             "\x76\x69\x73\x69\x62\x6c\x65\x5f\x6e\x61\x6d\x65" => (isset($this->modulesUserFriendlyNames[$mdN]))
                                 ? $this->modulesUserFriendlyNames[$mdN] : str_replace("_", " ", $mdN),
                             "\x6c\x69\x63\x65\x6e\x73\x65" => $lcK,
-                            "\x76\x65\x72\x73\x69\x6f\x6e" => $this->getComposerVersion(str_replace(["\x5f\x46\x72\x65\x65"], '', $componentName), \Magento\Framework\Component\ComponentRegistrar::MODULE)
+                            "\x76\x65\x72\x73\x69\x6f\x6e" => $this->getComposerVersion(str_replace("\x5f\x46\x72\x65\x65", '', $mdN), \Magento\Framework\Component\ComponentRegistrar::MODULE)
                         ];
                     }
                     $wpModules[$mdN] = $this->getWpMdsInf($mdN, $path, $lcK, $isLRqd, \Magento\Framework\Component\ComponentRegistrar::MODULE);
@@ -637,11 +631,7 @@ class License extends \Magento\Framework\Model\AbstractModel
     {
         $this->getMdsL();
 
-        $componentName = $mdN;
-        if (substr($mdN, -4) == "\x5f\x50\x72\x6f") {
-            $componentName = substr($mdN, 0, -4);
-        }
-        $path = $this->componentRegistrar->getPath(\Magento\Framework\Component\ComponentRegistrar::MODULE, str_replace(["\x5f\x46\x72\x65\x65"], '', $componentName));
+        $path = $this->componentRegistrar->getPath(\Magento\Framework\Component\ComponentRegistrar::MODULE, str_replace("\x5f\x46\x72\x65\x65", '', $mdN));
         $isLRqd = $this->_isLRqd($path, $mdN, true);
 
         if ($isLRqd) {
@@ -727,14 +717,9 @@ class License extends \Magento\Framework\Model\AbstractModel
             $vLid = $this->isLcVd($licNs, $mdN);
         }
 
-        $componentName = $moduleVersionName;
-        if (substr($moduleVersionName, -4) == "\x5f\x50\x72\x6f") {
-            $componentName = substr($moduleVersionName, 0, -4);
-        }
-
         return [
             "\x6e\x61\x6d\x65" => $mdN,
-            "\x76\x65\x72\x73\x69\x6f\x6e" => $this->getComposerVersion(str_replace(["\x5f\x46\x72\x65\x65"], '', $componentName), $moduleType),
+            "\x76\x65\x72\x73\x69\x6f\x6e" => $this->getComposerVersion(str_replace("\x5f\x46\x72\x65\x65", '', $moduleVersionName), $moduleType),
             "\x6c\x69\x63\x65\x6e\x73\x65\x5f\x6b\x65\x79" => $licNs,
             "\x69\x6e\x73\x74\x61\x6c\x6c\x61\x74\x69\x6f\x6e\x5f\x74\x79\x70\x65" => $installationType,
             "\x69\x73\x5f\x6c\x69\x63\x65\x6e\x73\x65\x5f\x6e\x65\x65\x64\x65\x64" => ($isLNd) ? '1' : '0',

@@ -92,7 +92,8 @@ class FileProcessor
     public function getImageDetails($file)
     {
         $imageUrl = $this->getFinalMediaUrl($file);
-        $imageDetails = getimagesize($this->mediaDirectory->getAbsolutePath() . $file);
+        //phpcs:ignore Generic.PHP.NoSilencedErrors
+        $imageDetails = @getimagesize($this->mediaDirectory->getAbsolutePath() . $file);
 
         $result = [];
         $result['width'] = $imageDetails[0];
@@ -102,7 +103,8 @@ class FileProcessor
         $result['existingImage'] = $file;
         $result['url'] = $imageUrl;
         $result['previewType'] = 'image';
-        $result['size'] = filesize($this->mediaDirectory->getAbsolutePath() . $file);
+        //phpcs:ignore Generic.PHP.NoSilencedErrors
+        $result['size'] = @filesize($this->mediaDirectory->getAbsolutePath() . $file);
 
         return $result;
     }

@@ -1,11 +1,3 @@
-<?php
-// @codingStandardsIgnoreFile
-/** @var \WeltPixel\SpeedOptimization\Helper\Data $_speedOptimizationHelper */
-$_speedOptimizationHelper = $this->helper('WeltPixel\SpeedOptimization\Helper\Data');
-if (!$_speedOptimizationHelper->isEnabled()) {
-    return;
-}
-?>
 <div class="wp_jsbundling_container" >
     <button style="display: none" class="startJsBundling primary"><span><?= __('Start Js Bundle Gathering') ?></span></button>
     <button style="display: none" class="stopJsBundling primary"><span><?= __('Stop Js Bundle Gathering') ?></span></button>

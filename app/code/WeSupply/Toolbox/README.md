@@ -26,12 +26,6 @@ $ php bin/magento setup:upgrade
 
 ###Release Notes  
 
-Version 1.12.4, July 14, 2022  
--New Feature: Added the possibility of displaying Gift Messages in WeSupply Email templates via variables. This applies to Gift Messages added to the whole order, as well as those added to individual items.  
--Improved the Order Import/Update process, which now better accounts for bulk imports/updates that are sent to WeSupply in in a very short period of time.  
--Fixed an issue that sometimes caused Standard and Virtual/Downloadable Products to be bundled together in the WeSupply Order View.  
--Optimized the extension installation and upgrade process in order to comply with Magento Best Practices.  
-
 Version 1.12.2, May 23rd, 2022  
 -Fixed an error specific to Magento 2.4.4 that prevented Shipping Options from loading on the Checkout Page when the Estimated Delivery Date functionality was enabled  
 -Fixed an issue that prevented Estimate Delivery Ranges from functioning properly in the Cart and on the Checkout Page when set to "As Range: Earliest - Latest"  

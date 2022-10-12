@@ -145,10 +145,9 @@ class Topmenu extends \Magento\Theme\Block\Html\Topmenu
                     $hasChildren = 'data-has-children="1"';
                 }
 
-                $DynamicScOpts = $parent->getWeltpixelMmDynamicScOpts() ?? '';
                 $columnsNumber = $this->_getColumnsNumber($parent);
                 $dynamicSubcategories = (boolean)$parent->getWeltpixelMmDynamicScFlag() && (in_array($parent->getWeltpixelMmDisplayMode(), ['sectioned', 'fullwidth']));
-                $columnGroups = explode(",", $DynamicScOpts);
+                $columnGroups = explode(",", $parent->getWeltpixelMmDynamicScOpts());
                 $columnGroups = array_slice($columnGroups, 0, $columnsNumber);
                 $columnGroupsSum = array_sum($columnGroups);
                 if ($columnsNumber) {
@@ -792,9 +791,8 @@ class Topmenu extends \Magento\Theme\Block\Html\Topmenu
      */
     protected function _getColumnWidth($item, $columnsNumber)
     {
-        $mmColumnWidth = $item->getWeltpixelMmColumnWidth() ?? '';
-        $numbers = (float)preg_replace('/[^0-9.]*/', '', trim($mmColumnWidth));
-        $characters = preg_replace('/[^a-zA-Z%]/', '', trim($mmColumnWidth));
+        $numbers = (float)preg_replace('/[^0-9.]*/', '', trim($item->getWeltpixelMmColumnWidth()));
+        $characters = preg_replace('/[^a-zA-Z%]/', '', trim($item->getWeltpixelMmColumnWidth()));
 
         switch ($item->getWeltpixelMmDisplayMode()) {
             case 'fullwidth':

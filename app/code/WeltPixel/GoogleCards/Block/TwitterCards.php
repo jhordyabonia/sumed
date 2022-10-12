@@ -12,11 +12,11 @@ class TwitterCards extends GoogleCards
     public function getDescription($product)
     {
         if ($this->_helper->getTwitterCardDescriptionType() == 1) {
-            return nl2br($product->getData('description') ?? '');
+            return nl2br($product->getData('description'));
         } elseif ($this->_helper->getTwitterCardDescriptionType() == 2){
-            return nl2br($product->getData('meta_description') ?? '');
+            return nl2br($product->getData('meta_description'));
         } else {
-            return nl2br($product->getData('short_description') ?? '');
+            return nl2br($product->getData('short_description'));
         }
     }
 

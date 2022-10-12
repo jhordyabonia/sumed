@@ -158,7 +158,7 @@ Note,Note
 "Persistent datalayer expiry time","Persistent datalayer expiry time"
 "The specified value represents minutes.","The specified value represents minutes."
 "Child vs Parent","Child vs Parent"
-"Send Parent Id or Child id cart, add to cart, remove from cart, checkout and thank you page","Send Parent Id or Child id cart, add to cart, remove from cart, checkout and thank you page"
+"Send Parent Id or Child id cart, checkout and thank you page","Send Parent Id or Child id cart, checkout and thank you page"
 "Use Secure Cookies","Use Secure Cookies"
 "Send the cookies as secure ones. Should only be used if your whole site is on HTTPS.","Send the cookies as secure ones. Should only be used if your whole site is on HTTPS."
 "User Scoped Custom Dimensions","User Scoped Custom Dimensions"

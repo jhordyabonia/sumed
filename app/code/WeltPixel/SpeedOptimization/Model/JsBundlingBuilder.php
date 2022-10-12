@@ -138,7 +138,7 @@ class JsBundlingBuilder
                 $jsBundlingValues[$optionName] = json_decode($options[0], true);
                     break;
                 default:
-                    $modulesIncludes[$optionName] = str_replace(['vimeo/player', 'vimeo/vimeo-wrapper'], ['vimeo', 'vimeoWrapper'], $options);
+                    $modulesIncludes[$optionName] = $options;
                     break;
             }
         }

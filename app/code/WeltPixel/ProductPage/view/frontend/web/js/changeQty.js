@@ -8,7 +8,6 @@ define([
         initialize: function () {
             this._super();
             this.qty = ko.observable($(this.qtyInput).val() * 1);
-            this.maxQtyValue = $(this.qtyInput).attr('max');
         },
         decreaseQty: function() {
             var newQty = this.qty() - 1;
@@ -20,11 +19,7 @@ define([
         },
         increaseQty: function() {
             var newQty = this.qty() + 1;
-            if (newQty <= this.maxQtyValue) {
-                this.qty(newQty);
-            } else {
-
-            }
+            this.qty(newQty);
         }
     });
 

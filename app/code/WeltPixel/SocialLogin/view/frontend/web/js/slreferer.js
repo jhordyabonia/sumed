@@ -1,6 +1,6 @@
 define([
     'jquery',
-    'js-cookie/cookie-wrapper',
+    'jquery/jquery.cookie',
     'domReady!'
 ], function($) {
     'use strict';

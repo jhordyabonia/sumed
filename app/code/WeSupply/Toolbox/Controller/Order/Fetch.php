@@ -91,7 +91,6 @@ class Fetch extends Action
         $response = '';
         $params = $this->getRequest()->getParams();
         $validationError = $this->_validateParams($params);
-        $responseStatusCode = 200;
 
         if ($validationError) {
             /** Add the error response */
@@ -113,7 +112,6 @@ class Fetch extends Action
             }
 
             if (is_array($xmlResponse) && array_key_exists('error', $xmlResponse)) {
-                $responseStatusCode = $xmlResponse['error'];
                 $response .= $this->addResponseStatus('true', 'ERROR', $xmlResponse['message'] ?? 'General error occurred.');
             } else {
                 $response .= $xmlResponse;
@@ -126,7 +124,6 @@ class Fetch extends Action
         $xml = simplexml_load_string($response);  // Might be ignored this and just send the $response as result
 
         $this->getResponse()->setHeader('Content-type', 'text/xml; charset=utf-8');
-        $this->getResponse()->setHttpResponseCode($responseStatusCode);
         $this->getResponse()->setBody($xml->asXML());
     }
 

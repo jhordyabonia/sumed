@@ -10,7 +10,7 @@
     ],
     shim: {
         'fotorama/fotorama': ['jquery', 'jquery/jquery-migrate', 'magnifier/magnify'],
-	    'jquery/jquery-migrate': ['jquery'],
+	    'jquery/jquery-migrate': ['jquery', 'jquery/jquery.cookie'],
         MutationObserver: ['es6-collections'],
         tinymce: {
             exports: 'tinymce',
@@ -148,7 +148,7 @@
             include: [
                 'mage/requirejs/mixins',
                 'mage/common',
-                'js-cookie/cookie-wrapper',
+                'jquery/jquery.cookie',
                 'jquery/jquery-storageapi',
                 'jquery/jquery.mobile.custom',
                 'jquery/ui',

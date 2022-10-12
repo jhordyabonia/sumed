@@ -39,11 +39,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     protected $serializer;
 
     /**
-     * @var \Magento\CatalogInventory\Api\StockRegistryInterface
-     */
-    protected $stockRegistry;
-
-    /**
      * Data constructor.
      * @param \Magento\Framework\App\Helper\Context $context
      * @param \WeltPixel\MobileDetect\Helper\Data $mobileDetectHelper
@@ -52,7 +47,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      * @param \Magento\Framework\Pricing\Helper\Data $priceHelper
      * @param \Magento\CatalogWidget\Model\Rule $rule
      * @param \Magento\Framework\Serialize\Serializer\Json $serializer
-     * @param \Magento\CatalogInventory\Api\StockRegistryInterface $stockRegistry
      */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
@@ -61,8 +55,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         \Magento\Framework\App\RequestInterface $request,
         \Magento\Framework\Pricing\Helper\Data $priceHelper,
         \Magento\CatalogWidget\Model\Rule $rule,
-        \Magento\Framework\Serialize\Serializer\Json $serializer,
-        \Magento\CatalogInventory\Api\StockRegistryInterface $stockRegistry
+        \Magento\Framework\Serialize\Serializer\Json $serializer
     ) {
         parent::__construct($context);
         $this->_storeManager = $storeManager;
@@ -71,7 +64,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $this->priceHelper = $priceHelper;
         $this->rule = $rule;
         $this->serializer = $serializer;
-        $this->stockRegistry = $stockRegistry;
     }
 
     /**
@@ -648,16 +640,5 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getViewMoreLessHeight($storeId = null)
     {
         return $this->scopeConfig->getValue('weltpixel_product_page/general/view_more_less_height', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $storeId);
-    }
-
-    /**
-     * @param \Magento\Catalog\Model\Product $product
-     * @return float
-     */
-    public function getProductMaxQty($product)
-    {
-        $stockItem = $this->stockRegistry->getStockItem($product->getId(), $product->getStore()->getWebsiteId());
-        $maxSaleQty = $stockItem->getMaxSaleQty();
-        return $maxSaleQty;
     }
 }

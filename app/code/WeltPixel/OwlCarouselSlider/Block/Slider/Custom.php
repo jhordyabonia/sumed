@@ -90,7 +90,8 @@ class Custom extends \Magento\Framework\View\Element\Template implements \Magent
     public function getImageDetails($imageName)
     {
         $mediapath = $this->_filesystem->getDirectoryRead(DirectoryList::MEDIA)->getAbsolutePath();
-        list($width, $height) = getimagesize($mediapath . $imageName);
+        //phpcs:ignore Generic.PHP.NoSilencedErrors
+        list($width, $height) = @getimagesize($mediapath . $imageName);
 
         return [
             'width' => $width,

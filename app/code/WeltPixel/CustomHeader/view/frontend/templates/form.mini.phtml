@@ -108,6 +108,7 @@ $serachOptionsVersionClass = !$serachOptionsVersion ? 'version-1' : 'version-2';
                     $(".nav-sections-4.sticky-header").attr('style', 'z-index: 0 !important');
                     $(".nav-toggle, .logo").attr('style', 'z-index: 0');
                 }
+                window.history.pushState("", document.title, window.location.pathname);
             });
 
             $(".block.block-content").on('click', function(){
@@ -119,6 +120,7 @@ $serachOptionsVersionClass = !$serachOptionsVersion ? 'version-1' : 'version-2';
                 window.location.hash = 'search-mod';
                 setTimeout(function(){
                     window.location.hash= '#';
+                    window.history.pushState("", document.title, window.location.pathname);
                     if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
                         searchMod.removeClass("isOpenIE");
                     }

@@ -137,6 +137,7 @@ class VisitorCounterManager
                 'last_visit_at < date_sub(NOW(), interval 1 day)'
             );
         } catch (\Exception $ex) {
+            print_r($ex->getMessage());
         }
     }
 }

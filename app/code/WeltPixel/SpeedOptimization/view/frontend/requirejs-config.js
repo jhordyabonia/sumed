@@ -1,3 +1,3 @@
 var config = {
-    deps: ['js-cookie/cookie-wrapper']
+    deps: ['jquery/jquery.cookie']
 };
