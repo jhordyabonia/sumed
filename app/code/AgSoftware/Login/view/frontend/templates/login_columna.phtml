@@ -1,39 +1,43 @@
-
+<?php
+    /**
+     * @var \AgSoftware\Login\Block\Columna $block;
+     **/
+    if(!$block->isLoggedIn()){
+        return;
+    }
+?>
 <div class="display-sidebar-login">
 <div class=content-column-login>
     <ul class="login-items-nav">
         <li>
             <strong class="list-style-nav">
-                Mi cuenta
+               <?=__("My Account");?>
             </strong>
         </li>
         <li class="list-style-nav">
-            <p>Mi cuenta corriente</p>
+            <p><?=__("Mi cuenta corriente")?></p>
         </li>
         <li class="list-style-nav">
-            <p>
-            Mi historial de pedidos</p>
+            <p><?=__("Mi historial de pedidos")?></p>
         </li>
         <li class="list-style-nav">
-            <p>
-            Mis comprobantes</p>
+            <p><?=__("Mis comprobantes")?></p>
         </li>
         <li class="list-style-nav">
-            <p>
-            Realizar un reclamo</p>
+            <p><?=__("Realizar un reclamo")?></p>
         </li>
 
         <li class="list-style-nav">
-            <p>Novedades</p>
+            <p><?=__("Novedades")?></p>
         </li>
         <li class="list-style-nav">
-            <p>Catalogos</p>
+            <p><?=__("Catalogos")?></p>
         </li>
         <li class="list-style-nav">
-            <p>Nuestras Ofertas</p>
+            <p><?=__("Nuestras Ofertas")?></p>
         </li>
         <li class="list-style-nav">
-            <p>Contacto</p>
+            <p><?=__("Contacto")?></p>
         </li>
     </ul>
 </div>

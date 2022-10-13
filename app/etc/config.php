@@ -481,6 +481,7 @@ return [
         'Magento_WishlistGiftCard' => 1,
         'Magento_WishlistGiftCardGraphQl' => 1,
         'Magento_GiftCardRequisitionListGraphQl' => 1,
+        'AgSoftware_Login' => 1,
         'AgSoftware_SelesForce' => 1,
         'Amasty_Amp' => 1,
         'Amasty_Base' => 1,

@@ -9,14 +9,11 @@
     <body>
      <referenceBlock name="footer_links" remove="true"/>
      <referenceBlock name="copyright" remove="true"/>
-     <referenceBlock name="top.links" remove="false"/>
+     <referenceBlock name="top.links" remove="true"/>
      <referenceBlock name="header.panel.wrapper" remove="false"/>
      <referenceContainer name="main.content">
-         <block name="login-columna" template="Magento_Theme::login-columna.phtml" cacheable="false" before="-"/>
-
+         <block name="login.columna" class="AgSoftware\Login\Block\Login" template="AgSoftware_Login::login_columna.phtml" before="-"/>
      </referenceContainer>
-    
-
      <!--<referenceBlock name="content" remove="true"/>-->
     </body>
 </page>
