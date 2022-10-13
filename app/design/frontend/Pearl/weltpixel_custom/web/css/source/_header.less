@@ -12,24 +12,47 @@
     .panel.wrapper {
         display: none;
     }
-    body {
-        .theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .nav-sections.sticky-header-nav {
-            order: 3;
+    :root body {
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .minicart-wrapper {
+            top: 79%;
+            z-index: 10;
+            right: e('22.2%');
         }
-        .theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .block-search {
-            order: 2;
-            margin-left: 0;
-            max-width: 1285px;
-            margin: 0 auto;
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .nav-sections.sticky-header-nav {
+            order: 3!important;
         }
-        .theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content {
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .block-search {
+            order: 2!important;
+            margin-left: 0!important;
+            max-width: 1285px!important;
+            margin: 0 auto!important;
+        }
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content {
             max-width: 100%;
             display: inline-block;
         }
-        .theme-pearl .page-wrapper .page-header-v1.sticky-header .desktop-logo.desktop-logo-all {
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .desktop-logo.desktop-logo-all {
             max-width: 200px;
             display: inline-block;
             margin: 0 auto;
+        }
+        &.theme-pearl .page-wrapper .page-header.sticky-header .logo img {
+            width: inherit;
+            height: 35px;
+            position: relative;
+            top: -12px;
+        }
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .desktop-logo {
+            margin-left: e('20.5%');
+        }
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .block-search .block-content .form.minisearch {
+            left: 140px;
+            position: relative;
+        }
+
+        &:not(.mobile-nav) .page-header.sticky-header .navigation,
+        &:not(.mobile-nav) .page-header.sticky-header .nav-sections-item-content {
+            background-color: #f6f8fb!important;
         }
         .header-multistore {
             display: none;
@@ -330,7 +353,8 @@
             color: @color-primario;
         }
         .theme-pearl .page-wrapper .page-header-v1 .header.content .minicart-wrapper {
-            top: 125%;
+            top: 135%;
+            right: 3%;
         }
 
         .minicart-wrapper .action.showcart .text{
