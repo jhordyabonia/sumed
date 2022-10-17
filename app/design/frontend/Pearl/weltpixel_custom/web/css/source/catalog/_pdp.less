@@ -4,7 +4,33 @@
 
 & when (@media-common = true) {
 
+    .mfp-content {
+        .mfp-iframe-scaler {
+            .mfp-close {
+                position: absolute;
+                display: inline-block;
+                top: 18px;
+                right: 25px;
+                color: #0C0C0C;
+                width: auto;
+                height: auto;
+            }
+            .mfp-iframe {
+                border: 1px solid #F6F8FB;
+                border-radius: 8px;
+            }
+        }
+    }
+        
     .weltpixel_quickview-catalog_product-view {
+
+        #maincontent.page-main {
+            min-height: 500px;
+            padding: 40px 20px 0 20px;
+            .product-full-width-section {
+                padding: 0;
+            }
+        }
 
         .discount-content {
             position: relative;
@@ -51,10 +77,16 @@
             }
         }
     
+        .product.media {
+            margin: 0;
+        }
+
         .container-dropdowns {
-            display: flex;
-            justify-content: space-evenly;;
-            width: 300px;
+            display: inline-flex;
+            justify-content: flex-start;
+            width: 60%;
+            gap: 20px;
+            margin-bottom: 20px;
             .dropdowns {
                 &:hover {
                     cursor: pointer;
@@ -77,25 +109,72 @@
                 }
             }
         }
-    
-        .product-info-stock-sku {
-            .stock.available {
-                span {
-                    color: #00893A;
-                    &::before {
-                        content: '\F26B';
-                        font-family: 'bootstrap-icons';
-                        margin-right: 8px;
+
+        .product-info-main {
+            text-align: left;
+            .product-info-stock-sku {
+                float: left;
+                padding-left: 0;
+                text-align: left;
+                .stock.available {
+                    width: 110px;
+                    padding: 2px 8px;
+                    margin-bottom: 8px;
+                    border: 1px solid #F6F8FB;
+                    border-radius: 4px;
+                    span {
+                        display: flex;
+                        color: #00893A;
+                        &::before {
+                            content: '\F26B';
+                            font-family: 'bootstrap-icons';
+                            margin-right: 8px;
+                        }
+                    }
+                }
+                .product.attribute.sku {
+                    color: #737B7D;
+                    .type {
+                        font-family: 'Barlow';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 170%;
+                        &::after {
+                            content: ' | ';
+                        }
                     }
                 }
             }
-            .product.attribute.sku {
-                color: #737B7D;
-                .type {
-                    &::after {
-                        content: ' | ';
-                    }
+            .page-title-wrapper {
+                .page-title {
+                    font-family: 'Barlow';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 20px !important;
+                    line-height: 130%;
+                    color: #0C0C0C;
                 }
+            }
+            .container-attributes {
+                .text-attribute {
+                    font-family: 'Barlow';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 170%;
+                }
+            }
+            .product-info-price {
+                border-bottom: none;
+            }
+        }
+
+        .product-info-price {
+            margin-top: 56px;
+            margin-bottom: 0;
+            .price-box {
+                padding-bottom: 0;
             }
         }
         
@@ -127,6 +206,7 @@
         form {
             .box-tocart {
                 .fieldset {
+                    margin-bottom: 0;
                     .actions {
                         button.primary {
                             width: 100%;
@@ -140,7 +220,8 @@
             }
         }
       
-    }              
+    }     
+
 }
 
 //

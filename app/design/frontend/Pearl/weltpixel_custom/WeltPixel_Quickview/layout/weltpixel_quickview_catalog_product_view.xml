@@ -28,5 +28,7 @@
 
         <move element="product.info.stock.sku" destination="product.info.main" before="-"/>
 
+        <referenceBlock name="product.price.tier" remove="true"/>
+
     </body>
 </page>
