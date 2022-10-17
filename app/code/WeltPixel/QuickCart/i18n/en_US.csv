@@ -6,7 +6,7 @@ Both,Both
 Arrows,Arrows
 Plus-Minus,Plus-Minus
 "Default Input","Default Input"
-"My Cart","My Cart"
+"My Cart","MI CARRITO"
 "Incl. Tax","Incl. Tax"
 "Total Incl. Tax","Total Incl. Tax"
 "Excl. Tax","Excl. Tax"
@@ -17,8 +17,8 @@ Close,Close
 item,item
 items,items
 Discount,Discount
-"View and edit cart","View and edit cart"
-"Go to Checkout","Go to Checkout"
+"View and edit cart","EDITAR CARRITO"
+"Go to Checkout","CONFIRMAR CARRITO"
 "Items in Cart","Items in Cart"
 "Apply Discount Code","Apply Discount Code"
 "Enter discount code","Enter discount code"
