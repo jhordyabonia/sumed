@@ -7,13 +7,17 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+
      <referenceBlock name="footer_links" remove="true"/>
      <referenceBlock name="copyright" remove="true"/>
      <referenceBlock name="top.links" remove="true"/>
      <referenceBlock name="header.panel.wrapper" remove="false"/>
+
      <referenceContainer name="main.content">
          <block name="login.columna" class="AgSoftware\Login\Block\Login" template="AgSoftware_Login::login_columna.phtml" before="-"/>
      </referenceContainer>
+     
      <!--<referenceBlock name="content" remove="true"/>-->
+
     </body>
 </page>
