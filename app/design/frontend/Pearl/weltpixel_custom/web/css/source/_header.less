@@ -12,6 +12,63 @@
     .panel.wrapper {
         display: none;
     }
+    :root body {
+        .desktop-logo.desktop-logo-all {
+            padding-right: 80px;
+        }
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .minicart-wrapper {
+            top: 79%;
+            z-index: 10;
+            right: 102px;
+        }
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .nav-sections.sticky-header-nav {
+            order: 3!important;
+        }
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .block-search {
+            order: 2!important;
+            margin-left: 0!important;
+            max-width: 1285px!important;
+            margin: 0 auto!important;
+            width: 573px;
+            padding-left: 17px;
+        }
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content {
+            max-width: 100%;
+            display: inline-block;
+        }
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .desktop-logo.desktop-logo-all {
+            display: inline-block;
+            margin: 0 auto;
+        }
+        &.theme-pearl .page-wrapper .page-header.sticky-header .logo img {
+            width: inherit;
+            height: 35px;
+            position: relative;
+            top: -12px;
+        }
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .desktop-logo {
+            margin-left: 90px;
+        }
+        &.theme-pearl .page-wrapper .page-header-v1.sticky-header .header.content .block-search .block-content .form.minisearch {
+            left: 10px;
+            position: relative;
+        }
+
+        &:not(.mobile-nav) .page-header.sticky-header .navigation,
+        &:not(.mobile-nav) .page-header.sticky-header .nav-sections-item-content {
+            background-color: #f6f8fb!important;
+        }
+        .header-multistore {
+            display: none!important;
+        }
+        .panel.wrapper {
+            display: none!important;
+        }
+        header.page-header {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+    }
     div.page-wrapper header.page-header .header.content, .page-wrapper .page-header .header_right {
         max-width: 1264px;
     }
@@ -20,7 +77,7 @@
             margin-bottom: 0;
             margin-top: -55px;
             float: right;
-            margin-right: -65%;
+            margin-right: -76%;
             a.link-button {
                 background: #0D717F;
                 padding: 15px 25px;
@@ -30,7 +87,7 @@
                 &.secound{
                     color: #0D717F;;
                     background: white;
-                    border: 2px solid #0D717F;
+                    border: 1px solid #0D717F;
                     span{
                         color:#0D717F;
                     }
@@ -42,7 +99,7 @@
                     &.secound{
                         color: #0D717F;;
                         background: white;
-                        border: 2px solid #0D717F;
+                        border: 1px solid #0D717F;
                         span{
                             color:#0D717F;
                         }
@@ -55,6 +112,7 @@
                     font-size: 16px;
                     line-height: 16px;
                     color: white;
+                    text-transform: capitalize;
                 }
             }
         }
@@ -90,7 +148,6 @@
         }
 
         .page-header {
-            border-top: 3px solid @color-primario;
             .panel.wrapper {
                 font-size: 11px;
                 color: @color-variante;
@@ -304,7 +361,7 @@
             color: @color-primario;
         }
         .theme-pearl .page-wrapper .page-header-v1 .header.content .minicart-wrapper {
-            top: 125%;
+            top: 135%;
         }
 
         .minicart-wrapper .action.showcart .text{
@@ -343,7 +400,6 @@
         .page-wrapper {
             .page-header {
                 display: block;
-                border-top: 3px solid @color-primario;
                 border-bottom: none;
                 .panel.wrapper {
                     width: 100%;
@@ -362,7 +418,6 @@
                             li {
                                 font-size: 11px;
                                 font-family: @Fuente1;
-                                text-transform: uppercase;
                                 list-style: none;
                                 margin: 0;
                                 padding: 0;
@@ -370,7 +425,6 @@
                                     display: inline-block;
                                     padding: 0 15px;
                                     border-left: 1px solid #ccc;
-                                    text-transform: uppercase;
                                     cursor: pointer;
                                     //color: @color-primario;
                                     span {
@@ -472,7 +526,6 @@
                         float: none;
                         .block-content {
                             .form.minisearch {
-                                left: 114px;
                                 position: relative;
                                 .field.search {
                                     .control {
@@ -519,8 +572,7 @@
                     .section-item-content {
                         background: #F6F8FB;
                         .navigation {
-                            max-width: 1280px;
-                            padding: 0 15px;
+                            max-width: 1260px;
                             background-color: transparent;
                             .ui-menu {
                                 font-family: Outfit;
