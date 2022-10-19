@@ -162,7 +162,6 @@
                                 .discount-price-details {
                                     display: flex;
                                     justify-content: space-between;
-                                    align-items: center;
                                     padding: 20px 0 8px;
                                     .price-details-content {
                                         display: flex;
@@ -297,6 +296,7 @@
                     width: 301px;
                     .discount-content {
                         position: absolute;
+                        top: 0;
                         left: 0;
                         display: flex;
                         width: 52px;
@@ -304,7 +304,8 @@
                         align-items: center;
                         justify-content: center;
                         padding: 4px 8px;
-                        background: #FFC327;
+                        border-radius: 8px 0 0;
+                        background: #EA8215;
                         z-index: 2;
                         .discount-text {
                             font-size: 14px;
@@ -340,28 +341,22 @@
                         }
                     }
                     .product-item-photo {
-                        display: block;
-                        width: auto;
-                        padding: 0;
                         .product-image-container {
                             span.product-image-wrapper[style="padding-bottom: 125%;"] {
-                                padding-bottom: 90%!important;
-                                .product-image-photo {
-                                    height: 220px;
-                                    padding: 0;
-                                    margin: 0 auto;
-                                }
+                                padding-bottom: 100%!important;
                             }
                         }  
                     }
                     .container-stock {
-                        position: absolute;
-                        left: 2%;
-                        top: 157px;
+                        position: relative;
+                        left: -10px;
+                        width: 100px;
                         z-index: 1;
                         display: flex;
                         justify-content: center;
                         gap: 5px;
+                        padding: 5px;
+                        margin-bottom: 16px;
                         border: 1px solid #F6F8FB;
                         border-radius: 4px;
                         z-index: 1;
@@ -387,6 +382,7 @@
                     }
                     .product-item-details {
                         .product-item-name {
+                            text-align: left !important;
                             .text-sub-title {
                                 font-size: 14px;
                                 font-weight: 400;
@@ -394,10 +390,13 @@
                                 color: #737B7D;
                             }
                             .product-item-link {
-                                font-size: 20px;
+                                font-family: 'Barlow';
+                                font-style: normal;
                                 font-weight: 700;
-                                line-height: 26px;
-                                color: #0C0C0C;
+                                font-size: 20px !important;
+                                text-align: left !important;
+                                line-height: 130%;
+                                color: #0C0C0C !important;
                             }
                             .container-attributes {
                                 margin-top: 10px;
@@ -405,6 +404,110 @@
                                     font-size: 14px;
                                     line-height: 20px;
                                     color: #0C0C0C;
+                                }
+                            }
+                            .container-tags {
+                                display: flex;
+                                flex-direction: row;
+                                width: 360px;
+                                height: 22px;
+                                align-items: flex-start;
+                                padding: 0;
+                                margin: 10px 0;
+                                gap: 4px;
+                                .tags-content {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 4px 8px;
+                                    border-radius: 4px;
+                                    .text-tags {
+                                        font-family: 'Barlow';
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        font-size: 10px;
+                                        line-height: 140%;
+                                        margin-bottom: 0;
+                                    }
+                                }
+                                .color-denim {
+                                    color: #FFFFFF;
+                                    background: #073A41;
+                                }
+                                .color-azure {
+                                    color: #073A41;
+                                    background: #0EC4DE;
+                                }
+                                .color-international-orange {
+                                    color: #0C0C0C;
+                                    background: #EA8215;
+                                }
+                                .color-extremely-red {
+                                    color: #FFFFFF;
+                                    background: #F52F2F;
+                                }
+                            }
+                            .container-price-details {
+                                display: flex;
+                                flex-direction: column;
+                                border-top: 1px solid #CFD2D5;
+                                .discount-price-details {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 20px 0 8px;
+                                    .price-details-content {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                        .price-title, .price-content {
+                                            font-family: 'Barlow';
+                                            font-style: normal;
+                                            font-weight: 600;
+                                            font-size: 14px;
+                                            line-height: 170%;
+                                            margin-bottom: 0;
+                                            color: #737B7D;
+                                        }
+                                        .price-title-total {
+                                            color: #0D717F;
+                                        }
+                                        .price-content-total {
+                                            color: #0D717F;
+                                            font-size: 24px;
+                                        }
+                                    }
+                                }
+                                .price-details-promotions {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    .text {
+                                        font-family: 'Barlow';
+                                        font-style: normal;
+                                        color: #EA8215;
+                                        margin-bottom: 0;
+                                    }
+                                    .details-discount {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 8px;
+                                        .text-carrying {
+                                            font-weight: 400;
+                                            font-size: 14px;
+                                            line-height: 170%;
+                                            b {
+                                                font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                    .price-discount {
+                                        .text-price {
+                                            font-weight: 600;
+                                            font-size: 24px;
+                                            line-height: 140%;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -528,7 +631,7 @@
                                         height: 48px;
                                         background: #0D717F;
                                         border-color: #0D717F;
-                                        border-radius: 30px;
+                                        border-radius: 8px;
                                     }
                                 }
                             }
@@ -544,7 +647,7 @@
             .grid {
                 .product-items {
                     li.product-item {
-                        width: 301px;
+                        width: 300px;
                         div.actions-secondary {
                             position: absolute;
                             top: 10px;
@@ -576,13 +679,14 @@
                             .product-item-actions {
                                 display: flex;
                                 flex-direction: column;
+                                margin: 0;
                                 .actions-primary {
                                     .primary {
                                         width: 100%;
                                         height: 48px;
                                         background: #0D717F;
                                         border-color: #0D717F;
-                                        border-radius: 30px;
+                                        border-radius: 8px;
                                     }
                                 }
                             }
@@ -597,17 +701,18 @@
         .slick-list {
             .slick-track {
                 div.slick-slide  {
-                    width: 301px !important;
+                    width: 300px !important;
                     li.product-item {
-                        width: 301px !important;
+                        width: 300px !important;
                         border: 1px solid #F6F8FB;
                         border-radius: 8px;
                         padding: 8px;
                         .product-item-info {
                             position: relative;
-                            width: 301px;
+                            width: 300px;
                             .discount-content {
                                 position: absolute;
+                                top: -8px;
                                 left: -8px;
                                 display: flex;
                                 width: 52px;
@@ -615,7 +720,8 @@
                                 align-items: center;
                                 justify-content: center;
                                 padding: 4px 8px;
-                                background: #FFC327;
+                                border-radius: 8px 0 0;
+                                background: #EA8215;
                                 z-index: 2;
                                 .discount-text {
                                     font-size: 14px;
@@ -653,28 +759,22 @@
                                 }
                             }
                             .product-item-photo {
-                                display: block;
-                                width: auto;
-                                padding: 0;
                                 .product-image-container {
                                     span.product-image-wrapper[style="padding-bottom: 125%;"] {
-                                        padding-bottom: 90%!important;
-                                        .product-image-photo {
-                                            height: 220px;
-                                            padding: 0;
-                                            margin: 0 auto;
-                                        }
+                                        padding-bottom: 100%!important;
                                     }
                                 }  
                             }
                             .container-stock {
-                                position: absolute;
-                                left: 2%;
-                                top: 157px;
+                                position: relative;
+                                width: 100px;
+                                left: -10px;
                                 z-index: 1;
                                 display: flex;
                                 justify-content: center;
                                 gap: 5px;
+                                padding: 5px;
+                                margin-bottom: 16px;
                                 border: 1px solid #F6F8FB;
                                 border-radius: 4px;
                                 z-index: 1;
@@ -697,6 +797,7 @@
                             }
                             .product-item-details {
                                 .product-item-name {
+                                    text-align: left !important;
                                     .text-sub-title {
                                         font-size: 14px;
                                         font-weight: 400;
@@ -704,10 +805,13 @@
                                         color: #737B7D;
                                     }
                                     .product-item-link {
-                                        font-size: 20px;
+                                        font-family: 'Barlow';
+                                        font-style: normal;
                                         font-weight: 700;
-                                        line-height: 26px;
-                                        color: #0C0C0C;
+                                        font-size: 20px !important;
+                                        text-align: left !important;
+                                        line-height: 130%;
+                                        color: #0C0C0C !important;
                                     }
                                     .container-attributes {
                                         margin-top: 10px;
@@ -715,6 +819,110 @@
                                             font-size: 14px;
                                             line-height: 20px;
                                             color: #0C0C0C;
+                                        }
+                                    }
+                                    .container-tags {
+                                        display: flex;
+                                        flex-direction: row;
+                                        width: 360px;
+                                        height: 22px;
+                                        align-items: flex-start;
+                                        padding: 0;
+                                        margin: 10px 0;
+                                        gap: 4px;
+                                        .tags-content {
+                                            display: flex;
+                                            flex-direction: row;
+                                            justify-content: center;
+                                            align-items: center;
+                                            padding: 4px 8px;
+                                            border-radius: 4px;
+                                            .text-tags {
+                                                font-family: 'Barlow';
+                                                font-style: normal;
+                                                font-weight: 600;
+                                                font-size: 10px;
+                                                line-height: 140%;
+                                                margin-bottom: 0;
+                                            }
+                                        }
+                                        .color-denim {
+                                            color: #FFFFFF;
+                                            background: #073A41;
+                                        }
+                                        .color-azure {
+                                            color: #073A41;
+                                            background: #0EC4DE;
+                                        }
+                                        .color-international-orange {
+                                            color: #0C0C0C;
+                                            background: #EA8215;
+                                        }
+                                        .color-extremely-red {
+                                            color: #FFFFFF;
+                                            background: #F52F2F;
+                                        }
+                                    }
+                                    .container-price-details {
+                                        display: flex;
+                                        flex-direction: column;
+                                        border-top: 1px solid #CFD2D5;
+                                        .discount-price-details {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            padding: 20px 0 8px;
+                                            .price-details-content {
+                                                display: flex;
+                                                flex-direction: column;
+                                                align-items: flex-start;
+                                                .price-title, .price-content {
+                                                    font-family: 'Barlow';
+                                                    font-style: normal;
+                                                    font-weight: 600;
+                                                    font-size: 14px;
+                                                    line-height: 170%;
+                                                    margin-bottom: 0;
+                                                    color: #737B7D;
+                                                }
+                                                .price-title-total {
+                                                    color: #0D717F;
+                                                }
+                                                .price-content-total {
+                                                    color: #0D717F;
+                                                    font-size: 24px;
+                                                }
+                                            }
+                                        }
+                                        .price-details-promotions {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            .text {
+                                                font-family: 'Barlow';
+                                                font-style: normal;
+                                                color: #EA8215;
+                                                margin-bottom: 0;
+                                            }
+                                            .details-discount {
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 8px;
+                                                .text-carrying {
+                                                    font-weight: 400;
+                                                    font-size: 14px;
+                                                    line-height: 170%;
+                                                    b {
+                                                        font-weight: 600;
+                                                    }
+                                                }
+                                            }
+                                            .price-discount {
+                                                .text-price {
+                                                    font-weight: 600;
+                                                    font-size: 24px;
+                                                    line-height: 140%;
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -815,7 +1023,7 @@
                                                 height: 48px;
                                                 background: #0D717F;
                                                 border-color: #0D717F;
-                                                border-radius: 30px;
+                                                border-radius: 8px;
                                             }
                                         }
                                     }
