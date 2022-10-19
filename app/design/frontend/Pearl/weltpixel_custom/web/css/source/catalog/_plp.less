@@ -1,4 +1,45 @@
 //
+//  Variables
+//  _____________________________________________
+
+@color-primario: #0D717F;
+@color-secundario: #F6F8FB;
+@color-variable: #EA8215;
+@color-neutro: #737B7D;
+@color-fuente: #0C0C0C;
+@Fuente: 'Barlow';
+@Fuente-secundaria: 'Inter';
+
+//
+//  Mixins
+//  _____________________________________________
+
+.titles {
+    display: flex;
+    align-items: center;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    color: @color-fuente;
+    margin: 0;
+    text-transform: inherit;
+}
+
+.texts {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 170%;
+    color: @color-fuente;
+    margin-bottom: 0;
+}
+
+
+
+//
 //  Common
 //  _____________________________________________
 
@@ -7,84 +48,51 @@
    .list {
         .product-items {
             .product-item {
+                padding: 0;
                 margin-bottom: 30px;
-                padding: 15px;
-                border: 1px solid #F6F8FB;
                 border-radius: 8px;
+                border: 1px solid @color-secundario;
                 .product-item-info {
                     position: relative;
                     .discount-content {
                         position: absolute;
                         top: 0;
                         left: 0;
-                        display: flex;
                         width: 52px;
                         height: 32px;
+                        display: flex;
                         align-items: center;
                         justify-content: center;
                         padding: 4px 8px;
-                        background: #FFC327;
+                        border-radius: 8px 0 0;
                         z-index: 2;
+                        background: @color-variable;
                         .discount-text {
+                            font-family: @Fuente;
                             font-size: 14px;
                             font-weight: 600;
                             color: #FFFFFF;
                             margin-bottom: 0;
                         }
                     }
-                    .actions-secondary {
-                        position: absolute;
-                        top: 0;
-                        left: 23%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 35px;
-                        height: 35px;
-                        border-radius: 50%;
-                        background: #E6EFFB;
-                        line-height: 35px;
-                        text-align: center;
-                        .towishlist {
-                            color: #00893A;
-                            margin: 0;
-                            &:before {
-                                content: '\e667';
-                                font-weight: bold;
-                                margin: 0;
-                            }
-                            span {
-                                display: none;
-                            }
-                        }
-                    }
                     .product-item-photo {
-                        display: block;
                         width: auto;
+                        display: block;
                         padding: 0;
-                        margin-right: 50px;
-                        .product-image-container {
-                            width: 226px;
-                            .product-image-wrapper {
-                                .product-image-photo {
-                                    width: 226px;
-                                    height: 215px;
-                                }
-                            }
-                        } 
-                        
+                        margin-right: 0;
                     }
                     .container-stock {
-                        position: absolute;
-                        left: 2%;
-                        top: 157px;
+                        position: relative;
+                        left: 0;
+                        width: 90px;
                         display: flex;
+                        justify-content: flex-start;
                         gap: 5px;
-                        justify-content: center;
                         padding: 5px;
-                        border: 1px solid #F6F8FB;
+                        margin-bottom: 56px;
                         border-radius: 4px;
                         z-index: 1;
+                        border: 1px solid @color-secundario;
                         .stock-image {
                             display: flex;
                             align-self: center;
@@ -96,6 +104,7 @@
                         .stock-text {
                             display: flex;
                             align-self: center;
+                            font-family: @Fuente;
                             font-size: 14px;
                             font-weight: 400;
                             color: #00893A;
@@ -103,9 +112,15 @@
                         }
                     }
                     .container-dropdowns {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 56px;
                         display: flex;
-                        justify-content: space-evenly;;
-                        width: 300px;
+                        justify-content: flex-start;
+                        gap: 16px;
+                        padding: 16px;
+                        border-top: 1px solid #CFD2D5;
                         .dropdowns {
                             &:hover {
                                 cursor: pointer;
@@ -120,113 +135,163 @@
                             .technical-details-title, .attachments-title {
                                 display: flex;
                                 gap: 10px;
+                                .technical-details-text, .attachments-text {
+                                    font-family: @Fuente;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 170%;
+                                    color: @color-fuente; 
+                                }
                             }
                             .technical-details-content, .attachments-content {
-                                border: 1px solid rgb(246, 248, 251);
-                                border-radius: 4px;
                                 padding: 5px;
+                                border: 1px solid #CFD2D5;
+                                border-radius: 4px; 
                             }
                         }
                     }
                     .product-item-details {
                         .product-item-name {
+                            width: 63.5%;
                             display: inline-block;
-                            width: 48%;
-                            .text-sub-title {
-                                font-size: 14px;
-                                font-weight: 400;
-                                line-height: 24px;
-                                color: #737B7D;
-                            }
+                            margin: 16px 0 0;
                             .product-item-link {
-                                font-size: 20px;
+                                font-family: @Fuente;
+                                font-style: normal;
                                 font-weight: 700;
-                                line-height: 26px;
-                                color: #0C0C0C;
+                                font-size: 20px !important;
+                                line-height: 130%;
+                                color: @color-fuente;
                             }
-                            .container-attributes {
-                                margin-top: 10px;
-                                .text-attribute {
-                                    font-size: 14px;
-                                    line-height: 20px;
-                                    color: #0C0C0C;
+                            .container-tags {
+                                display: flex;
+                                flex-direction: row;
+                                width: 360px;
+                                height: 22px;
+                                align-items: flex-start;
+                                gap: 4px;
+                                padding: 0;
+                                margin: 10px 0;
+                                .tags-content {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 4px 8px;
+                                    border-radius: 4px;
+                                    .text-tags {
+                                        font-family: @Fuente;
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        font-size: 10px;
+                                        line-height: 140%;
+                                        margin-bottom: 0;
+                                    }
+                                }
+                                .color-denim {
+                                    color: #FFFFFF;
+                                    background: #073A41;
+                                }
+                                .color-azure {
+                                    color: #073A41;
+                                    background: #0EC4DE;
+                                }
+                                .color-international-orange {
+                                    color: @color-fuente;
+                                    background: @color-variable;
+                                }
+                                .color-extremely-red {
+                                    color: #FFFFFF;
+                                    background: #F52F2F;
+                                }
+                            }
+                            .container-price-details {
+                                display: flex;
+                                flex-direction: column;
+                                border-top: 1px solid #CFD2D5;
+                                .discount-price-details {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 20px 0 8px;
+                                    .price-details-content {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                        .price-title, .price-content {
+                                            font-family: @Fuente;
+                                            font-style: normal;
+                                            font-weight: 600;
+                                            font-size: 14px;
+                                            line-height: 170%;
+                                            margin-bottom: 0;
+                                            color: @color-neutro;
+                                        }
+                                        .price-title-total {
+                                            color: @color-primario;
+                                        }
+                                        .price-content-total {
+                                            color: @color-primario;
+                                            font-size: 24px;
+                                        }
+                                    }
+                                }
+                                .price-details-promotions {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    .text {
+                                        font-family: @Fuente;
+                                        font-style: normal;
+                                        color: @color-variable;
+                                        margin-bottom: 0;
+                                    }
+                                    .details-discount {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 8px;
+                                        .text-carrying {
+                                            font-weight: 400;
+                                            font-size: 14px;
+                                            line-height: 170%;
+                                            b {
+                                                font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                    .price-discount {
+                                        .text-price {
+                                            font-weight: 600;
+                                            font-size: 24px;
+                                            line-height: 140%;
+                                        }
+                                    }
                                 }
                             }
                         }
                         .product-item-description, .price-box, .arrow-input-container, .product-item-inner {
                             width: 50%;
-                            float: right;
                             display: inline-block;
+                            float: right;
                         }
                         .product-item-description {
                             display: none;
-                        }
-                        .price-box {
-                            margin: 92px 0 25px;
-                        } 
-                        .price-final_price {
-                            display: flex;
-                            justify-content: space-evenly;
-                            .special-price {
-                                display: flex;
-                                .price-container {
-                                    .price {
-                                        font-size: 24px;
-                                        font-weight: 600;
-                                        color: #0D717F;
-                                        &:after {
-                                            content: " s/IVA";
-                                            font-size: 16px;
-                                            font-weight: 400;
-                                            color: #0D717F;
-                                        }
-                                        &:before {
-                                            content: "precio ";
-                                            font-size: 16px;
-                                            font-weight: 400;
-                                            color: #0D717F;
-                                        }
-                                    }
-                                }
-                            }
-                            .price-container {
-                                display: flex;
-                                align-self: center;
-                                .price-label {
-                                    display: none;
-                                }
-                                span[data-price-type="oldPrice"]  {
-                                    .price {
-                                        text-decoration: line-through;
-                                        font-size: 16px;
-                                        font-weight: 400;
-                                        color: #FFC327;
-                                    }
-                                    &::after {
-                                        content: " s/IVA";
-                                        font-size: 16px;
-                                        font-weight: 400;
-                                        color: #FFC327;
-                                    }
-                                }
-                            }
-                            .minimal-price-link {
-                                display: flex;
-                                align-self: center;
-                                margin-top: 0;
-                            }
                         }
                         .container-input-card {
                             display: none;
                         }
                         .product-item-inner {
+                            width: 35%;
+                            height: 308px;
                             display: flex;
                             flex-direction: column;
+                            justify-content: flex-end;
                             gap: 15px;
-                            margin-top: -35px;
+                            padding: 0 16px;
+                            // margin-top: -35px;
                             .arrow-input-container {
-                                display: flex;
                                 width: 100%;
+                                display: flex;
                                 justify-content: center;
                                 gap: 8px;   
                                 .increase, .decrease {
@@ -235,30 +300,30 @@
                                     align-self: center;
                                 }
                                 input[type="number"] {
+                                    width: 121px;
+                                    height: 48px;
                                     display: flex;
                                     flex-direction: row;
-                                    width: 181px;
-                                    height: 48px;
                                     justify-content: center;
                                     align-items: center;
                                     text-align: center;
                                     padding: 12px 16px;
-                                    border: 1px solid #434447;
                                     border-radius: 8px;
+                                    border: 1px solid #434447;
                                 }
                             }
                             .product-item-actions {
+                                width: 100%;
                                 display: flex;
                                 flex-direction: column;
-                                width: 100%;
                                 .actions-primary {
-                                    width: 75%;
+                                    width: 225px;
                                     .primary {
                                         width: 100%;
                                         height: 48px;
-                                        background: #0D717F;
-                                        border-color: #0D717F;
-                                        border-radius: 30px;
+                                        background: @color-primario;
+                                        border-color: @color-primario;
+                                        border-radius: 8px;
                                     }
                                 }
                             }
@@ -274,82 +339,52 @@
         .product-items {
             li.product-item {
                 width: 301px;
-                border: 1px solid #F6F8FB;
+                padding: 8px;           
                 border-radius: 8px;
-                padding: 8px;
+                border: 1px solid @color-secundario;
                 .product-item-info {
                     position: relative;
                     width: 301px;
                     .discount-content {
                         position: absolute;
+                        top: 0;
                         left: 0;
-                        display: flex;
                         width: 52px;
                         height: 32px;
+                        display: flex;
                         align-items: center;
                         justify-content: center;
                         padding: 4px 8px;
-                        background: #FFC327;
+                        border-radius: 8px 0 0;
                         z-index: 2;
+                        background: @color-variable;
                         .discount-text {
+                            font-family: @Fuente;
                             font-size: 14px;
                             font-weight: 600;
                             color: #FFFFFF;
                             margin-bottom: 0;
                         }
                     }
-                    .actions-secondary {
-                        position: absolute;
-                        top: 10px;
-                        right: 5%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        text-align: center;
-                        width: 35px;
-                        height: 35px;
-                        border-radius: 50%;
-                        background: #E6EFFB;
-                        line-height: 35px;
-                        .towishlist {
-                            color: #00893A;
-                            margin: 0;
-                            &:before {
-                                content: '\e667';
-                                font-weight: bold;
-                                margin: 0;
-                            }
-                            span {
-                                display: none;
-                            }
-                        }
-                    }
                     .product-item-photo {
-                        display: block;
-                        width: auto;
-                        padding: 0;
                         .product-image-container {
                             span.product-image-wrapper[style="padding-bottom: 125%;"] {
-                                padding-bottom: 90%!important;
-                                .product-image-photo {
-                                    height: 220px;
-                                    padding: 0;
-                                    margin: 0 auto;
-                                }
+                                padding-bottom: 100%!important;
                             }
                         }  
                     }
                     .container-stock {
-                        position: absolute;
-                        left: 2%;
-                        top: 157px;
-                        z-index: 1;
+                        position: relative;
+                        left: -10px;
+                        width: 100px;
                         display: flex;
                         justify-content: center;
                         gap: 5px;
-                        border: 1px solid #F6F8FB;
+                        padding: 5px;
+                        margin-bottom: 16px;
                         border-radius: 4px;
                         z-index: 1;
+                        border: 1px solid @color-secundario;
                         .stock-image {
                             display: flex;
                             align-self: center;
@@ -372,108 +407,125 @@
                     }
                     .product-item-details {
                         .product-item-name {
+                            text-align: left !important;
                             .text-sub-title {
+                                font-family: @Fuente;
                                 font-size: 14px;
                                 font-weight: 400;
                                 line-height: 24px;
-                                color: #737B7D;
+                                color: @color-neutro;
                             }
                             .product-item-link {
-                                font-size: 20px;
+                                font-family: @Fuente;
+                                font-style: normal;
                                 font-weight: 700;
-                                line-height: 26px;
-                                color: #0C0C0C;
+                                font-size: 20px !important;
+                                text-align: left !important;
+                                line-height: 130%;
+                                color: @color-fuente !important;
                             }
-                            .container-attributes {
-                                margin-top: 10px;
-                                .text-attribute {
-                                    font-size: 14px;
-                                    line-height: 20px;
-                                    color: #0C0C0C;
-                                }
-                            }
-                        }
-                        .price-final_price {
-                            display: flex;
-                            justify-content: space-evenly;
-                            .special-price {
+                            .container-tags {
+                                width: 360px;
+                                height: 22px;
                                 display: flex;
-                                .price-container {
-                                    .price {
-                                        font-size: 24px;
-                                        font-weight: 600;
-                                        color: #0D717F;
-                                        &:after {
-                                            content: " s/IVA";
-                                            font-size: 16px;
-                                            font-weight: 400;
-                                            color: #0D717F;
-                                        }
-                                        &:before {
-                                            content: "precio ";
-                                            font-size: 16px;
-                                            font-weight: 400;
-                                            color: #0D717F;
-                                        }
-                                    }
-                                }
-                            }
-                            .price-container {
-                                display: flex;
-                                align-self: center;
-                                .price-label {
-                                    display: none;
-                                }
-                                span[data-price-type="oldPrice"]  {
-                                    .price {
-                                        text-decoration: line-through;
-                                        font-size: 16px;
-                                        font-weight: 400;
-                                        color: #FFC327;
-                                    }
-                                    &::after {
-                                        content: " s/IVA";
-                                        font-size: 16px;
-                                        font-weight: 400;
-                                        color: #FFC327;
-                                    }
-                                }
-                            }
-                            .minimal-price-link {
-                                display: flex;
-                                align-self: center;
-                                margin-top: 0;
-                            }
-                        }
-                        .container-input-card {
-                            display: flex;
-                            justify-content: space-between;
-                            gap: 8px;
-                            margin-bottom: 15px;
-                            .arrow-input-container {
-                                display: flex;
-                                justify-content: center;
-                                gap: 8px;   
-                                input[type="number"] {
+                                flex-direction: row;
+                                gap: 4px;
+                                align-items: flex-start;
+                                padding: 0;
+                                margin: 10px 0;
+                                .tags-content {
                                     display: flex;
                                     flex-direction: row;
-                                    width: 110px;
-                                    height: 48px;
                                     justify-content: center;
                                     align-items: center;
-                                    text-align: center;
-                                    padding: 12px 16px;
-                                    border: 1px solid #EAECEE;
-                                    border-radius: 8px;
+                                    padding: 4px 8px;
+                                    border-radius: 4px;
+                                    .text-tags {
+                                        font-family: @Fuente;
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        font-size: 10px;
+                                        line-height: 140%;
+                                        margin-bottom: 0;
+                                    }
+                                }
+                                .color-denim {
+                                    color: #FFFFFF;
+                                    background: #073A41;
+                                }
+                                .color-azure {
+                                    color: #073A41;
+                                    background: #0EC4DE;
+                                }
+                                .color-international-orange {
+                                    color: @color-fuente;
+                                    background: @color-variable;
+                                }
+                                .color-extremely-red {
+                                    color: #FFFFFF;
+                                    background: #F52F2F;
                                 }
                             }
-                            .unit-selector-container {
-                                .unit-selector  {
-                                    width: 150px;
-                                    height: 48px;
-                                    border: 1px solid #EAECEE;
-                                    border-radius: 8px;
-                                    padding: 12px 16px;
+                            .container-price-details {
+                                display: flex;
+                                flex-direction: column;
+                                border-top: 1px solid #CFD2D5;
+                                .discount-price-details {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 20px 0 8px;
+                                    .price-details-content {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                        .price-title, .price-content {
+                                            font-family: @Fuente;
+                                            font-style: normal;
+                                            font-weight: 600;
+                                            font-size: 14px;
+                                            line-height: 170%;
+                                            margin-bottom: 0;
+                                            color: @color-neutro;
+                                        }
+                                        .price-title-total {
+                                            color: #0D717F;
+                                        }
+                                        .price-content-total {
+                                            color: @color-primario;
+                                            font-size: 24px;
+                                        }
+                                    }
+                                }
+                                .price-details-promotions {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    .text {
+                                        font-family: @Fuente;
+                                        font-style: normal;
+                                        color: @color-variable;
+                                        margin-bottom: 0;
+                                    }
+                                    .details-discount {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 8px;
+                                        .text-carrying {
+                                            font-weight: 400;
+                                            font-size: 14px;
+                                            line-height: 170%;
+                                            b {
+                                                font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                    .price-discount {
+                                        .text-price {
+                                            font-weight: 600;
+                                            font-size: 24px;
+                                            line-height: 140%;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -482,8 +534,8 @@
                             flex-direction: column;
                             gap: 15px;
                             .arrow-input-container {
-                                display: flex;
                                 width: 100%;
+                                display: flex;                              
                                 justify-content: center;
                                 gap: 8px;   
                                 .increase, .decrease {
@@ -492,10 +544,10 @@
                                     align-self: center;
                                 }
                                 input[type="number"] {
-                                    display: flex;
-                                    flex-direction: row;
                                     width: 181px;
                                     height: 48px;
+                                    display: flex;
+                                    flex-direction: row;
                                     justify-content: center;
                                     align-items: center;
                                     text-align: center;
@@ -511,9 +563,14 @@
                                     .primary {
                                         width: 100%;
                                         height: 48px;
-                                        background: #0D717F;
-                                        border-color: #0D717F;
-                                        border-radius: 30px;
+                                        background: @color-primario;
+                                        border-color: @color-primario;
+                                        border-radius: 8px;
+                                        font-family: @Fuente;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 16px;
+                                        line-height: 16px;
                                     }
                                 }
                             }
@@ -529,20 +586,20 @@
             .grid {
                 .product-items {
                     li.product-item {
-                        width: 301px;
+                        width: 300px;
                         div.actions-secondary {
                             position: absolute;
                             top: 10px;
                             right: 5%;
+                            width: 35px;
+                            height: 35px;
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             text-align: center;
-                            width: 35px;
-                            height: 35px;
-                            border-radius: 50%;
-                            background: #E6EFFB;
                             line-height: 35px;
+                            border-radius: 50%;
+                            background: @color-secundario;
                             .towishlist {
                                 color: #00893A;
                                 &:before {
@@ -561,13 +618,21 @@
                             .product-item-actions {
                                 display: flex;
                                 flex-direction: column;
+                                margin: 0;
                                 .actions-primary {
                                     .primary {
                                         width: 100%;
                                         height: 48px;
-                                        background: #0D717F;
-                                        border-color: #0D717F;
-                                        border-radius: 30px;
+                                        border-radius: 8px;
+                                        background: @color-primario;
+                                        border-color: @color-primario;
+                                        span {
+                                            font-family: @Fuente;
+                                            font-style: normal;
+                                            font-weight: 500;
+                                            font-size: 16px;
+                                            line-height: 16px;
+                                        }
                                     }
                                 }
                             }
@@ -582,26 +647,28 @@
         .slick-list {
             .slick-track {
                 div.slick-slide  {
-                    width: 301px !important;
+                    width: 300px !important;
                     li.product-item {
-                        width: 301px !important;
-                        border: 1px solid #F6F8FB;
-                        border-radius: 8px;
+                        width: 300px !important;
                         padding: 8px;
+                        border-radius: 8px;
+                        border: 1px solid @color-secundario;                      
                         .product-item-info {
                             position: relative;
-                            width: 301px;
+                            width: 300px;
                             .discount-content {
                                 position: absolute;
+                                top: -8px;
                                 left: -8px;
-                                display: flex;
                                 width: 52px;
                                 height: 32px;
+                                display: flex;
                                 align-items: center;
                                 justify-content: center;
                                 padding: 4px 8px;
-                                background: #FFC327;
+                                border-radius: 8px 0 0;
                                 z-index: 2;
+                                background: @color-variable;
                                 .discount-text {
                                     font-size: 14px;
                                     font-weight: 600;
@@ -609,60 +676,25 @@
                                     margin-bottom: 0;
                                 }
                             }
-                            div.actions-secondary {
-                                position: absolute;
-                                top: 10px;
-                                right: 5%;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                text-align: center;
-                                width: 35px;
-                                height: 35px;
-                                border-radius: 50%;
-                                background: #E6EFFB;
-                                line-height: 35px;
-                                .towishlist {
-                                    color: #00893A;
-                                    &:before {
-                                        content: '\e625';
-                                        font-weight: bold;
-                                        margin-right: 0;
-                                    }
-                                    span {
-                                        display: none;
-                                    }
-                                }
-                                .tocompare {
-                                    display: none;
-                                }
-                            }
                             .product-item-photo {
-                                display: block;
-                                width: auto;
-                                padding: 0;
                                 .product-image-container {
                                     span.product-image-wrapper[style="padding-bottom: 125%;"] {
-                                        padding-bottom: 90%!important;
-                                        .product-image-photo {
-                                            height: 220px;
-                                            padding: 0;
-                                            margin: 0 auto;
-                                        }
+                                        padding-bottom: 100%!important;
                                     }
                                 }  
                             }
                             .container-stock {
-                                position: absolute;
-                                left: 2%;
-                                top: 157px;
-                                z-index: 1;
+                                position: relative;
+                                left: -10px;
+                                width: 100px;
                                 display: flex;
                                 justify-content: center;
                                 gap: 5px;
-                                border: 1px solid #F6F8FB;
+                                padding: 5px;
+                                margin-bottom: 16px;
                                 border-radius: 4px;
                                 z-index: 1;
+                                border: 1px solid @color-secundario;
                                 .stock-image {
                                     display: flex;
                                     align-self: center;
@@ -674,6 +706,7 @@
                                 .stock-text {
                                     display: flex;
                                     align-self: center;
+                                    font-weight: @Fuente;
                                     font-size: 14px;
                                     font-weight: 400;
                                     color: #00893A;
@@ -682,108 +715,124 @@
                             }
                             .product-item-details {
                                 .product-item-name {
+                                    text-align: left !important;
                                     .text-sub-title {
                                         font-size: 14px;
                                         font-weight: 400;
                                         line-height: 24px;
-                                        color: #737B7D;
+                                        color: @color-neutro;
                                     }
                                     .product-item-link {
-                                        font-size: 20px;
+                                        font-family: @Fuente;
+                                        font-style: normal;
                                         font-weight: 700;
-                                        line-height: 26px;
-                                        color: #0C0C0C;
+                                        font-size: 20px !important;
+                                        text-align: left !important;
+                                        line-height: 130%;
+                                        color: @color-fuente !important;
                                     }
-                                    .container-attributes {
-                                        margin-top: 10px;
-                                        .text-attribute {
-                                            font-size: 14px;
-                                            line-height: 20px;
-                                            color: #0C0C0C;
-                                        }
-                                    }
-                                }
-                                .price-final_price {
-                                    display: flex;
-                                    justify-content: space-evenly;
-                                    .special-price {
+                                    .container-tags {
+                                        width: 360px;
+                                        height: 22px;
                                         display: flex;
-                                        .price-container {
-                                            .price {
-                                                font-size: 24px;
-                                                font-weight: 600;
-                                                color: #0D717F;
-                                                &:after {
-                                                    content: " s/IVA";
-                                                    font-size: 16px;
-                                                    font-weight: 400;
-                                                    color: #0D717F;
-                                                }
-                                                &:before {
-                                                    content: "precio ";
-                                                    font-size: 16px;
-                                                    font-weight: 400;
-                                                    color: #0D717F;
-                                                }
-                                            }
-                                        }
-                                    }
-                                    .price-container {
-                                        display: flex;
-                                        align-self: center;
-                                        .price-label {
-                                            display: none;
-                                        }
-                                        span[data-price-type="oldPrice"]  {
-                                            .price {
-                                                text-decoration: line-through;
-                                                font-size: 16px;
-                                                font-weight: 400;
-                                                color: #FFC327;
-                                            }
-                                            &::after {
-                                                content: " s/IVA";
-                                                font-size: 16px;
-                                                font-weight: 400;
-                                                color: #FFC327;
-                                            }
-                                        }
-                                    }
-                                    .minimal-price-link {
-                                        display: flex;
-                                        align-self: center;
-                                        margin-top: 0;
-                                    }
-                                }
-                                .container-input-card {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    gap: 8px;
-                                    margin-bottom: 15px;
-                                    .arrow-input-container {
-                                        display: flex;
-                                        justify-content: center;
-                                        gap: 8px;   
-                                        input[type="number"] {
+                                        flex-direction: row;
+                                        align-items: flex-start;
+                                        gap: 4px;
+                                        padding: 0;
+                                        margin: 10px 0;
+                                        .tags-content {
                                             display: flex;
                                             flex-direction: row;
-                                            width: 110px;
-                                            height: 48px;
                                             justify-content: center;
                                             align-items: center;
-                                            text-align: center;
-                                            padding: 12px 16px;
-                                            border: 1px solid #EAECEE;
-                                            border-radius: 8px;
+                                            padding: 4px 8px;
+                                            border-radius: 4px;
+                                            .text-tags {
+                                                font-family: @Fuente;
+                                                font-style: normal;
+                                                font-weight: 600;
+                                                font-size: 10px;
+                                                line-height: 140%;
+                                                margin-bottom: 0;
+                                            }
+                                        }
+                                        .color-denim {
+                                            color: #FFFFFF;
+                                            background: #073A41;
+                                        }
+                                        .color-azure {
+                                            color: #073A41;
+                                            background: #0EC4DE;
+                                        }
+                                        .color-international-orange {
+                                            color: @color-fuente;
+                                            background: @color-variable;
+                                        }
+                                        .color-extremely-red {
+                                            color: #FFFFFF;
+                                            background: #F52F2F;
                                         }
                                     }
-                                    .unit-selector-container {
-                                        .unit-selector  {
-                                            width: 150px;
-                                            height: 48px;
-                                            border: 1px solid #EAECEE;
-                                            border-radius: 8px;
-                                            padding: 12px 16px;
+                                    .container-price-details {
+                                        display: flex;
+                                        flex-direction: column;
+                                        border-top: 1px solid #CFD2D5;
+                                        .discount-price-details {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            padding: 20px 0 8px;
+                                            .price-details-content {
+                                                display: flex;
+                                                flex-direction: column;
+                                                align-items: flex-start;
+                                                .price-title, .price-content {
+                                                    font-family: @Fuente;
+                                                    font-style: normal;
+                                                    font-weight: 600;
+                                                    font-size: 14px;
+                                                    line-height: 170%;
+                                                    margin-bottom: 0;
+                                                    color: @color-neutro;
+                                                }
+                                                .price-title-total {
+                                                    color: @color-primario;
+                                                }
+                                                .price-content-total {
+                                                    font-size: 24px;
+                                                    color: @color-primario;
+                                                }
+                                            }
+                                        }
+                                        .price-details-promotions {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            .text {
+                                                font-family: @Fuente;
+                                                font-style: normal;
+                                                margin-bottom: 0;
+                                                color: @color-variable;
+                                            }
+                                            .details-discount {
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 8px;
+                                                .text-carrying {
+                                                    font-weight: 400;
+                                                    font-size: 14px;
+                                                    line-height: 170%;
+                                                    b {
+                                                        font-weight: 600;
+                                                    }
+                                                }
+                                            }
+                                            .price-discount {
+                                                .text-price {
+                                                    font-weight: 600;
+                                                    font-size: 24px;
+                                                    line-height: 140%;
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -798,9 +847,16 @@
                                             .primary {
                                                 width: 100%;
                                                 height: 48px;
-                                                background: #0D717F;
-                                                border-color: #0D717F;
-                                                border-radius: 30px;
+                                                border-radius: 8px;
+                                                background: @color-primario;
+                                                border-color: @color-primario;
+                                                span {
+                                                    font-family: @Fuente;
+                                                    font-style: normal;
+                                                    font-weight: 500;
+                                                    font-size: 16px;
+                                                    line-height: 16px;
+                                                }
                                             }
                                         }
                                     }
