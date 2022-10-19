@@ -56,20 +56,49 @@
                                 .block-title{
                                     margin-top: 15px;
 
-                                    #sl_login_tab_title{
-                                        display: none;
+                                    a#sl_login_tab_title{
+                                        .active{
+                                            text-transform: none;
+                                            font-family: 'Barlow';
+                                            font-style: normal;
+                                            font-weight: 700;
+                                            font-size: 20px;
+                                            line-height: 130%;
+                                            color: #0C0C0C;
+                                            text-decoration: none;
+                                        }
+                                       
                                     }
                                     .sl-ajaxlogin-title-space{
                                         display:none;
                                     }
-                                    .sl-ajaxlogin-title{
-                                        text-transform: none;
-                                        font-family: 'Barlow';
-                                        font-style: normal;
-                                        font-weight: 700;
-                                        font-size: 20px;
-                                        line-height: 130%;
-                                        color: #0C0C0C;
+                                    #sl_register_tab_title{
+                                        display: none; //CONTENIDO OCULTO TEMPORALMENTE
+                                        position: absolute;
+                                        bottom: 13%;
+                                        margin: 0 auto;
+                                        right: 30.4%;
+                                        .sl-ajaxlogin-title{
+                                            font-family: 'Barlow';
+                                            font-style: normal;
+                                            font-weight: 500;
+                                            font-size: 16px;
+                                            line-height: 16px;
+                                            color: #0D717F;
+                                            text-transform: none;
+                                            
+                                            &:before{
+                                                content: '¿No tiene cuenta?';
+                                                color: #0C0C0C;
+                                                font-family: 'Barlow';
+                                                font-style: normal;
+                                                font-weight: 400;
+                                                font-size: 14px;
+                                                line-height: 170%;
+                                                margin-right: 5px;
+                                               }
+                                        }
+                                        
                                     }
                                 }
 
