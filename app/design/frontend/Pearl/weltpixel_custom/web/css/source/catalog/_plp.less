@@ -8,7 +8,7 @@
         .product-items {
             .product-item {
                 margin-bottom: 30px;
-                padding: 15px;
+                padding: 0;
                 border: 1px solid #F6F8FB;
                 border-radius: 8px;
                 .product-item-info {
@@ -23,7 +23,8 @@
                         align-items: center;
                         justify-content: center;
                         padding: 4px 8px;
-                        background: #FFC327;
+                        border-radius: 8px 0 0;
+                        background: #EA8215;
                         z-index: 2;
                         .discount-text {
                             font-size: 14px;
@@ -32,56 +33,21 @@
                             margin-bottom: 0;
                         }
                     }
-                    .actions-secondary {
-                        position: absolute;
-                        top: 0;
-                        left: 23%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 35px;
-                        height: 35px;
-                        border-radius: 50%;
-                        background: #E6EFFB;
-                        line-height: 35px;
-                        text-align: center;
-                        .towishlist {
-                            color: #00893A;
-                            margin: 0;
-                            &:before {
-                                content: '\e667';
-                                font-weight: bold;
-                                margin: 0;
-                            }
-                            span {
-                                display: none;
-                            }
-                        }
-                    }
                     .product-item-photo {
                         display: block;
                         width: auto;
                         padding: 0;
-                        margin-right: 50px;
-                        .product-image-container {
-                            width: 226px;
-                            .product-image-wrapper {
-                                .product-image-photo {
-                                    width: 226px;
-                                    height: 215px;
-                                }
-                            }
-                        } 
-                        
+                        margin-right: 0;
                     }
                     .container-stock {
-                        position: absolute;
-                        left: 2%;
-                        top: 157px;
+                        position: relative;
+                        left: 0;
                         display: flex;
+                        width: 90px;
                         gap: 5px;
-                        justify-content: center;
+                        justify-content: flex-start;
                         padding: 5px;
+                        margin-bottom: 56px;
                         border: 1px solid #F6F8FB;
                         border-radius: 4px;
                         z-index: 1;
@@ -103,9 +69,15 @@
                         }
                     }
                     .container-dropdowns {
+                        position: absolute;
+                        bottom: 0;
                         display: flex;
-                        justify-content: space-evenly;;
-                        width: 300px;
+                        width: 100%;
+                        height: 56px;
+                        justify-content: flex-start;
+                        gap: 16px;
+                        padding: 16px;
+                        border-top: 1px solid #CFD2D5;
                         .dropdowns {
                             &:hover {
                                 cursor: pointer;
@@ -131,25 +103,119 @@
                     .product-item-details {
                         .product-item-name {
                             display: inline-block;
-                            width: 48%;
-                            .text-sub-title {
-                                font-size: 14px;
-                                font-weight: 400;
-                                line-height: 24px;
-                                color: #737B7D;
-                            }
+                            width: 63.5%;
+                            margin: 16px 0 0;
                             .product-item-link {
-                                font-size: 20px;
+                                font-family: 'Barlow';
+                                font-style: normal;
                                 font-weight: 700;
-                                line-height: 26px;
+                                font-size: 20px !important;
+                                line-height: 130%;
                                 color: #0C0C0C;
                             }
-                            .container-attributes {
-                                margin-top: 10px;
-                                .text-attribute {
-                                    font-size: 14px;
-                                    line-height: 20px;
+                            .container-tags {
+                                display: flex;
+                                flex-direction: row;
+                                width: 360px;
+                                height: 22px;
+                                align-items: flex-start;
+                                padding: 0;
+                                margin: 10px 0;
+                                gap: 4px;
+                                .tags-content {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 4px 8px;
+                                    border-radius: 4px;
+                                    .text-tags {
+                                        font-family: 'Barlow';
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        font-size: 10px;
+                                        line-height: 140%;
+                                        margin-bottom: 0;
+                                    }
+                                }
+                                .color-denim {
+                                    color: #FFFFFF;
+                                    background: #073A41;
+                                }
+                                .color-azure {
+                                    color: #073A41;
+                                    background: #0EC4DE;
+                                }
+                                .color-international-orange {
                                     color: #0C0C0C;
+                                    background: #EA8215;
+                                }
+                                .color-extremely-red {
+                                    color: #FFFFFF;
+                                    background: #F52F2F;
+                                }
+                            }
+                            .container-price-details {
+                                display: flex;
+                                flex-direction: column;
+                                border-top: 1px solid #CFD2D5;
+                                .discount-price-details {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    padding: 20px 0 8px;
+                                    .price-details-content {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                        .price-title, .price-content {
+                                            font-family: 'Barlow';
+                                            font-style: normal;
+                                            font-weight: 600;
+                                            font-size: 14px;
+                                            line-height: 170%;
+                                            margin-bottom: 0;
+                                            color: #737B7D;
+                                        }
+                                        .price-title-total {
+                                            color: #0D717F;
+                                        }
+                                        .price-content-total {
+                                            color: #0D717F;
+                                            font-size: 24px;
+                                        }
+                                    }
+                                }
+                                .price-details-promotions {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    .text {
+                                        font-family: 'Barlow';
+                                        font-style: normal;
+                                        color: #EA8215;
+                                        margin-bottom: 0;
+                                    }
+                                    .details-discount {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 8px;
+                                        .text-carrying {
+                                            font-weight: 400;
+                                            font-size: 14px;
+                                            line-height: 170%;
+                                            b {
+                                                font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                    .price-discount {
+                                        .text-price {
+                                            font-weight: 600;
+                                            font-size: 24px;
+                                            line-height: 140%;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -161,69 +227,18 @@
                         .product-item-description {
                             display: none;
                         }
-                        .price-box {
-                            margin: 92px 0 25px;
-                        } 
-                        .price-final_price {
-                            display: flex;
-                            justify-content: space-evenly;
-                            .special-price {
-                                display: flex;
-                                .price-container {
-                                    .price {
-                                        font-size: 24px;
-                                        font-weight: 600;
-                                        color: #0D717F;
-                                        &:after {
-                                            content: " s/IVA";
-                                            font-size: 16px;
-                                            font-weight: 400;
-                                            color: #0D717F;
-                                        }
-                                        &:before {
-                                            content: "precio ";
-                                            font-size: 16px;
-                                            font-weight: 400;
-                                            color: #0D717F;
-                                        }
-                                    }
-                                }
-                            }
-                            .price-container {
-                                display: flex;
-                                align-self: center;
-                                .price-label {
-                                    display: none;
-                                }
-                                span[data-price-type="oldPrice"]  {
-                                    .price {
-                                        text-decoration: line-through;
-                                        font-size: 16px;
-                                        font-weight: 400;
-                                        color: #FFC327;
-                                    }
-                                    &::after {
-                                        content: " s/IVA";
-                                        font-size: 16px;
-                                        font-weight: 400;
-                                        color: #FFC327;
-                                    }
-                                }
-                            }
-                            .minimal-price-link {
-                                display: flex;
-                                align-self: center;
-                                margin-top: 0;
-                            }
-                        }
                         .container-input-card {
                             display: none;
                         }
                         .product-item-inner {
+                            width: 35%;
+                            height: 308px;
                             display: flex;
                             flex-direction: column;
+                            justify-content: flex-end;
                             gap: 15px;
-                            margin-top: -35px;
+                            padding: 0 16px;
+                            // margin-top: -35px;
                             .arrow-input-container {
                                 display: flex;
                                 width: 100%;
@@ -237,7 +252,7 @@
                                 input[type="number"] {
                                     display: flex;
                                     flex-direction: row;
-                                    width: 181px;
+                                    width: 121px;
                                     height: 48px;
                                     justify-content: center;
                                     align-items: center;
@@ -252,13 +267,13 @@
                                 flex-direction: column;
                                 width: 100%;
                                 .actions-primary {
-                                    width: 75%;
+                                    width: 225px;
                                     .primary {
                                         width: 100%;
                                         height: 48px;
                                         background: #0D717F;
                                         border-color: #0D717F;
-                                        border-radius: 30px;
+                                        border-radius: 8px;
                                     }
                                 }
                             }
