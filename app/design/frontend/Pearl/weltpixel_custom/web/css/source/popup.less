@@ -1,0 +1,188 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    
+    .cms-home-page-v1 {
+
+        .modals-wrapper{
+
+            .popup-authentication{
+
+                div.modal-inner-wrap{
+                    min-width:  546px;
+                    height: 490px;
+                    border-radius: 8px;
+
+                    .modal-header{
+                        .action-close:before{
+                            font-size: 14px;
+                            line-height: 14px;
+                            color: #0C0C0C;
+                            content: '\e616';
+                            font-weight: 900;
+                            position: absolute;
+                            right: 13px;
+                            top: 13px;
+                           
+                        }
+                        .action-close:hover:before{
+                            font-size: 17px;
+                            line-height: 17px;
+                            font-weight: 900;
+                            color: #681d979c;
+                            
+                           
+                            
+                        }
+                    }
+
+                    .modal-content{
+                        .block-authentication{
+                            border-top: none;
+                            
+                            
+                            .block-customer-login{
+                                display: none;
+                            }
+
+                             .block-new-customer{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                padding: 0;
+
+                                .block-title{
+                                    margin-top: 15px;
+
+                                    #sl_login_tab_title{
+                                        display: none;
+                                    }
+                                    .sl-ajaxlogin-title-space{
+                                        display:none;
+                                    }
+                                    .sl-ajaxlogin-title{
+                                        text-transform: none;
+                                        font-family: 'Barlow';
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        font-size: 20px;
+                                        line-height: 130%;
+                                        color: #0C0C0C;
+                                    }
+                                }
+
+                                .block-content{
+                                    .form-login{
+                                        .fieldset{
+                                            .field {
+                                                .label{
+                                                    margin: 0;
+                                                    span{
+                                                        font-family: 'Barlow';
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        font-size: 14px;
+                                                        line-height: 170%;
+                                                        color: #434447;
+                                                    }
+                                                }
+                                                .label:after{
+                                                    color: #fff;
+                                                    font-size: 1.2rem;
+                                                    margin: 0 0 0 5px;
+                                                }
+            
+                                                .control {
+                                                    .input-text{
+                                                        width: 373px;
+                                                        height: 48px;
+                                                        border-radius: 8px;
+                                                    }
+                                                }
+                                            }
+                                            
+
+                                .actions-toolbar{
+                                    display: flex;
+                                    justify-content: center;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    margin: 28px 0px 12px 0px;
+                                    .primary{
+                                        .login{
+                                            width: 198px;
+                                            height: 48px;
+                                            background-color: #0D717F ;
+                                            border-radius: 30px;
+                                            border: 1px solid #0D717F;
+
+                                                span{
+                                                    font-family: 'Barlow';
+                                                    font-style: normal;
+                                                    font-weight: 500;
+                                                    font-size: 16px;
+                                                    line-height: 16px;
+                                                    color: #FFFFFF;
+                                                }
+                                            
+                                           
+                                        }
+
+
+                                    }
+                                    .secondary{
+                                        position: absolute;
+                                        right: 10%;
+                                        bottom: 36%;
+
+                                        
+                                            span{
+                                                font-family: 'Barlow';
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                font-size: 16px;
+                                                line-height: 16px;
+                                                color: #0D717F;
+
+                                               
+                                            }
+                                        
+                                    }
+
+                                    
+                                   
+                                }
+                                        }
+                                    }
+                                   
+                                }
+                             }
+                        }
+                    }
+                }   
+            }
+          
+
+        }
+        
+    }
+    
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
