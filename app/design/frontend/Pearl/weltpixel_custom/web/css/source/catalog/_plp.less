@@ -77,9 +77,13 @@
                     }
                     .product-item-photo {
                         width: auto;
-                        display: block;
+                        display: flex;
+                        justify-content: center;
                         padding: 0;
-                        margin-right: 0;
+                        margin: auto;
+                        .product-image-container {
+                            width: 300px !important;
+                        }
                     }
                     .container-stock {
                         position: relative;
@@ -146,8 +150,95 @@
                             }
                             .technical-details-content, .attachments-content {
                                 padding: 5px;
-                                border: 1px solid #CFD2D5;
-                                border-radius: 4px; 
+                                box-shadow: e("0px 8px 40px rgb(0 0 0 / 5%);");
+                                border-radius: 8px;
+                            }
+                            .technical-details-content {
+                                position: absolute;
+                                left: 0px;
+                                width: 100%;
+                                display: block;
+                                padding: 0;
+                                background: #FFFFFF;
+                                .container-details {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                    padding: 8px 16px;
+                                    background: #FFFFFF;
+                                    .details-text {
+                                        font-family: @Fuente;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 14px;
+                                        line-height: 170%;
+                                        color: @color-fuente;
+                                    }
+                                    .details-value {
+                                        font-family: @Fuente;
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        font-size: 14px;
+                                        line-height: 170%;
+                                        color: @color-fuente;
+                                    }
+                                }
+                                .detail-gray, .detail-sku:first-of-type + .container-details {
+                                    background: @color-secundario;
+                                }
+                                .detail-sku {
+                                    background: @color-secundario;
+                                }
+                            }
+                            .attachments-content {
+                                position: absolute;
+                                left: 0px;
+                                width: 100%;
+                                display: block;
+                                padding: 24px;
+                                background: #FFFFFF;
+                                .attachments-file {
+                                    width: 30%;
+                                    display: inline-flex;
+                                    flex-direction: column;
+                                    gap: 8px;
+                                    .attachments-text-content {
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: flex-start;
+                                        gap: 8px;
+                                        .attachments-text {
+                                            display: flex;
+                                            align-items: center;
+                                            font-family: @Fuente-secundaria;
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            font-size: 16px;
+                                            line-height: 24px;
+                                            margin-bottom: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .dropdowns[aria-expanded="true"] {
+                            .technical-details-title, .attachments-title {
+                                .technical-details-img, .attachments-img {
+                                    svg {
+                                        transform: rotate(180deg);
+                                        transition: 0.5s;
+                                    }
+                                }
+                            }
+                        }
+                        .dropdowns[aria-expanded="false"] {
+                            .technical-details-title, .attachments-title {
+                                .technical-details-img, .attachments-img {
+                                    svg {
+                                        transform: rotate(0);
+                                        transition: 0.5s;
+                                    }
+                                }
                             }
                         }
                     }
