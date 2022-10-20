@@ -63,14 +63,7 @@ $_helper = $block->getData('outputHelper');
 
                     <!-- Etiqueta de descuento -->
                     <div class="discount-content">
-                        <p class="discount-text">-30%</p>
-                    </div>
-
-                    <!-- To whist list -->
-                    <div data-role="add-to-links" class="actions-secondary">
-                        <?php if ($addToBlock = $block->getChildBlock('addto')): ?>
-                            <?= $addToBlock->setProduct($_product)->getChildHtml() ?>
-                        <?php endif; ?>
+                        <p class="discount-text"><?=__("-30%")?></p>
                     </div>
                     
                     <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
@@ -84,7 +77,7 @@ $_helper = $block->getData('outputHelper');
                         <span class="stock-image">
                             <img src="<?= $this->getViewFileUrl('images/plp/Vector.png') ?>" alt="">
                         </span>
-                        <p class="stock-text"><?= $_product->getResource()->getAttribute('quantity_and_stock_status')->getFrontend()->getValue($_product) ?></p>
+                        <p class="stock-text"><?= __("In Stock") ?></p>
                     </div>
 
                     <!-- collapsibles -->
@@ -97,7 +90,7 @@ $_helper = $block->getData('outputHelper');
                         <div class="container-items dropdowns-deatils dropdowns" data-role="collapsible">
                             <div class="container-technical-details" data-role="trigger">
                                 <div class="technical-details-title">
-                                    <span class="technical-details-text"><?=__("Technical details")?></span>
+                                    <span class="technical-details-text"><?=__("Details")?></span>
                                     <span class="technical-details-img">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -133,24 +126,71 @@ $_helper = $block->getData('outputHelper');
                         <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
                         <strong class="product name product-item-name">
 
-                            <!-- Name brach | part -->
-                            <p class="text-sub-title">
-                                <span><?=__("Logo Brand Name")?></span>
-                                <span> | </span>
-                                <span><?=__("Part No. 234565")?></span>
-                            </p>
-
                             <a class="product-item-link"
                                href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
                                 <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
                             </a>
 
-                            <!-- Atributtes -->
-                            <div class="container-attributes">
-                                <p class="text-attribute"><?= $_product->getResource()->getAttribute('Btty')->getStoreLabel().": " ?><b><?= $_product->getResource()->getAttribute('Btty')->getFrontend()->getValue($_product) ?></b></p>
-                                <p class="text-attribute"><?= $_product->getResource()->getAttribute('Lflux')->getStoreLabel().": " ?><b><?= $_product->getResource()->getAttribute('Lflux')->getFrontend()->getValue($_product) ?></b></p>
-                                <p class="text-attribute"><?= $_product->getResource()->getAttribute('Mbpo')->getStoreLabel().": " ?><b><?= $_product->getResource()->getAttribute('Mbpo')->getFrontend()->getValue($_product) ?></b></p>
+                            <!-- section tags -->
+                            <div class="container-tags">
+                                <div class="tags-content color-denim">
+                                    <p class="text-tags"><?= __("hospitable")?></p>
+                                </div>
+                                <div class="tags-content color-azure">
+                                    <p class="text-tags"><?= __("cold chain")?></p>
+                                </div>
+                                <div class="tags-content color-international-orange">
+                                    <p class="text-tags"><?= __("no refund")?></p>
+                                </div>
+                                <div class="tags-content color-extremely-red">
+                                    <p class="text-tags"><?= __("psychotropic")?></p>
+                                </div>
                             </div>
+
+                            <!-- section price details -->
+                            <fidelset class="container-price-details">
+                                <div class="price-details discount-price-details">
+                                    <div class="price-details-content">
+                                        <p class="price-title public-price-title"><?=__("Public price")?></p>
+                                        <p class="public-price-content price-content"><?=__("$45.00")?></p>
+                                    </div>
+                                    <div class="price-details-content">
+                                        <p class="price-title discount-price-title"><?=__("Discount")?></p>
+                                        <p class="discount-price-content price-content"><?=__("25%")?></p>
+                                    </div>
+                                    <div class="price-details-content">
+                                        <p class="price-title-total price-title"><?=__("Price")?></p>
+                                        <p class="price-content-total price-content"><?=__("$34.00")?></p>
+                                    </div>
+                                </div>
+                                <div class="price-details price-details-promotions promotions-carries-50-units">
+                                    <div class="details-discount">
+                                        <img class="icon-copyright" src="<?= $this->getViewFileUrl('images/plp/icon-discount-novelty.png') ?>" alt=""></img>
+                                        <p class="text-carrying text"><?=__("carrying 50")?><b><?=__("you get 15% discount on PUB")?></b></p>
+                                    </div>
+                                    <div class="price-discount">
+                                        <p class="text-price text"><?=__("$30.00")?></p>
+                                    </div>
+                                </div>
+                                <div class="price-details price-details-promotions promotions-carries-50-units">
+                                    <div class="details-discount">
+                                        <img class="icon-copyright" src="<?= $this->getViewFileUrl('images/plp/icon-discount-novelty.png') ?>" alt=""></img>
+                                        <p class="text-carrying text"><?=__("carrying 80")?><b><?=__("you get 18% discount on PUB")?></b></p>
+                                    </div>
+                                    <div class="price-discount">
+                                        <p class="text-price text"><?=__("$28.00")?></p>
+                                    </div>
+                                </div>
+                                <div class="price-details price-details-promotions promotions-carries-50-units">
+                                    <div class="details-discount">
+                                        <img class="icon-copyright" src="<?= $this->getViewFileUrl('images/plp/icon-discount-novelty.png') ?>" alt=""></img>
+                                        <p class="text-carrying text"><?=__("carrying 100")?><b><?=__("you get 20% discount on PUB")?></b></p>
+                                    </div>
+                                    <div class="price-discount">
+                                        <p class="text-price text"><?=__("$26.00")?></p>
+                                    </div>
+                                </div>
+                            </fidelset>
 
                         </strong>
                         
@@ -169,8 +209,8 @@ $_helper = $block->getData('outputHelper');
                                 </a>
                             </div>
                         <?php endif; ?>
-                        <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
-                        <?= /* @noEscape */ $block->getProductPrice($_product) ?>
+                        <!-- <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
+                        <?= /* @noEscape */ $block->getProductPrice($_product) ?> -->
 
                         <?= $block->getProductDetailsHtml($_product) ?>
                         <div class="product-item-inner">
@@ -178,14 +218,14 @@ $_helper = $block->getData('outputHelper');
                             <!-- Input wicht arrow -->
                             <div class="arrow-input-container">
                                 <div class="increase" id="increaseBtnP">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
                                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                         <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                                     </svg>
                                 </div>
                                 <input type="number">
                                 <div class="decrease" id="decreaseBtnP">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
                                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                     </svg>
@@ -237,13 +277,13 @@ $_helper = $block->getData('outputHelper');
                                         $position,
                                         'product-item-info_' . $_product->getId() . ' div.actions-primary'
                                     ) : '' ?>
-                            <!--
+                            
                                 <div data-role="add-to-links" class="actions-secondary">
                                     <?php if ($addToBlock = $block->getChildBlock('addto')): ?>
                                         <?= $addToBlock->setProduct($_product)->getChildHtml() ?>
                                     <?php endif; ?>
                                 </div>
-                            -->
+                           
                                 <?= ($pos && strpos($pos, $viewMode . '-secondary')) ?
                                     /* @noEscape */ $secureRenderer->renderStyleAsTag(
                                         $position,
