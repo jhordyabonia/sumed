@@ -15,20 +15,20 @@
         <referenceContainer name="content">
 
             <block name="section-discount" template="WeltPixel_Quickview::section-discount.phtml" before="-"/>
-            <block name="section-whist_list" template="WeltPixel_Quickview::section-whist_list.phtml" after="section-discount"/>
             <block name="section-collapsible" template="WeltPixel_Quickview::section-collapsible.phtml" after="product.info.media"/>
 
         </referenceContainer>
 
         <referenceContainer name="product.info.main">
 
-            <block name="section-atributtes" template="WeltPixel_Quickview::section-atributtes.phtml" before="product.info.price"/>
+            <block name="section-price-details" template="WeltPixel_Quickview::section-price-details.phtml" before="product.info.price"/>
 
         </referenceContainer>
 
-        <move element="product.info.stock.sku" destination="product.info.main" before="-"/>
+        <move element="product.info.stock.sku" destination="content" after="product.info.media"/>
 
-        <referenceBlock name="product.price.tier" remove="true"/>
+        <referenceBlock name="product.info.price" remove="true"/>
+        <referenceBlock name="product.info.sku" remove="true"/>
 
     </body>
 </page>
