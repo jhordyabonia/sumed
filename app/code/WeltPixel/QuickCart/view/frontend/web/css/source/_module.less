@@ -59,10 +59,24 @@
 
                 .quickcart-top {
                     min-height: 50px;
-                    text-align: center;
+                    height: 80px;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 24px;
                     top: 0;
                     width: 100%;
                     z-index: 1;
+                    background-color: #0D717F;
+
+                    .text{
+                        span{
+                            font-family: 'Barlow';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 20px;
+                            color: #fff;
+                        }
+                    }
 
                     .box-sized;
 
@@ -72,8 +86,13 @@
                         right: 0;
                         margin: 0;
                         padding: 0;
+                        top: 4px;
                         span {
                             position: relative;
+                            font-weight: 700;
+                            span{
+                                font-size: 20px;
+                            }
                         }
                     }
                     button.close:hover span {
@@ -119,10 +138,23 @@
                                     top: 0;
                                     right: 0;
                                 }
+                                .icon-line-cross:before {
+                                    content: "\e604";
+                                    font-family: luma-icons;
+                                    color: #737B7D;
+                                }
                             }
 
                             .product-item-name {
-                                max-width: 90%;
+                                //max-width: 90%;
+                                width: 200px;
+                                height: 48px;
+                                font-family: 'Barlow';
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 14px;
+                                line-height: 170%;
+                                color: #0C0C0C;
                             }
                             .product-image-wrapper {
                                 margin-bottom: 10px;
@@ -132,17 +164,24 @@
                                     background: transparent;
                                     display: block;
                                     font-size: 16px;
-                                    height: 15px;
+                                    height: 20px;
                                     margin: 0;
                                     position: relative;
                                     padding: 0;
                                     top: 0;
-                                    width: 15px;
+                                    width: 20px;
                                 }
                             }
                             .details-qty {
                                 float: left;
                                 margin-top: 5px;
+                                display: flex;
+                                //gap: 10px;
+                                width: 180px;
+                                justify-content: space-between;
+                                .label{
+                                    display: none;
+                                }
 
                                 .spinner {
                                     display: none;
@@ -253,15 +292,22 @@
                                         width: 100%;
                                         span.minicart-price {
                                             span.price {
-                                                font-size: 12px
+                                                //font-size: 12px
                                             }
                                         }
                                     }
                                 }
                                 span.price {
-                                    font-size: 12px;
-                                    margin: 0 0 10px 0;
+                                    //font-size: 12px;
+                                    margin: 0;
                                     float: right;
+
+                                    font-family: 'Barlow';
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 16px;
+                                    line-height: 16px;
+                                    color: #0d717f;
                                 }
                             }
                             .options {
@@ -293,19 +339,23 @@
                                 color: #000;
                                 font-size: 13px;
                                 float: left;
-                                padding: 0 8px 8px 8px;
+                                padding: 8px 8px 8px 8px;
                                 &.item-minus {
                                     visibility: visible;
                                     font-family: 'luma-icons';
+                                    border-radius: 50%;
+                                    border: 1px solid;
                                     &:after {
-                                        content: '\e617';
+                                        content: '\e60f';
                                     }
                                 }
                                 &.item-plus {
                                     visibility: visible;
                                     font-family: 'luma-icons';
+                                    border-radius: 50%;
+                                    border: 1px solid;
                                     &:after {
-                                        content: '\e608';
+                                        content: '\e61c';
                                     }
                                 }
                             }
@@ -329,17 +379,21 @@
                             }
                             .cart-item-qty {
                                 color: #000;
-                                border: 0 none;
                                 float: left;
-                                height: auto;
-                                line-height: 14px;
                                 margin: 0;
                                 opacity: 1;
                                 padding: 0;
                                 text-align: center;
-                                font-size: 13px;
-                                width: auto;
-                                max-width: 35px;
+
+                                width: 100px;
+                                height: 30px;
+                                border: 1px solid #434447;
+                                border-radius: 8px;
+                                font-family: 'Barlow';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 170%;
 
                             }
                             button.update-cart-item {
@@ -355,26 +409,41 @@
                     margin-top: auto;
                     width: 100%;
 
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
                     .items-total {
                         display: none;
                     }
                     .subtotal{
                         margin: 0;
-                        padding: 20px;
-                        width: 100%;
+                        padding: 24px;
+                        width: 500px;
+                        height: 130px;
+                        background: #E6EFFB;
+
 
                         span.label {
                             float: left;
 
                             span {
-                                font-size: 16px;
+                                font-family: 'Barlow';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 20px;
+                                line-height: 130%;
+                                color: #434447;
                             }
                         }
                         .price-container {
 
                             span.price {
-                                font-size: 16px;
-                                font-weight: 400;
+                                font-family: 'Barlow';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 20px;
+                                line-height: 130%;
+                                color: #434447;
                             }
                         }
                     }
@@ -407,6 +476,21 @@
 
                         .secondary {
                             padding: 15px;
+                            margin: auto;
+                            border: 1px solid #0d717f;
+                            border-radius: 30px;
+                            width: 452px;
+                            height: 48px;
+                            .viewcart{
+                                span{
+                                    font-family: 'Barlow';
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 16px;
+                                    line-height: 16px;
+                                    color: #0d717f;
+                                }
+                            }
                         }
                     }
                     .actions.action-checkout {
@@ -419,7 +503,23 @@
                             margin: 0 auto 10px;
                             min-width: 200px;
                             padding: 15px 0;
-                            width: 100%;
+
+                            background-color: #0D717F;
+                            border: 1px solid #0D717F;
+                            border-radius: 30px;
+                            width: 452px;
+                            height: 48px;
+
+                            span{
+                                font-size: 12px;
+                                width: 150px;
+                                height: 16px;
+                                font-family: 'Barlow';
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 16px;
+                            }
                         }
                     }
                     .minicart-widgets {
@@ -595,4 +695,19 @@
             }
         }
     }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m){
+    .page-wrapper .minicart-wrapper .block-minicart {
+        width: 500px;
+    }
+    .minicart-weltpixel{
+        .product-item-photo{
+            .product-image-container{
+                width: 130px !important;
+                height: 130px;
+            }
+        }
+
+    }
+
 }
