@@ -21,5 +21,32 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+ .page-header{
+     .container-minicartFloat{
+         position: absolute;
+         right: -72px;
+         cursor: pointer;
+         .content__miniCartFloat{
+             display: flex;
+             width: 30px;
+             height: 135px;
+             background-color: #0D717F;
+             border-radius: 4px;
+             color: #fff;
+             flex-direction: column;
+             justify-content: space-around;
+             align-items: center;
+             font-weight: 600;
+
+             /*.icon__miniCartFloat showcart{
+                 width: 20px;
+             }*/
+             .txt-miniCartFloat{
+                 transform: rotate(90deg);
+                 width: 90px;
+             }
+         }
+     }
+ }
 
 }
