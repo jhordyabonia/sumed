@@ -45,10 +45,11 @@
                 padding: 0;
             }
             div.product.media {
-                width: 48%;
+                width: 45%;
+                margin-top: 40px;
             }
             div.product-info-main {
-                width: 50%;
+                width: 55%;
                 margin-top: 40px;
                 padding-right: 70px;
             }
@@ -101,7 +102,7 @@
         .container-dropdowns {
             width: 100%;
             height: 48px;
-            display: inline-flex;
+            display: flex;
             justify-content: flex-start;
             gap: 20px;
             padding: 12px 16px;
@@ -115,24 +116,115 @@
                 span {
                     align-self: center;
                     margin-bottom: 0;
-                    svg {
+                    img {
                         display: flex;
                     }
                 }
                 .technical-details-title, .attachments-title {
                     display: flex;
                     gap: 10px;
+                    .technical-details-text, .attachments-text {
+                        font-family: @Fuente;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 170%;
+                        color: @color-fuente; 
+                    }
                 }
                 .technical-details-content, .attachments-content {
-                    border: 1px solid rgb(246, 248, 251);
-                    border-radius: 4px;
                     padding: 5px;
-                    font-family: @Fuente;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 170%;
-                    color: @color-fuente;
+                    box-shadow: e("0px 8px 40px rgb(0 0 0 / 5%);");
+                    border-radius: 8px;
+                }
+                .technical-details-content {
+                    position: relative;
+                    left: -5%;
+                    width: 140%;
+                    min-height: 650px;
+                    display: block;
+                    padding: 0;
+                    background: #FFFFFF;
+                    .container-details {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding: 8px 16px;
+                        background: #FFFFFF;
+                        .details-text {
+                            font-family: @Fuente;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 170%;
+                            color: @color-fuente;
+                        }
+                        .details-value {
+                            font-family: @Fuente;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 14px;
+                            line-height: 170%;
+                            color: @color-fuente;
+                        }
+                    }
+                    .detail-gray, .detail-sku:first-of-type + .container-details {
+                        background: @color-secundario;
+                    }
+                    .detail-sku {
+                        background: @color-secundario;
+                    }
+                }
+                .attachments-content {
+                    position: relative;
+                    left: -32%;
+                    width: 100%;
+                    min-height: 325px;
+                    display: block;
+                    padding: 24px;
+                    background: #FFFFFF;
+                    .attachments-file {
+                        width: 100%;
+                        display: inline-flex;
+                        flex-direction: column;
+                        gap: 8px;
+                        .attachments-text-content {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: flex-start;
+                            gap: 8px;
+                            .attachments-text {
+                                display: flex;
+                                align-items: center;
+                                font-family: @Fuente-secundaria;
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 24px;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .dropdowns[aria-expanded="true"] {
+                .technical-details-title, .attachments-title {
+                    .technical-details-img, .attachments-img {
+                        img {
+                            transform: rotate(180deg);
+                            transition: 0.5s;
+                        }
+                    }
+                }
+            }
+            .dropdowns[aria-expanded="false"] {
+                .technical-details-title, .attachments-title {
+                    .technical-details-img, .attachments-img {
+                        img {
+                            transform: rotate(0);
+                            transition: 0.5s;
+                        }
+                    }
                 }
             }
         }
@@ -214,9 +306,12 @@
             .product-info-price {
                 border-bottom: none;
             }
+            .product-add-form {
+                padding: 20px 20px 0;
+            }
         }
         
-        .arrow-input-container {
+        div.arrow-input-container {
             width: 100%;
             display: flex;
             justify-content: center;
@@ -266,6 +361,12 @@
         }
         
     }     
+
+    .catalog-product-view {
+        .arrow-input-container {
+            display: none;
+        }
+    }
     
 }
 
