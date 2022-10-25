@@ -21,11 +21,13 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
- .page-header{
+ .page-main{
      .container-minicartFloat{
-         position: absolute;
-         right: -72px;
+         position: fixed;
+         right: 0;
          cursor: pointer;
+         z-index: 9;
+         top: 238px;
          .content__miniCartFloat{
              display: flex;
              width: 30px;
@@ -38,9 +40,6 @@
              align-items: center;
              font-weight: 600;
 
-             /*.icon__miniCartFloat showcart{
-                 width: 20px;
-             }*/
              .txt-miniCartFloat{
                  transform: rotate(90deg);
                  width: 90px;

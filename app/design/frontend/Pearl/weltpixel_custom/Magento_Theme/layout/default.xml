@@ -14,12 +14,10 @@
      <referenceBlock name="header.panel.wrapper" remove="false"/>
 
      <referenceContainer name="main.content">
-         <block name="login.columna" class="AgSoftware\Login\Block\Login" template="AgSoftware_Login::login_columna.phtml" before="-"/>
-     </referenceContainer>
-     <referenceContainer name="header.container">
-         <container name="mini.cart.float" htmlClass="container-minicartFloat" htmlTag="div" after="-">
+         <container name="mini.cart.float" htmlClass="container-minicartFloat" htmlTag="div" before="login.columna">
              <block name="mini.cart.float.block" class="Magento\Framework\View\Element\Template" template="Magento_Theme::miniCartFloat.phtml" before="-"/>
          </container>
+         <block name="login.columna" class="AgSoftware\Login\Block\Login" template="AgSoftware_Login::login_columna.phtml" before="-"/>
      </referenceContainer>
      <!--<referenceBlock name="content" remove="true"/>-->
 
