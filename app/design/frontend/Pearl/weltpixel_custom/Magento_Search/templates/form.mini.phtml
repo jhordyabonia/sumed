@@ -83,11 +83,6 @@ $quickSearchUrl = $allowedSuggestion ? $escaper->escapeUrl($helper->getSuggestUr
                 </div>
                 <?= $block->getBlockHtml('header.additional') ?>
                 <!-- /ko -->
-                <div class="not-logged-in" data-bind="visible:customer().fullname">
-                    <a class="link-button secound" href="<?=$block->getUrl('customer/account/logout')?>">
-                        <span class=""><?=__("Logout")?></span>
-                    </a>
-                </div>
             </div>
             <script type="text/x-magento-init">
                 {
