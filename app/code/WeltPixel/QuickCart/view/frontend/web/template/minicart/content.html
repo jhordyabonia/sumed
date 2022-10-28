@@ -57,7 +57,12 @@
 
 
     <!-- ko if: getCartParam('summary_count') -->
-
+        <div class="shipping-img">
+            <img data-bind="attr: { src: require.toUrl('images/freeShipping.png') }" alt="">
+        </div>
+        <div class="container-free-shipping">
+            <span class="content-free-shipping">Espacio para comunicaciones (ej: envío gratis)</span>
+        </div>
         <div class="quickcart-bottom-container">
             <!-- ko if: getCartParam('weltpixel_quickcart_cmsblock') -->
             <div class="custom-cms-block-wrapper">
@@ -180,7 +185,7 @@
                                 class="action primary checkout"
                                 data-bind="attr: {title: $t('Go to Checkout')}"
                         >
-                            <!-- ko i18n: 'Go to Checkout' --><!-- /ko -->
+                            <!-- ko i18n: 'CONFIRMAR CARRITO' --><!-- /ko -->
                         </button>
                         <div class="extra-actions" data-bind="html: getCartParam('extra_actions')"></div>
                     </div>
