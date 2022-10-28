@@ -36,11 +36,11 @@ define([
                     customerData.invalidate(['customer']);
 
                     if (redirectUrl) {
-                        window.location.href = BASE_URL+"/home-commerce-logged";
+                        window.location.href = BASE_URL+"home-commerce-logged";
                     } else if (response.redirectUrl) {
-                        window.location.href = BASE_URL+"/home-commerce-logged";
+                        window.location.href = BASE_URL+"home-commerce-logged";
                     } else {
-                        window.location.href = BASE_URL+"/home-commerce-logged";
+                        window.location.href = BASE_URL+"home-commerce-logged";
                     }
                 }
             }).fail(function () {
