@@ -381,14 +381,45 @@
                             padding: 0 16px;
                             // margin-top: -35px;
                             .arrow-input-container {
+                                position: relative;
                                 width: 100%;
                                 display: flex;
                                 justify-content: center;
                                 gap: 8px;   
                                 .increase, .decrease {
+                                    width: 44px;
+                                    height: 44px;
                                     display: flex;
                                     justify-content: center;
                                     align-self: center;
+                                    border: 1px solid #434447;
+                                    border-radius: 100px;
+                                }
+                                .increase {
+                                    .icon-increase {
+                                        position: absolute;
+                                        top: 45.83%;
+                                        &:before {
+                                            content: "\F4FE";
+                                            font-family: 'bootstrap-icons';
+                                            font-size: 30px;
+                                            line-height: 0px;
+                                            color: #434447;
+                                        }
+                                    }
+                                }
+                                .decrease {
+                                    .icon-decrease {
+                                        position: absolute;
+                                        top: 45.83%;
+                                        &:before {
+                                            content: "\F2EA";
+                                            font-family: 'bootstrap-icons';
+                                            font-size: 30px;
+                                            line-height: 0px;
+                                            color: #434447;
+                                        }
+                                    }
                                 }
                                 input[type="number"] {
                                     width: 121px;
@@ -959,7 +990,19 @@
             }
         }
    }
-                        
+
+    .page-products .products-list .product-item .weltpixel-quickview {
+            display: none;
+    }
+
+    .catalogsearch-result-index {
+        .products-list .product-item-info:hover .weltpixel-quickview.weltpixel_quickview_button_v2 {
+            left: 22%;
+            top: 68%;
+        }
+    }
+    
+
 }
 
 //
