@@ -11,9 +11,16 @@
                                 color: #0c0c0c;
                             }
                             .wp-slide-down-add {
+                                .active {
+                                    &::after {
+                                        color: #0d717f;
+                                        top: 6px;
+                                        margin-left: 5px;
+                                    }
+                                }
                                 &::after {
                                     color: #0d717f;
-                                    top: 9px;
+                                    top: 5px;
                                     margin-left: 5px;
                                 }
                             }
@@ -32,7 +39,6 @@
                             .block-content {
                                 .filter-current {
                                     width: 1135px;
-                                    height: 44px;
                                     .filter-current-subtitle {
                                         display: none;
                                     }
@@ -43,7 +49,7 @@
                                             color: #ffffff;
                                             height: 44px;
                                             border-radius: 8px;
-                                            padding: 10px 40px 10px 10px;
+                                            padding: 9px 35px 9px 10px;
                                             background: #0d717f;
                                             flex-direction: row;
                                             margin: 10px 16px 10px 0px;
@@ -69,7 +75,7 @@
                                                 height: 14px;
                                                 position: relative;
                                                 &:before {
-                                                    font-size: 12px;
+                                                    font-size: 14px;
                                                     top: 3px;
                                                     color: #ffffff;
                                                     position: absolute;
@@ -82,7 +88,7 @@
                                     }
                                 }
                                 .block-actions {
-                                    margin-top: -16px;
+                                    margin-top: -54px;
                                     letter-spacing: 0em;
                                     text-align: left;
                                     .filter-clear {
@@ -96,7 +102,7 @@
                                         }
                                     }
                                 }
-                                .filter-options{
+                                .filter-options {
                                     height: 600px;
                                     width: 1135px;
                                     background: #ffffff;
@@ -106,7 +112,7 @@
                                     display: none;
                                 }
                                 #narrow-by-list {
-                                    padding-top: 40px;
+                                    padding-top: 20px;
                                     .filter-options-item {
                                         border-bottom: none;
                                         gap: 16px;
@@ -128,6 +134,7 @@
                                             #slider-range {
                                                 order: 1;
                                                 background-color: #0d717f !important;
+                                                width: 90%;
                                                 .ui-slider-handle {
                                                     height: 22px;
                                                     width: 22px;
@@ -143,7 +150,8 @@
                                                         width: 20px;
                                                         margin: 0px 12px 0px 5px;
                                                         color: white;
-                                                        background-color: black;
+                                                        border: 1px solid
+                                                            #eaecee;
                                                     }
                                                     .inp-type {
                                                         max-width: 40%;
@@ -152,12 +160,9 @@
                                                         height: 48px !important;
                                                         width: 99px;
                                                         border-radius: 8px;
-                                                        padding: 12px 16px 12px
-                                                            16px;
-                                                        &::placeholder {
-                                                            content: "from";
-                                                            color: #0c0c0c;
-                                                        }
+                                                        padding: 12px 16px;
+                                                        border: 1px solid
+                                                            #eaecee;
                                                     }
                                                     .wp-price-slider-a {
                                                         top: 10px;
@@ -176,7 +181,7 @@
                                             letter-spacing: 0em;
                                             text-align: left;
                                             .ms_counter {
-                                                content: "";
+                                                display: none;
                                             }
                                             &::after {
                                                 color: #0d717f;
@@ -186,22 +191,34 @@
                                             }
                                         }
                                         .filter-options-content {
+                                            width: 200px;
                                             .wp-instant-search-wrapper {
+                                                height: 22%;
+                                                position: relative;
+                                                bottom: 25px;
+                                                font-size: 16px;
+                                                &::before {
+                                                    content: "\e615";
+                                                    font-family: "luma-icons";
+                                                    color: #0d717f;
+                                                    position: relative;
+                                                    left: 10px;
+                                                    top: 38px;
+                                                }
                                                 .wp-instant-search-inp {
                                                     width: 200px;
                                                     height: 48px;
-                                                    padding: 12px 16px;
+                                                    padding: 12px 14px 12px 27px;
                                                     gap: 8px;
-                                                    border: 1px solid #eaecee;
                                                     border-radius: 8px;
-                                                    &::before {
-                                                        content: "\e621";
-                                                        font-family: "luma-icons";
-                                                    }
+                                                    border: 1px solid #eaecee;
+                                                    font-size: 14px;
+                                                    &::placeholder {
+                                                        color: transparent;
+                                                   }
                                                 }
                                             }
                                             .items {
-                                                height: 24px;
                                                 width: 200px;
                                                 .item {
                                                     width: 100%;
