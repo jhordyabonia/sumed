@@ -36,6 +36,9 @@
                         }
                         .block {
                             padding-top: 20px;
+                            box-shadow: e("0px 8px 40px rgb(0 0 0 / 5%);");
+                            border-radius: 8px;
+                            
                             .block-content {
                                 .filter-current {
                                     width: 1135px;
@@ -186,12 +189,13 @@
                                             &::after {
                                                 color: #0d717f;
                                                 top: 8px;
-
                                                 right: 6px;
                                             }
                                         }
                                         .filter-options-content {
                                             width: 200px;
+                                            height: 260px;
+                                            overflow: visible;
                                             .wp-instant-search-wrapper {
                                                 height: 22%;
                                                 position: relative;
@@ -202,26 +206,31 @@
                                                     font-family: "luma-icons";
                                                     color: #0d717f;
                                                     position: relative;
-                                                    left: 10px;
+                                                    left: 8px;
                                                     top: 38px;
+                                                    padding: 10px;
                                                 }
                                                 .wp-instant-search-inp {
                                                     width: 200px;
                                                     height: 48px;
-                                                    padding: 12px 14px 12px 27px;
+                                                    padding: 12px 14px 12px 38px;
                                                     gap: 8px;
                                                     border-radius: 8px;
                                                     border: 1px solid #eaecee;
                                                     font-size: 14px;
+                                                    color: #737b7d;
                                                     &::placeholder {
                                                         color: transparent;
-                                                   }
+                                                    }
                                                 }
                                             }
                                             .items {
                                                 width: 200px;
                                                 .item {
                                                     width: 100%;
+                                                    &:last-of-type {
+                                                        padding-bottom: 0;
+                                                    }
                                                     a {
                                                         gap: 8px;
                                                         font-family: Inter;
@@ -252,6 +261,33 @@
                                                             &::after {
                                                                 content: "";
                                                             }
+                                                        }
+                                                    }
+                                                }
+                                                .wp-ln-actions {
+                                                    width: 100%;
+                                                    text-align: center;
+                                                    .icon-line-arrow-up {
+                                                        &::before {
+                                                            content: "Show less";
+                                                            color: #0d717f;
+                                                            font-family: "Barlow";
+                                                            font-style: normal;
+                                                            font-weight: 500;
+                                                            font-size: 16px;
+                                                            line-height: 16px;
+                                                        }
+                                                    }
+
+                                                    .icon-line-arrow-down {
+                                                        &::before {
+                                                            content: "Show more";
+                                                            color: #0d717f;
+                                                            font-family: "Barlow";
+                                                            font-style: normal;
+                                                            font-weight: 500;
+                                                            font-size: 16px;
+                                                            line-height: 16px;
                                                         }
                                                     }
                                                 }
