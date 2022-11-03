@@ -1,12 +1,5 @@
-<?php
-    /**
-     * @var \AgSoftware\Login\Block\Columna $block;
-     **/
-    if(!$block->isLoggedIn()){
-        return;
-    }
-?>
-<div class="display-sidebar-login">
+<div class="display-sidebar-login" data-bind="scope:'login-column'" >
+<!-- ko if: isActive() -->
 <div class=content-column-login>
     <ul class="login-items-nav">
     <li class="list-colunm-nav">
@@ -120,4 +113,18 @@
         </li>
     </ul>
 </div>
+<!-- /ko -->
 </div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "login-column": {
+                        "component": "AgSoftware_Login/js/login-column"
+                    }
+                }
+            }
+        }
+    }
+</script>
