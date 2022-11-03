@@ -3,51 +3,78 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-    .page-wrapper{
-div.nav-sections{
-    margin-bottom: 0;
-}
-        .page-main{
-            .display-sidebar-login{
-                .content-column-login{
-                    width: 293px;
-                    background: #E6EFFB;
-                    display: flex;
-                    list-style: none;
-                    justify-content: center;
-                    height: 984px;
-                    z-index: 100;
-                    position: absolute;
-                    float: left;
+    body.logged {
+        padding-left: 300px;
+        &[class*='customer-account']{
+            .sidebar.sidebar-main,
+            .sidebar.sidebar-additional{
+                display: none;
+            }
+            .column.main {
+                width: 100%;
+            }
+        }
+        .page-wrapper {
+            header.page-header {
+                max-width: inherit;
+            }
+            .header.content {
+                margin: 0;
+                .desktop-logo a.logo {
+                    display: none;
+                }
+             }
+            div.nav-sections {
+                margin-bottom: 0;
+            }
+
+            .page-main {
+                .display-sidebar-login {
+                    position: fixed;
                     left: 0;
+                    top: 0;
+                    z-index: 10;
+
+                    .content-column-login {
+                        width: 293px;
+                        background: #E6EFFB;
+                        display: flex;
+                        list-style: none;
+                        justify-content: center;
+                        height: 984px;
+                        z-index: 100;
+                        position: absolute;
+                        float: left;
+                        left: 0;
 
 
-                        .login-items-nav{
+                        .login-items-nav {
                             list-style: none;
                             display: flex;
                             flex-direction: column;
                             height: 560px;
                             margin-top: 50px;
                             padding: 0;
-                             gap: 33px;
+                            gap: 33px;
 
-                             .space-text{
+                            .space-text {
                                 margin: 33px 0px;
-                             }
+                            }
 
-                             .space-exit{
+                            .space-exit {
                                 margin-top: 30px;
 
-                             }
+                            }
 
-                            .list-colunm-nav{
-                             
-                                .container-text-data{
+                            .list-colunm-nav {
+                                cursor: pointer;
+
+                                .container-text-data {
                                     display: flex;
                                     gap: 10px;
                                     flex-direction: column;
 
-                                    .text-description{
+                                    .text-description {
                                         font-family: 'Barlow';
                                         font-style: normal;
                                         font-weight: 700;
@@ -55,7 +82,7 @@ div.nav-sections{
                                         color: #073A41;
                                     }
 
-                                    .text{
+                                    .text {
                                         color: #073A41;
                                         font-family: 'Barlow';
                                         font-style: normal;
@@ -63,12 +90,13 @@ div.nav-sections{
                                         font-size: 16px;
                                     }
                                 }
-                                .container-column{
+
+                                .container-column {
                                     display: flex;
                                     align-items: center;
                                     gap: 10px;
 
-                                    .list-style-nav{
+                                    .list-style-nav {
                                         font-family: 'Barlow';
                                         font-style: normal;
                                         font-weight: 500;
@@ -78,7 +106,7 @@ div.nav-sections{
                                         color: #073A41;
                                     }
 
-                                    .list-style-exit{
+                                    .list-style-exit {
                                         font-family: 'Barlow';
                                         font-style: normal;
                                         font-weight: 500;
@@ -87,19 +115,19 @@ div.nav-sections{
                                         color: #F52F2F;
                                     }
                                 }
-                                
 
-                               
+
                             }
                         }
                     }
+                }
+
             }
 
         }
 
-        }
-
     }
+}
 
 
 
