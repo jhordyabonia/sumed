@@ -9,7 +9,7 @@ define([
                customer:CustomerData.get('customer')
            },
            getFullName: function () {
-               if(location.pathname.indexOf("checkout") >= 0){
+               if(location.pathname == "checkout"){
                    return false;
                }
                try {
