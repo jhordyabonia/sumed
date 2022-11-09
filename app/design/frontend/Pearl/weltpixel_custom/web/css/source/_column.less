@@ -1,0 +1,202 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    body.logged .page-wrapper .page-main .display-sidebar-login .content-column-login {
+        transition: width 0.3s ease-out 0s;
+        width: 112.87px;
+        height: 605px;
+        background: #E6EFFB;
+
+        .space-exit {
+            margin-top: 30px;
+        }
+
+        .container-column {
+            margin: 0 auto;
+            width: 100%;
+            display: block;
+            &:first-child{
+                img.logo-movil {
+                    display: inherit;
+                    margin-top: 25px;
+                }
+                img.logo {
+                    display: none;
+                }
+            }
+            > img {
+                margin: 0 auto;
+                width: auto;
+                display: block;
+            }
+        }
+        .login-items-nav {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            gap: 18px;
+        }
+        .list-style-exit,
+        .container-text-data.space-text {
+            display: none;
+        }
+        .container-column {
+            .list-style-nav {
+                display: none;
+            }
+        }
+    }
+    body.logged {
+        //padding-left: 300px;
+        &[class*='customer-account']{
+            .sidebar.sidebar-main,
+            .sidebar.sidebar-additional{
+                display: none;
+            }
+            .column.main {
+                width: 100%;
+            }
+        }
+        .page-wrapper {
+            header.page-header {
+                max-width: inherit;
+            }
+            .header.content {
+                margin: 0;
+                .desktop-logo a.logo {
+                    display: none;
+                }
+             }
+            div.nav-sections {
+                margin-bottom: 0;
+            }
+
+            .page-main {
+                .display-sidebar-login {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    z-index: 10;
+
+                    .content-column-login:hover {
+                        transition: width 0.3s ease-out 0s;
+                        width: 293px;
+                        background: #E6EFFB;
+                        display: flex;
+                        list-style: none;
+                        justify-content: center;
+                        height: 984px;
+                        z-index: 100;
+                        position: absolute;
+                        float: left;
+                        left: 0;
+
+                        ul > li{
+                            margin-bottom: 0;
+                        }
+
+                        .login-items-nav {
+                            list-style: none;
+                            display: flex;
+                            flex-direction: column;
+                            height: 560px;
+                            margin-top: 50px;
+                            padding: 0;
+                            gap: 33px;
+
+                            .list-colunm-nav {
+                                cursor: pointer;
+                                img.logo-movil {
+                                    display: none;
+                                }
+                                img.logo {
+                                    display: inherit;
+                                }
+                                .container-text-data {
+                                    display: flex;
+                                    gap: 10px;
+                                    flex-direction: column;
+
+                                    .text-description {
+                                        font-family: 'Barlow';
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        font-size: 16px;
+                                        color: #073A41;
+                                    }
+
+                                    .text {
+                                        color: #073A41;
+                                        font-family: 'Barlow';
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 16px;
+                                    }
+                                }
+                                .container-column {
+                                    margin: 0 auto;
+                                    width: 100%;
+                                    display: block;
+                                }
+                                .container-column {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    > img {
+                                        margin: 0;
+                                    }
+                                    .list-style-nav {
+                                        font-family: 'Barlow';
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 16px;
+                                        margin: 0;
+                                        line-height: 16px;
+                                        color: #073A41;
+                                        display: inherit;
+                                    }
+
+                                    .list-style-exit {
+                                        font-family: 'Barlow';
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 16px;
+                                        line-height: 16px;
+                                        color: #F52F2F;
+                                    }
+                                }
+
+
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+    }
+}
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
