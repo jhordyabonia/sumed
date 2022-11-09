@@ -1,31 +1,23 @@
-<?php
-    /**
-     * @var \AgSoftware\Login\Block\Columna $block;
-     **/
-    if(!$block->isLoggedIn()){
-        return;
-    }
-?>
-<div class="display-sidebar-login">
+<div id="login-column" class="display-sidebar-login" data-bind="scope:'login-column'" style="display:none">
+<!-- ko if: getFullName() -->
 <div class=content-column-login>
     <ul class="login-items-nav">
-    <li class="list-colunm-nav">
+    <li class="list-colunm-nav" onclick="location.href='<?=$block->getUrl()?>'">
             <div class="container-column">
             <a href="/home-commerce-logged/"><img src="<?= $this->getViewFileUrl('images/footer/SUMED-logo-color-2.png') ?>" alt=""></a>
             
             </div>
-           
+
         </li>
         <li class="list-colunm-nav">
             <div class="container-text-data space-text">
             <span class="text">
                <?=__("Hola,");?>
             </span>
-            <span class="text-description">
-               <?=__("FARMACIA DEL SUR");?>
+            <span class="text-description" data-bind="text:getFullName()">
             </span>
             </div>
-           
+
         </li>
         <li class="list-colunm-nav">
             <div class="container-column">
@@ -34,9 +26,9 @@
                <?=__("My Account");?>
             </span>
             </div>
-           
+
         </li>
-        <li class="list-colunm-nav">
+        <li class="list-colunm-nav" onclick="location.href='<?=$block->getUrl('customer/account/')?>'">
             <div  class="container-column">
                 <img src="<?= $this->getViewFileUrl('images/column/corriente.svg') ?>" alt="">
 
@@ -44,15 +36,11 @@
             </div>
         </li>
 
-        <li class="list-colunm-nav">
-
+        <li class="list-colunm-nav" onclick="location.href='<?=$block->getUrl('customer/account/')?>'">
             <div  class="container-column">
-
                 <img src="<?= $this->getViewFileUrl('images/column/historial.svg') ?>" alt="">
                 <span class="list-style-nav"><?=__("Mi historial de pedidos")?></span>
-
             </div>
-
         </li>
         <li class="list-colunm-nav">
         <div  class="container-column">
@@ -63,7 +51,7 @@
 
         </div>
         </li>
-        <li class="list-colunm-nav">
+        <li class="list-colunm-nav" onclick="location.href='<?=$block->getUrl('customer/account/')?>'">
         <div  class="container-column">
         <img src="<?= $this->getViewFileUrl('images/column/reclamos.svg') ?>" alt="">
 
@@ -73,7 +61,7 @@
         </div>
         </li>
 
-        <li class="list-colunm-nav">
+        <li class="list-colunm-nav" onclick="location.href='<?=$block->getUrl('customer/account/')?>'">
         <div  class="container-column">
         <img src="<?= $this->getViewFileUrl('images/column/novedades.svg') ?>" alt="">
 
@@ -82,7 +70,7 @@
 
         </div>
         </li>
-        <li class="list-colunm-nav">
+        <li class="list-colunm-nav" onclick="location.href='<?=$block->getUrl('customer/account/')?>'">
         <div  class="container-column">
         <img src="<?= $this->getViewFileUrl('images/column/catalogo.svg') ?>" alt="">
 
@@ -91,7 +79,7 @@
 
         </div>
         </li>
-        <li class="list-colunm-nav">
+        <li class="list-colunm-nav" onclick="location.href='<?=$block->getUrl('customer/account/')?>'">
         <div  class="container-column">
         <img src="<?= $this->getViewFileUrl('images/column/ofertas.svg') ?>" alt="">
 
@@ -100,8 +88,8 @@
 
         </div>
         </li>
-        
-        <li class="list-colunm-nav">
+
+        <li class="list-colunm-nav" onclick="location.href='<?=$block->getUrl('customer/account/')?>'">
         <div  class="container-column">
         <img src="<?= $this->getViewFileUrl('images/column/contacto.svg') ?>" alt="">
 
@@ -110,7 +98,7 @@
         </div>
         </li>
 
-        <li class="list-colunm-nav space-exit">
+        <li class="list-colunm-nav space-exit" onclick="location.href='<?=$block->getUrl('customer/account/logout')?>'" style="cursor:pointer;">
         <div  class="container-column">
         <img src="<?= $this->getViewFileUrl('images/column/salir.png') ?>" alt="">
 
@@ -120,4 +108,18 @@
         </li>
     </ul>
 </div>
+<!-- /ko -->
 </div>
+<script type="text/x-magento-init">
+    {
+        "#login-column": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "login-column": {
+                        "component": "AgSoftware_Login/js/login-column"
+                    }
+                }
+            }
+        }
+    }
+</script>
