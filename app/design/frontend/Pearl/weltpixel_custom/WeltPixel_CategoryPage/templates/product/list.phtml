@@ -43,6 +43,9 @@ $_helper = $block->getData('outputHelper');
      * Position for actions regarding image size changing in vde if needed
      */
     $pos = $block->getPositioned();
+    
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $StockState = $objectManager->get('\Magento\CatalogInventory\Api\StockStateInterface');
     ?>
     <div class="products wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
         <ol class="products list items product-items">
@@ -72,12 +75,17 @@ $_helper = $block->getData('outputHelper');
                         <?= $productImage->toHtml() ?>
                     </a>
 
-                    <!-- Attribute Stock -->
-                    <div class="container-stock">
+                    <!-- Attribute Stock --> 
+                    <div class="container-stock">                       
+                    <?php if($StockState->getStockQty($_product->getId(), $_product->getStore()->getWebsiteId())): ?>
                         <span class="stock-image">
                             <img src="<?= $this->getViewFileUrl('images/plp/Vector.png') ?>" alt="">
                         </span>
                         <p class="stock-text <?=$_product->getData('qty')?>"><?= __("In Stock") ?></p>
+                     <?php else:?>
+                        <div class="stock unavailable">
+                            <span><?= $escaper->escapeHtml(__('Out of stock')) ?></span></div>
+                    <?php endif; ?>
                     </div>
 
                     <!-- collapsibles -->
