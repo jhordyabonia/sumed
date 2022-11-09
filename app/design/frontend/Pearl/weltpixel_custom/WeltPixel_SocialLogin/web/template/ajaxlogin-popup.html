@@ -208,6 +208,7 @@ aside.modal-popup.popup-authentication.modal-slide._inner-scroll._show div.modal
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!-- /ko -->
         <div class="block-content" aria-labelledby="block-customer-login-heading" id="login_section">
+            <h4><b>Ingresa a tu portal Sumed</b></h4>
             <form class="form form-login"
                   method="post"
                   data-bind="event: {submit: login }"
@@ -238,12 +239,15 @@ aside.modal-popup.popup-authentication.modal-slide._inner-scroll._show div.modal
                     <!-- ko foreach: getRegion('additional-login-form-fields') -->
                     <!-- ko template: getTemplate() --><!-- /ko -->
                     <!-- /ko -->
+                    <p>¿Algún problema? Contactar a SUMED</p>
+                    <br><br>
                     <div class="actions-toolbar">
                         <div class="primary">
                             <button type="submit" class="action login primary" name="send" id="ajaxlogin-send">
                                 <span data-bind="i18n: 'Sign In'"></span>
                             </button>
                         </div>
+                        <p>¿No tiene cuenta?<a href="#">Registrarse</a></p>
                         <div class="secondary">
                             <a class="action" data-bind="attr: {href: forgotPasswordUrl}">
                                 <span data-bind="i18n: 'Forgot Your Password?'"></span>
