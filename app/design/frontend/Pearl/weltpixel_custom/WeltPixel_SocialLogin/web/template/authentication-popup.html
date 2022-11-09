@@ -41,6 +41,7 @@
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!-- /ko -->
         <div class="block-content" aria-labelledby="block-customer-login-heading">
+            <h4><b>Ingresa a tu portal Sumed</b></h4>
             <form class="form form-login"
                   method="post"
                   data-bind="event: {submit: login }"
@@ -72,6 +73,8 @@
                     <!-- ko template: getTemplate() --><!-- /ko -->
                     <!-- /ko -->
                     </div>
+                    <p>¿Algún problema? Contactar a SUMED</p>
+                    <br><br>
                     <div class="actions-toolbar">
                         <input name="context" type="hidden" value="checkout" />
                         <div class="primary">
@@ -84,7 +87,8 @@
                                 <span data-bind="i18n: 'Forgot Your Password?'"></span>
                             </a>
                         </div>
-
+                        <p>¿No tiene cuenta?<a href="#">Registrarse</a></p>
+                        
                         <div class="sociallogin-or">
                             <span data-bind="i18: 'OR'"></span>
                         </div>
