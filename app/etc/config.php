@@ -1,16 +1,5 @@
 <?php
 return [
-    'system' => [
-        'default' => [
-            'general' => [
-                'locale' => [
-                    'code' => 'es_AR'
-                ]
-            ]
-            
-        ]
-        
-    ],
     'modules' => [
         'Magento_Store' => 1,
         'Magento_AdminAnalytics' => 1,
