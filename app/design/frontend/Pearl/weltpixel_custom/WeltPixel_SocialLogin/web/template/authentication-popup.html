@@ -1,44 +1,56 @@
-<div class="block-authentication sl-popup"  id="login-form"
-     data-bind="afterRender: setAjaxModelElement, blockLoader: isLoading"
+<div class="block-authentication"
+     data-bind="afterRender: setModalElement, blockLoader: isLoading"
      style="display: none">
-
     <div class="block block-new-customer"
          data-bind="attr: {'data-label': $t('or')}">
         <div class="block-title">
-            <a href="#" id="sl_login_tab_title">
-                <strong id="block-customer-ajaxlogin-heading alink"
+            <strong id="block-new-customer-heading"
                     role="heading"
                     aria-level="2"
-                    class="sl-ajaxlogin-title"
-                    data-bind="i18n: 'Login',click: showLogin, css: {active :logClicked() > 0}"></strong>
-            </a>
-            <span class="sl-ajaxlogin-title-space" data-bind="i18n: 'or'"></span>
-            <a href="#" id="sl_register_tab_title">
-                <strong id="block-new-customer-heading alink"
-                        role="heading"
-                        aria-level="2"
-                        class="sl-ajaxlogin-title"
-                    data-bind="i18n: 'Create an Account',click: showRegister, css: {active :regClicked() > 0}"></strong>
-            </a>
+                    data-bind="i18n: 'Checkout out as a new customer'"></strong>
         </div>
+        <div class="block-content" aria-labelledby="block-new-customer-heading">
+            <p data-bind="i18n: 'Creating an account has many benefits:'"></p>
+            <ul>
+                <li data-bind="i18n: 'See order and shipping status'"></li>
+                <li data-bind="i18n: 'Track order history'"></li>
+                <li data-bind="i18n: 'Check out faster'"></li>
+            </ul>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <a class="action action-register primary" data-bind="attr: {href: registerUrl}">
+                        <span data-bind="i18n: 'Create Account'"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="block block-customer-login"
+         data-bind="attr: {'data-label': $t('or')}">
+        <div class="block-title">
+            <strong id="block-customer-login-heading"
+                    role="heading"
+                    aria-level="2"
+                    data-bind="i18n: 'Checkout out using your account'"></strong>
+        </div>
         <!-- ko foreach: getRegion('messages') -->
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!--/ko-->
         <!-- ko foreach: getRegion('before') -->
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!-- /ko -->
-        <div class="block-content" aria-labelledby="block-customer-login-heading" id="login_section">
+        <div class="block-content" aria-labelledby="block-customer-login-heading">
             <form class="form form-login"
                   method="post"
                   data-bind="event: {submit: login }"
-                  id="ajaxlogin-form">
+                  id="login-form">
                 <div class="fieldset login" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
                     <div class="field email required">
-                        <label class="label" for="ajaxlogin-email"><span data-bind="i18n: 'Email Address'"></span></label>
+                        <label class="label" for="email"><span data-bind="i18n: 'Email Address'"></span></label>
                         <div class="control">
                             <input name="username"
-                                   id="ajaxlogin-email"
+                                   id="email"
                                    type="email"
                                    class="input-text"
                                    data-bind="attr: {autocomplete: autocomplete}"
@@ -46,22 +58,24 @@
                         </div>
                     </div>
                     <div class="field password required">
-                        <label for="ajaxlogin-pass" class="label"><span data-bind="i18n: 'Password'"></span></label>
+                        <label for="pass" class="label"><span data-bind="i18n: 'Password'"></span></label>
                         <div class="control">
                             <input name="password"
                                    type="password"
                                    class="input-text"
-                                   id="ajaxlogin-pass"
+                                   id="pass"
                                    data-bind="attr: {autocomplete: autocomplete}"
-                                   data-validate="{required:true}">
+                                   data-validate="{required:true, 'validate-password':true}">
                         </div>
                     </div>
                     <!-- ko foreach: getRegion('additional-login-form-fields') -->
                     <!-- ko template: getTemplate() --><!-- /ko -->
                     <!-- /ko -->
+                    </div>
                     <div class="actions-toolbar">
+                        <input name="context" type="hidden" value="checkout" />
                         <div class="primary">
-                            <button type="submit" class="action login primary" name="send" id="ajaxlogin-send">
+                            <button type="submit" class="action action-login secondary" name="send" id="send2">
                                 <span data-bind="i18n: 'Sign In'"></span>
                             </button>
                         </div>
@@ -70,22 +84,15 @@
                                 <span data-bind="i18n: 'Forgot Your Password?'"></span>
                             </a>
                         </div>
+
+                        <div class="sociallogin-or">
+                            <span data-bind="i18: 'OR'"></span>
+                        </div>
+                        <div data-bind="html: socialloginButtons"></div>
+
                     </div>
                 </div>
             </form>
         </div>
-
-        
-    </div>
-    <div class="block block-customer-login"
-         data-bind="attr: {'data-label': $t('or')}">
-
-        <div class="block-content">
-            <div class="sociallogin-or">
-                <span data-bind="i18: 'OR'"></span>
-            </div>
-            <div data-bind="html: socialloginButtons"></div>
-        </div>
-
     </div>
 </div>
