@@ -278,7 +278,7 @@ $_helper = $block->getData('outputHelper');
 
                             <div class="product actions product-item-actions">
                                 <div class="actions-primary">
-                                    <?php if ($_product->isSaleable()):?>
+                                    <?php if (true/*$_product->isSaleable()*/):?>
                                         <?php $postParams = $block->getAddToCartPostParams($_product); ?>
                                         <form data-role="tocart-form"
                                               data-product-sku="<?= $escaper->escapeHtml($_product->getSku()) ?>"
