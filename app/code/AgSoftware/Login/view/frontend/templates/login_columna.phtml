@@ -4,8 +4,8 @@
     <ul class="login-items-nav">
     <li class="list-colunm-nav" onclick="location.href='<?=$block->getUrl()?>'">
             <div class="container-column">
-                <img class="logo" src="<?= $this->getViewFileUrl('images/footer/SUMED-logo-color-2.png') ?>" alt="">
-                <img class="logo-movil" src="<?= $this->getViewFileUrl('images/footer/SUMED-logo-color-3.svg') ?>" alt="">
+            <a href="home-commerce-logged/"><img src="<?= $this->getViewFileUrl('images/footer/SUMED-logo-color-2.png') ?>" alt=""></a>
+            
             </div>
 
         </li>
@@ -102,7 +102,7 @@
         <div  class="container-column">
         <img src="<?= $this->getViewFileUrl('images/column/salir.png') ?>" alt="">
 
-        <span class="list-style-exit"><?=__("salir")?></span>
+        <span class="list-style-nav" style="color:red"><?=__("Exit")?></span>
 
         </div>
         </li>
@@ -110,16 +110,3 @@
 </div>
 <!-- /ko -->
 </div>
-<script type="text/x-magento-init">
-    {
-        "#login-column": {
-            "Magento_Ui/js/core/app": {
-                "components": {
-                    "login-column": {
-                        "component": "AgSoftware_Login/js/login-column"
-                    }
-                }
-            }
-        }
-    }
-</script>
