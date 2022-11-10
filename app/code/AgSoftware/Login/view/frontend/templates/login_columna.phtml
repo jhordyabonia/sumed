@@ -110,21 +110,3 @@
 </div>
 <!-- /ko -->
 </div>
-<script>
-    require(['jquery'], function($) {
-        jQuery( document ).ready(function() {
-            if (jQuery( "#login-column" ).length == 0) {
-                return;
-            }
-            jQuery( "#login-column" )
-                .focusout(function() {
-                    console.log('focusout');
-                    jQuery( "#maincontent" ).css( "margin-left",  "0");
-                })
-                .blur(function() {
-                    console.log('blur');
-                    jQuery( "#maincontent" ).css( "margin-left",  jQuery( "#login-column" ).width() + "px");
-                });
-        });
-    });
-</script>
