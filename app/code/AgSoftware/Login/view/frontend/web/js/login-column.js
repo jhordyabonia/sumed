@@ -18,7 +18,7 @@ define([
                         $('#tab-mini-cart.showcart').show();
                         $('#login-column.display-sidebar-login').show();
                         $('body').addClass('logged');
-                        return out;
+                        
                         $('.content-column-login').hover(
                             function(){
                                 $('#abierto').show();
@@ -29,7 +29,9 @@ define([
                                 $('#abierto').hide();
                                 $('#cerrado').show();
                                 $('.page-wrapper').attr('style','margin-left:8%');
-                            })        
+                            }
+                        );
+                        return out;        
                     }
                 }catch (e) {}
                 $('body').removeClass('logged');
