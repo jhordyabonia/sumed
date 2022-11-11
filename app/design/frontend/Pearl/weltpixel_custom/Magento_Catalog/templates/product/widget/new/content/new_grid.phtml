@@ -64,9 +64,9 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
 
                             <div class="product-item-details">
                                 <strong class="product-item-name">
-                                    
+
                                     <a title="<?= $block->escapeHtml($_item->getName()) ?>"
-                                       href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
+                                       onclick="quickview.displayContent('weltpixel_quickview/catalog_product/view/id/<?=$_item->getId()?>')"
                                        class="product-item-link">
                                         <?= $block->escapeHtml($_item->getName()) ?>
                                     </a>

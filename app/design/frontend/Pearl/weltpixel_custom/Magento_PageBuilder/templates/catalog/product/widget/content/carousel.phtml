@@ -56,7 +56,7 @@ use Magento\Framework\App\Action\Action;
                     <strong class="product-item-name">
 
                         <a title="<?= $block->escapeHtml($_item->getName()) ?>"
-                           href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
+                           onclick="quickview.displayContent('weltpixel_quickview/catalog_product/view/id/<?=$_item->getId()?>')"
                            class="product-item-link">
                             <?= $block->escapeHtml($_item->getName()) ?>
                         </a>

@@ -40,7 +40,7 @@ use Magento\Framework\App\Action\Action;
                     <?php foreach ($items as $_item): ?>
                         <?= /* @noEscape */ ($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
                         <div class="product-item-info">
-                            
+
                             <!-- Etiqueta discount -->
                             <div class="discount-content">
                                 <p class="discount-text">-30%</p>
@@ -57,12 +57,12 @@ use Magento\Framework\App\Action\Action;
                                 </span>
                                 <p class="stock-text"><?=__("In Stock")?></p>
                             </div>
-                            
+
                             <div class="product-item-details">
                                 <strong class="product-item-name">
                                     <a title="<?= $block->escapeHtml($_item->getName()) ?>"
-                                       href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
-                                       class="product-item-link">
+                                       onclick="quickview.displayContent('weltpixel_quickview/catalog_product/view/id/<?=$_item->getId()?>')"
+                                       class="product-item-link weltpixel-quickview">
                                         <?= $block->escapeHtml($_item->getName()) ?>
                                     </a>
 
