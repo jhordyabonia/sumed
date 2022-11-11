@@ -10,6 +10,7 @@ define([
            },
            getFullName: function () {
                if(location.pathname == "checkout"){
+                   
                    return false;
                }
                try {
@@ -20,6 +21,16 @@ define([
                        $('#login-column.display-sidebar-login').show();
                        $('body').addClass('logged');
                        return out;
+                   }
+                   else {
+                        $('.page-wrapper').attr("style",'margin-left:0px;'); 
+                   }
+                   let desp = $('.content-column-login:hover');
+                   if (desp) {
+                        $('.page-wrapper').attr("style",'margin-left:20%;'); 
+                   }
+                   else  {
+                    $('.page-wrapper').attr("style",'margin-left:8%;'); 
                    }
                }catch (e) {}
                $('body').removeClass('logged');
