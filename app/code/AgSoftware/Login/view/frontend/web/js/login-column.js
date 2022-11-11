@@ -15,7 +15,7 @@ define([
                try {
                    let out = this.customer().fullname;
                    if(out) {
-                       $('.page-wrapper').attr("style",'margin-right:8%'); 
+                       $('.page-wrapper').attr("style",'margin-left:8%;'); 
                        $('#tab-mini-cart.showcart').show();
                        $('#login-column.display-sidebar-login').show();
                        $('body').addClass('logged');
