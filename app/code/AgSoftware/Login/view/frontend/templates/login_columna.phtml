@@ -3,7 +3,23 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $dataPersistor = $objectManager->get(Magento\Framework\App\Request\DataPersistor::class);
 $customer = $dataPersistor->get('customer');
 if ($customer['email']):?>
-
+<script type="text/javascript">
+    require(['jquery'],function($) {
+        $('body').addClass('logged');
+        $('.content-column-login').hover(
+            function () {
+                $('#abierto').show();
+                $('#cerrado').hide();
+                $('.page-wrapper').attr('style', 'margin-left:252px;margin-right:30px');
+            },
+            function () {
+                $('#abierto').hide();
+                $('#cerrado').show();
+                $('.page-wrapper').attr('style', 'margin-left:72px');
+            }
+        );
+    });
+</script>
 <div id="login-column" class="display-sidebar-login" data-bind="scope:'login-column'">
 <!-- ko if: getFullName() -->
 <div class=content-column-login>
@@ -117,21 +133,4 @@ if ($customer['email']):?>
 </div>
 <!-- /ko -->
 </div>
-<script type="text/javascript">
-    require(['jquery'],function($) {
-        $('body').addClass('logged');
-        $('.content-column-login').hover(
-            function () {
-                $('#abierto').show();
-                $('#cerrado').hide();
-                $('.page-wrapper').attr('style', 'margin-left:252px;margin-right:30px');
-            },
-            function () {
-                $('#abierto').hide();
-                $('#cerrado').show();
-                $('.page-wrapper').attr('style', 'margin-left:72px');
-            }
-        );
-    });
-</script>
 <?php endif;?>
