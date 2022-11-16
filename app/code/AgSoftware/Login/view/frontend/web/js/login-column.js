@@ -23,7 +23,7 @@ define([
                             function(){
                                 $('#abierto').show();
                                 $('#cerrado').hide();
-                                $('.page-wrapper').attr('style','margin-left:23%');
+                                $('.page-wrapper').attr('style','margin-left:21%');
                             },
                             function(){
                                 $('#abierto').hide();
