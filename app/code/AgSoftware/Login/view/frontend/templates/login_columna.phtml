@@ -1,13 +1,19 @@
-<div id="login-column" class="display-sidebar-login" data-bind="scope:'login-column'" style="display:none">
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$dataPersistor = $objectManager->get(Magento\Framework\App\Request\DataPersistor::class);
+$customer = $dataPersistor->get('customer');
+if ($customer['email']):?>
+
+<div id="login-column" class="display-sidebar-login" data-bind="scope:'login-column'">
 <!-- ko if: getFullName() -->
 <div class=content-column-login>
     <ul class="login-items-nav">
     <li class="list-colunm-nav" onclick="location.href='<?=$block->getUrl()?>'">
             <div class="container-column">
-            <a href="/commerce/home-commerce-logged/"> 
+            <a href="/commerce/home-commerce-logged/">
                 <img id="abierto" src="<?= $this->getViewFileUrl('images/footer/SUMED-logo-color-2.png')  ?>" style="diplay:none" alt=""></a>
                 <img id="cerrado" src="/pub/media/wysiwyg/Vector_2.png"   style="diplay:block" alt=""></a>
-            
+
             </div>
 
         </li>
@@ -112,16 +118,20 @@
 </div>
 <!-- /ko -->
 </div>
-<script type="text/x-magento-init">
-    {
-        "#login-column": {
-            "Magento_Ui/js/core/app": {
-                "components": {
-                    "login-column": {
-                        "component": "AgSoftware_Login/js/login-column"
-                    }
-                }
-            }    
+<script type="text/javascript">
+    let $ = jQuery;
+    $('body').addClass('logged');
+    $('.content-column-login').hover(
+        function(){
+            $('#abierto').show();
+            $('#cerrado').hide();
+            $('.page-wrapper').attr('style','margin-left:20%');
+        },
+        function(){
+            $('#abierto').hide();
+            $('#cerrado').show();
+            $('.page-wrapper').attr('style','margin-left:8%');
         }
-    }
+    );
 </script>
+<?php endif;?>

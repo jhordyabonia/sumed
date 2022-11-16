@@ -5,6 +5,7 @@
  */
 use Magento\Framework\App\Action\Action;
 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 ?>
 <?php
 /**
@@ -28,7 +29,9 @@ $_helper = $block->getData('outputHelper');
     <?= $block->getToolbarHtml() ?>
     <?= $block->getAdditionalHtml() ?>
     <?php
-    if ($block->getMode() === 'grid') {
+    $dataPersistor = $objectManager->get(Magento\Framework\App\Request\DataPersistor::class);
+    $customer = $dataPersistor->get('customer');
+    if (!$customer['email']) {
         $viewMode = 'grid';
         $imageDisplayArea = 'category_page_grid';
         $showDescription = false;
@@ -44,7 +47,6 @@ $_helper = $block->getData('outputHelper');
      */
     $pos = $block->getPositioned();
 
-    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
     $StockState = $objectManager->get('\Magento\CatalogInventory\Api\StockStateInterface');
     ?>
     <div class="products wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
@@ -64,10 +66,12 @@ $_helper = $block->getData('outputHelper');
                     ?>
                     <?php // Product Image ?>
 
+                    <?php if($customer['email']):?>
                     <!-- Etiqueta de descuento -->
                     <div class="discount-content">
                         <p class="discount-text"><?=__("-30%")?></p>
                     </div>
+                    <?php endif;?>
 
                     <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
                        class="product photo product-item-photo"
@@ -184,7 +188,7 @@ $_helper = $block->getData('outputHelper');
                                onclick="quickview.displayContent('weltpixel_quickview/catalog_product/view/id/<?=$_product->getId()?>')">
                                 <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
                             </a>
-
+                            <?php if ($customer['email']):?>
                             <!-- section tags -->
                             <div class="container-tags">
                                 <div class="tags-content color-denim">
@@ -200,7 +204,6 @@ $_helper = $block->getData('outputHelper');
                                     <p class="text-tags"><?= __("psychotropic")?></p>
                                 </div>
                             </div>
-
                             <!-- section price details -->
                             <fidelset class="container-price-details">
                                 <div class="price-details discount-price-details">
@@ -249,7 +252,7 @@ $_helper = $block->getData('outputHelper');
                                     </div>
                                 </div>
                             </fidelset>
-
+                            <?php endif;?>
                         </strong>
 
                         <?php if ($showDescription): ?>
@@ -273,6 +276,7 @@ $_helper = $block->getData('outputHelper');
                         <?= $block->getProductDetailsHtml($_product) ?>
                         <div class="product-item-inner">
 
+                            <?php if ($customer['email']):?>
                             <!-- Input wicht arrow -->
                             <div class="arrow-input-container">
                                 <div class="decrease" id="decreaseBtnP">
@@ -283,10 +287,9 @@ $_helper = $block->getData('outputHelper');
                                     <span class="icon-increase"></span>
                                 </div>
                             </div>
-
+                            <?php endif;?>
                             <div class="product actions product-item-actions">
                                 <div class="actions-primary">
-                                    <?php if (true/*$_product->isSaleable()*/):?>
                                         <?php $postParams = $block->getAddToCartPostParams($_product); ?>
                                         <form data-role="tocart-form"
                                               data-product-sku="<?= $escaper->escapeHtml($_product->getSku()) ?>"
@@ -307,22 +310,23 @@ $_helper = $block->getData('outputHelper');
                                                    /* @noEscape */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED]
                                                     ?>">
                                             <?= $block->getBlockHtml('formkey') ?>
+
+                                            <?php if ($customer['email']):?>
                                             <button type="submit"
                                                     title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
                                                     class="action tocart primary"
                                                     disabled>
                                                 <span><?= $escaper->escapeHtml(__('Add to Cart')) ?></span>
                                             </button>
+                                            <?php else:?>
+                                                <button type="submit"
+                                                        title="<?= $escaper->escapeHtmlAttr(__('Ingrese para comprar')) ?>"
+                                                        class="action tocart primary"
+                                                        disabled>
+                                                    <span><?= $escaper->escapeHtml(__('Ingrese para comprar')) ?></span>
+                                                </button>
+                                            <?php endif;?>
                                         </form>
-                                    <?php else:?>
-                                        <?php if ($_product->isAvailable()):?>
-                                            <div class="stock available">
-                                                <span><?= $escaper->escapeHtml(__('In stock')) ?></span></div>
-                                        <?php else:?>
-                                            <div class="stock unavailable">
-                                                <span><?= $escaper->escapeHtml(__('Out of stock')) ?></span></div>
-                                        <?php endif; ?>
-                                    <?php endif; ?>
                                 </div>
                                 <?= ($pos && strpos($pos, $viewMode . '-primary')) ?
                                     /* @noEscape */ $secureRenderer->renderStyleAsTag(

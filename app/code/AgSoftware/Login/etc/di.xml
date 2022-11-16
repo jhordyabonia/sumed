@@ -4,4 +4,8 @@
                 type="AgSoftware\Login\Plugin\CustomerRedirect"/>
     <preference for="WeltPixel\SocialLogin\Controller\Ajax\Login"
                 type="AgSoftware\Login\Plugin\CustomerRedirect"/>-->
+    <type name="Magento\Framework\App\Action\HttpGetActionInterface">
+        <plugin name="AgSoftware_Force_loggin_data"
+                type="AgSoftware\Login\Plugin\CustomerRedirect" sortOrder="10" disabled="false"/>
+    </type>
 </config>
