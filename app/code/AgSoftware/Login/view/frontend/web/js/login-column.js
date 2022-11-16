@@ -23,12 +23,12 @@ define([
                             function(){
                                 $('#abierto').show();
                                 $('#cerrado').hide();
-                                $('.page-wrapper').attr('style','margin-left:21%');
+                                $('.page-wrapper').attr('style','margin-left:252px');
                             },
                             function(){
                                 $('#abierto').hide();
                                 $('#cerrado').show();
-                                $('.page-wrapper').attr('style','margin-left:8%');
+                                $('.page-wrapper').attr('style','margin-left:72px');
                             }
                         );
                         return out;        
