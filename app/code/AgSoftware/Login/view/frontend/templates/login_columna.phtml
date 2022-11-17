@@ -6,6 +6,7 @@ if ($customer['email']):?>
 <script type="text/javascript">
     require(['jquery'],function($) {
         $('body').addClass('logged');
+        $('#cerrado').hide();
         $('.content-column-login').hover(
             function () {
                 $('#abierto').show();
