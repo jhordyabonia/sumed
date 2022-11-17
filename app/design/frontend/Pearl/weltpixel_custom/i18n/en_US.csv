@@ -1,76 +1,3 @@
-"Subscribe to our Newsletter","Suscríbase a nuestro Newsletter"
-"Stay up to date with our latest releases. Learn more about our brands and receive the best promotions.","Manténgase actualizado con nuestros últimos lanzamientos. Conozca más sobre nuestras marcas y reciba las mejores promociones."
-"Your email","Su e-mail"
-"Sign up for the Newsletter","Registrame al newsletter"
-"Accept","Acepto"
-"terms and conditions","términos y condiciones"
-"Help","Ayuda"
-"Contact","Contacto"
-"Online Help","Ayuda Online"
-"Our commitment","Nuestro compromiso"
-"Give feedback","Dar feedback"
-"How to buy","Cómo comprar"
-"Payment methods","Métodos de pago"
-"withdrawal to deposit","Retiro a depósito"
-"Buy with shipping","Compra con envío"
-"Telephone purchases","Compras telefónicas"
-"returns","Devoluciones"
-"us","Nosotros"
-"About us","Sobre nosotros"
-"Press","Prensa"
-"For providers","Para proveedores"
-"Regulations","Regulaciones"
-"Privacy","Privacidad"
-"Cookies","Cookies"
-"Services","Servicios"
-"Logistics","Logística"
-"Customer Support","Atención al cliente"
-"Other services","Devoluciones"
-"2022 Ballon Group SRL","Otros servicios"
-"Public price","Precio Público"
-"Discount","Descuento"
-"Price","Precio"
-"carrying 50","Llevando 50 "
-"carrying 80","Llevando 80 "
-"carrying 100","Llevando 100 "
-"you get 15% discount on PUB","obtenés 15% dto s/PUB"
-"you get 18% discount on PUB","obtenés 18% dto s/PUB"
-"you get 20% discount on PUB","obtenés 20% dto s/PUB"
-"Add to Cart","Agregar al carrito"
-"Details","Detalles"
-"Attachments","Adjuntos"
-"hospitable","HOSPITALARIO"
-"cold chain","CADENA DE FRÍO"
-"no refund","SIN DEVOLUCIÓN"
-"psychotropic","PSICOTRÓPICO"
-"In Stock","En Stock"
-"Sign In","Ingresar"
-"Email Address","Usuario"
-"Password","Contraseña"
-"Create an Account","¡Bienvenido de vuelta!"
-"Forgot Your Password?","¿Olvidó su contraseña?"
-"IOMA","IOMA"
-"PAMI 6","PAMI 6"
-"master box","Caja master"
-"expiration","Vencimiento"
-"VAT","IVA"
-"No","No"
-"Pharmacy cost with tax","Costo Farmacia con impuesto"
-"SKU","SKU"
-"Document’s name/format/(size)","Nombre/formato/(tamaño) del documento"
-"Create an Account","Registrarse"
-"Forgot Your Password?","¿Algún problema? Contactar a SUMED"
-"Login","Ingresa a tu portal Sumed"
-"Shopping Cart","Carrito de compras" 
-"Summary", "Resumen"
-"Subtotal","SUBTOTAL"
-"Shipping (Flat Rate - Fixed)", "IMPUESTO"
-"Order Total","TOTAL"
-"Update Shopping Cart","Actualizar carrito de compras"
-"Proceed to Checkout","CONFIRMAR CARRITO"
-"Tax","IMPUESTOS"
-"Exit","Salir"
-"My Account","Mi Cuenta"
 "All","Todos",module,Magento_AdminGws
 "None","Ninguno",module,Magento_AdminGws
 "Allowed Scopes","Ámbitos permitidos",module,Magento_AdminGws
@@ -3123,7 +3050,7 @@ Time in seconds between the widget updates.,module,Magento_CatalogWidget
 "Cancel Coupon","Cancelar el cupón",module,Magento_Checkout
 "Shopping Cart Items","Artículos del carrito de compras",module,Magento_Checkout
 "Item","Artículo",module,Magento_Checkout
-"Price","Precio",module,Magento_Checkout
+"Price","",module,Magento_Checkout
 "Qty","Cantidad",module,Magento_Checkout
 "Subtotal","Subtotal",module,Magento_Checkout
 "Continue Shopping","Continuar comprando",module,Magento_Checkout
@@ -3193,9 +3120,9 @@ Time in seconds between the widget updates.,module,Magento_CatalogWidget
 "Forgot an Item?","¿Ha olvidado un elemento?",module,Magento_Checkout
 "Edit Your Cart","Editar carrito",module,Magento_Checkout
 "Ship Here","Entregar aquí",module,Magento_Checkout
-"Select Method","Select Method",module,Magento_Checkout
-"Method Title","Method Title",module,Magento_Checkout
-"Carrier Title","Carrier Title",module,Magento_Checkout
+"Select Method","",module,Magento_Checkout
+"Method Title","",module,Magento_Checkout
+"Carrier Title","",module,Magento_Checkout
 "Ship To:","Enviar a:",module,Magento_Checkout
 "edit","editar",module,Magento_Checkout
 "Shipping Address","Dirección de envío",module,Magento_Checkout
@@ -7913,7 +7840,7 @@ it will make no affect on Price filter.",module,Magento_LayeredNavigation
 "Review Order - %1","Revisar pedido - %1",module,Magento_Multishipping
 "Total","Totals",module,Magento_Multishipping
 "Total for this address","Total para esta dirección",module,Magento_Multishipping
-"Shipping Methods","Métodos de envío",module,Magento_Multishipping
+"Shipping Methods","Distribuidores",module,Magento_Multishipping
 "Edit Address","Editar dirección",module,Magento_Multishipping
 "Edit Billing Address","Modificar dirección de facturación",module,Magento_Multishipping
 "Edit Shipping Address","Modificar dirección de envío",module,Magento_Multishipping
@@ -12817,7 +12744,7 @@ no es restringido a los clientes.",module,Magento_SharedCatalog
 "Shipping Policy Parameters","Parámetros de la política de envío",module,Magento_Shipping
 "Apply custom Shipping Policy","Aplicar política de envío personalizada",module,Magento_Shipping
 "Shipping Policy","Política de Envío",module,Magento_Shipping
-"Shipping Methods","Métodos de envío",module,Magento_Shipping
+"Shipping Methods","Distribuidores",module,Magento_Shipping
 "Track your order","Seguí tu pedido",module,Magento_Shipping
 "Track All Shipments","Seguí todos los envíos",module,Magento_Shipping
 "Approved","Aprobado",module,Magento_Signifyd
@@ -13192,7 +13119,7 @@ Respaldamos nuestras aprobaciones con una protección de devolución de cargo de
 "Partial Refund Offline","Reembolso parcial fuera de línea",module,Magento_Support
 "Payments Functionality Matrix","Matriz de funcionalidad de pagos",module,Magento_Support
 "Payment Methods","Métodos de pago",module,Magento_Support
-"Shipping Methods","Métodos de envío",module,Magento_Support
+"Shipping Methods","Distribuidores",module,Magento_Support
 "Job Code","Código de trabajo",module,Magento_Support
 "Cron Expression","Expresión cron",module,Magento_Support
 "Run Class","Ejecutar la clase",module,Magento_Support
@@ -15774,7 +15701,7 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "Pickup Point Details","Detalles del punto de recogida"
 "Choose a Store","Elige una tienda"
 "Editing is not applicable for the selected shipping method","La edición no es aplicable para el método de envío seleccionado"
-""Please, choose a store where you would like to pick up your order"",""Por favor, elige una tienda donde te gustaría recoger tu pedido""
+"Please, choose a store where you would like to pick up your order","Por favor, elige un distribudor para hacer tu pedido"
 "Please fill in the comment field","Por favor complete el campo de comentarios"
 "Comment length limit is exceeded. Please keep it less than {length} symbols","Se excedió el límite de longitud del comentario. Manténgalo en menos de {longitud} símbolos"
 "Choose a store...","Elige una tienda..."
@@ -15825,6 +15752,7 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "Applicable for this Location","Aplicable para esta ubicación"
 "Enables Pickup Option for this location.","Habilita la opción de recogida para esta ubicación."
 "Pickup Option Conditions Text","Texto de las condiciones de la opción de recogida"
-"Select a store to collect your order:","Selecciona una tienda para recoger tu pedido:"
+"Select a store to collect your order:","Selecciona un distribuidor para hacer tu pedido:"
 "Pickup Date:","Fecha de recogida:"
 "Pickup Time:","Hora de recogida:"
+"Everywhere","En todas partes"
