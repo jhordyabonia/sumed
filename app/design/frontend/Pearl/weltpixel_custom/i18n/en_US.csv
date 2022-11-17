@@ -12281,7 +12281,7 @@ Se aplica un límite de uso únicamente para los usuarios que inician sesión.,m
 "All Websites","Todos los sitios web",module,Magento_Search
 "    All Store Views","    Todas las vistas de la tienda",module,Magento_Search
 "All Store Views","Todas las vistas de tienda",module,Magento_Search
-"Search entire store here...","¿Qué estás buscando?",module,Magento_Search
+"Search entire store here...","Buscar producto por monodroga, nombre comercial, laboratorio o código de barra",module,Magento_Search
 "There are no search terms available.","No hay términos de búsqueda disponibles.",module,Magento_Search
 "Search Engine","Motor de búsqueda",module,Magento_Search
 "CSV","CSV",module,Magento_Search
