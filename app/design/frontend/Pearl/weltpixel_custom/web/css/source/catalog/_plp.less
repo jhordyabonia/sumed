@@ -45,7 +45,55 @@
 
 & when (@media-common = true) {
 
-   .list {
+    .toolbar.toolbar-products {
+        display: inline-block;
+        width:75%;
+    }
+
+    #layer-product-list >.pages {
+        display: inline-block;
+        margin: 0!important;
+        padding: 0!important;
+        margin-left: 25px!important;
+    }
+
+    body.slider-down-layer .toolbar-products {
+        margin: 0!important;
+        padding: 0!important;
+        position: relative;
+        top: 15px;
+        .pages >ul >li.item {
+            &.pages-item-next {
+                display:block;
+            }
+            &.current {
+                background: #0D717F;
+            }
+        }
+    }
+
+    .pages >ul >li.item {
+        border: 1px solid #0D717F;
+        border-radius: 5px;
+        padding: 0px 6px;
+        &.pages-item-next {
+            display:none;
+        }
+        &.current {
+            background: #E6EFFB;
+        }
+    }
+
+    select#sorter {
+        background: white;
+        border: 1px solid #EAECEE;
+        padding: 10px;
+        height: auto;
+        border-radius: 6px;
+    }
+
+
+    .list {
         .product-items {
             .product-item {
                 padding: 0;
@@ -145,7 +193,7 @@
                                     font-weight: 400;
                                     font-size: 14px;
                                     line-height: 170%;
-                                    color: @color-fuente; 
+                                    color: @color-fuente;
                                 }
                             }
                             .technical-details-content, .attachments-content {
@@ -385,7 +433,7 @@
                                 width: 100%;
                                 display: flex;
                                 justify-content: center;
-                                gap: 8px;   
+                                gap: 8px;
                                 .increase, .decrease {
                                     width: 44px;
                                     height: 44px;
@@ -450,7 +498,7 @@
                                 }
                             }
                         }
-                        
+
                     }
                 }
             }
@@ -461,7 +509,7 @@
         .product-items {
             li.product-item {
                 width: 301px;
-                padding: 8px;           
+                padding: 8px;
                 border-radius: 8px;
                 border: 1px solid @color-secundario;
                 .product-item-info {
@@ -493,7 +541,7 @@
                             span.product-image-wrapper[style="padding-bottom: 125%;"] {
                                 padding-bottom: 100%!important;
                             }
-                        }  
+                        }
                     }
                     .container-stock {
                         position: relative;
@@ -660,7 +708,7 @@
                                 width: 100%;
                                 display: flex;
                                 justify-content: center;
-                                gap: 8px;   
+                                gap: 8px;
                                 .increase, .decrease {
                                     width: 44px;
                                     height: 44px;
@@ -805,7 +853,7 @@
                         width: 300px !important;
                         padding: 8px;
                         border-radius: 8px;
-                        border: 1px solid @color-secundario;                      
+                        border: 1px solid @color-secundario;
                         .product-item-info {
                             position: relative;
                             width: 300px;
@@ -834,7 +882,7 @@
                                     span.product-image-wrapper[style="padding-bottom: 125%;"] {
                                         padding-bottom: 100%!important;
                                     }
-                                }  
+                                }
                             }
                             .container-stock {
                                 position: relative;
@@ -1016,7 +1064,7 @@
                                 }
                             }
                         }
-                    } 
+                    }
                 }
             }
         }
@@ -1032,7 +1080,7 @@
             top: 68%;
         }
     }
-    
+
 }
 
 //
