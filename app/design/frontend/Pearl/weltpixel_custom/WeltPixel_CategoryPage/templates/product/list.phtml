@@ -48,7 +48,11 @@ $_helper = $block->getData('outputHelper');
     $pos = $block->getPositioned();
 
     $StockState = $objectManager->get('\Magento\CatalogInventory\Api\StockStateInterface');
+
+    echo  $block->getLayout()->getBlock('product_list_toolbar')
+                ->getPagerHtml();
     ?>
+
     <div class="products wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
         <ol class="products list items product-items">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
