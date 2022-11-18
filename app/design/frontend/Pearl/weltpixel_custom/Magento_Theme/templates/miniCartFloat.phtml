@@ -1,4 +1,10 @@
-<div id="tab-mini-cart" class="content__miniCartFloat showcart" style="display:none">
-    <span class="icon__miniCartFloat"><i class="fa-solid fa-cart-shopping"></i></span>
-    <p class="txt-miniCartFloat"><?=__("Mi Carrito")?></p>
-</div>
+<?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $dataPersistor = $objectManager->get(Magento\Framework\App\Request\DataPersistor::class);
+    $customer = $dataPersistor->get('customer');
+if ($customer['email']):?>
+    <div id="tab-mini-cart" class="content__miniCartFloat showcart">
+        <span class="icon__miniCartFloat"><i class="fa-solid fa-cart-shopping"></i></span>
+        <p class="txt-miniCartFloat"><?=__("Mi Carrito")?></p>
+    </div>
+<?php endif; ?>

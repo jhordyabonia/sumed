@@ -475,13 +475,13 @@ href=""https://dashboard.rjmetrics.com/v2/magento/signup/"">Magento BI Essential
 "Deselect all","Anular todas las selecciones",module,Magento_B2b
 "Cancel","Cancelar",module,Magento_B2b
 "Done","Hecho",module,Magento_B2b
-"We couldn't find any records.","We couldn't find any records.",module,Magento_B2b
-"Show","Show",module,Magento_B2b
-"per page","per page",module,Magento_B2b
-"Please Select","Bitte auswählen",module,Magento_B2b
+"We couldn't find any records.","No pudimos encontrar ningun registro.",module,Magento_B2b
+"Show","Mostrar",module,Magento_B2b
+"per page","por pagina",module,Magento_B2b
+"Please Select","Por favor seleccione",module,Magento_B2b
 "%s of %s selected","%s de %s seleccionados",module,Magento_B2b
-"Search by keyword","Search by keyword",module,Magento_B2b
-"This is a required field.","This is a required field.",module,Magento_B2b
+"Search by keyword","Buscar",module,Magento_B2b
+"This is a required field.","Este campo es obligatorio.",module,Magento_B2b
 "B2B Features","Características B2B",module,Magento_B2b
 "Invalid Form Key. Please refresh the page.","Clave de formulario inválida. Por favor actualice la página.",module,Magento_Backend
 "You entered an invalid Secret Key. Please refresh the page.","Has introducido una clave secreta inválida. Por favor actualice la página.",module,Magento_Backend
@@ -691,7 +691,7 @@ href=""https://dashboard.rjmetrics.com/v2/magento/signup/"">Magento BI Essential
 "You saved the store.","Se guardó la tienda.",module,Magento_Backend
 "Something went wrong while saving. Please review the error log.","Algo salió mal al guardar. Por favor, revise el registro de errores.",module,Magento_Backend
 "Authentication storage is incorrect.","La autentificación de almacenamiento es incorrecta.",module,Magento_Backend
-"The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.","The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.",module,Magento_Backend
+"The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.",El inicio de sesión de la cuenta fue incorrecto o su cuenta está deshabilitada temporalmente. Por favor, espere y vuelva a intentarlo más tarde.",module,Magento_Backend
 "An authentication error occurred. Verify and try again.","An authentication error occurred. Verify and try again.",module,Magento_Backend
 "The Admin session lifetime is invalid. Set the lifetime to 31536000 seconds (one year) or shorter and try again.","The Admin session lifetime is invalid. Set the lifetime to 31536000 seconds (one year) or shorter and try again.",module,Magento_Backend
 "The Admin session lifetime is invalid. Set the lifetime to 60 seconds or longer and try again.","The Admin session lifetime is invalid. Set the lifetime to 60 seconds or longer and try again.",module,Magento_Backend
@@ -1150,7 +1150,7 @@ href=""https://dashboard.rjmetrics.com/v2/magento/signup/"">Magento BI Essential
 "Add Cart Price Rules","Add Cart Price Rules",module,Magento_Banner
 "Related Catalog Price Rule","Related Catalog Price Rule",module,Magento_Banner
 "Catalog price rules allows you to setup promotions for an items in catalog.","Catalog price rules allows you to setup promotions for an items in catalog.",module,Magento_Banner
-"Cancel","Cancel",module,Magento_Banner
+"Cancel","Cancelar",module,Magento_Banner
 "Add Selected","Add Selected",module,Magento_Banner
 "Visibility","Visibilidad",module,Magento_Banner
 "All Segments","Todos los Segmentos",module,Magento_BannerCustomerSegment
@@ -1518,7 +1518,7 @@ y el descriptor del producto puede ser de hasta 18, 14 o 9 caracteres respectiva
 "Refunded","Reembolsado",module,Magento_Bundle
 "Canceled","Cancelado",module,Magento_Bundle
 "Regular Price","Precio habitual",module,Magento_Bundle
-"As low as","Tan bajo como",module,Magento_Bundle
+"As low as","",module,Magento_Bundle
 "From","De",module,Magento_Bundle
 "To","Para",module,Magento_Bundle
 "Buy %1 with %2 discount each","Compra %1 con %2 de descuento",module,Magento_Bundle
@@ -2042,7 +2042,7 @@ y el descriptor del producto puede ser de hasta 18, 14 o 9 caracteres respectiva
 "Multiple Select","Selección múltiple",module,Magento_Catalog
 "Dropdown","Lista desplegable",module,Magento_Catalog
 "%1 doesn't extend \Magento\Framework\Filter\Template","%1 no se extiende a \Magento\Framework\Filter\Template",module,Magento_Catalog
-"As low as","Tan bajo como",module,Magento_Catalog
+"As low as","",module,Magento_Catalog
 "Could not get extension attributes","No se pudo obtener los atributos de extensión",module,Magento_Catalog
 "Message","Message",module,Magento_Catalog
 "HTML is invalid","HTML is invalid",module,Magento_Catalog
@@ -2589,7 +2589,7 @@ Time in seconds between the widget updates.,module,Magento_Catalog
 "The fewest you may purchase is %1.","Lo menos que puedes comprar es %1.",module,Magento_CatalogInventory
 "Please correct the quantity for some products.","Por favor corregir la cantidad de algunos productos.",module,Magento_CatalogInventory
 "The most you may purchase is %1.","Lo máximo que puede comprar es %1.",module,Magento_CatalogInventory
-"The requested qty is not available","The requested qty is not available",module,Magento_CatalogInventory
+"The requested qty is not available","La cantidad solicitada no se encuentra disponible",module,Magento_CatalogInventory
 "We don't have as many ""%1"" as you requested, but we'll back order the remaining %2.","No tenemos la cantidad ""%1"" que usted pidió, pero pondremos como pedido pendiente las/los %2 restantes.",module,Magento_CatalogInventory
 "We don't have ""%1"" in the requested quantity, so we'll back order the remaining %2.","No tenemos ""%1"" de la cantidad solicitada, pondremos como pedido pendiente los/las %2 restantes.",module,Magento_CatalogInventory
 "You can buy %1 only in quantities of %2 at a time.","Usted puede comprar %1 solamente en cantidades de %2 a la vez.",module,Magento_CatalogInventory
@@ -3050,7 +3050,7 @@ Time in seconds between the widget updates.,module,Magento_CatalogWidget
 "Cancel Coupon","Cancelar el cupón",module,Magento_Checkout
 "Shopping Cart Items","Artículos del carrito de compras",module,Magento_Checkout
 "Item","Artículo",module,Magento_Checkout
-"Price","",module,Magento_Checkout
+"Price","Precio",module,Magento_Checkout
 "Qty","Cantidad",module,Magento_Checkout
 "Subtotal","Subtotal",module,Magento_Checkout
 "Continue Shopping","Continuar comprando",module,Magento_Checkout
@@ -3120,9 +3120,9 @@ Time in seconds between the widget updates.,module,Magento_CatalogWidget
 "Forgot an Item?","¿Ha olvidado un elemento?",module,Magento_Checkout
 "Edit Your Cart","Editar carrito",module,Magento_Checkout
 "Ship Here","Entregar aquí",module,Magento_Checkout
-"Select Method","",module,Magento_Checkout
-"Method Title","",module,Magento_Checkout
-"Carrier Title","",module,Magento_Checkout
+"Select Method","Seleccionar",module,Magento_Checkout
+"Method Title","Método",module,Magento_Checkout
+"Carrier Title","Transportador",module,Magento_Checkout
 "Ship To:","Enviar a:",module,Magento_Checkout
 "edit","editar",module,Magento_Checkout
 "Shipping Address","Dirección de envío",module,Magento_Checkout
@@ -3939,10 +3939,10 @@ Los clientes no podrán realizar pedidos hasta que actualice la moneda de crédi
 "Outstanding Balance:","Saldo pendiente:",module,Magento_CompanyCredit
 "Available Credit:","Crédito Disponible:",module,Magento_CompanyCredit
 "Credit Limit:","Límite de crédito:",module,Magento_CompanyCredit
-"Custom Reference Number","Custom Reference Number",module,Magento_CompanyCredit
+"Custom Reference Number","Numero de referencia",module,Magento_CompanyCredit
 "%1 is disabled when the available credit is less than the Order Grand Total.","%1 is disabled when the available credit is less than the Order Grand Total.",module,Magento_CompanyCredit
 "Charged off the company credit: %1","Cancelado el crédito de la empresa: %1",module,Magento_CompanyCredit
-"Custom Reference Number: %1","Custom Reference Number: %1",module,Magento_CompanyCredit
+"Custom Reference Number: %1","Numero de referencia: %1",module,Magento_CompanyCredit
 "The base currency for %1 has been updated. The currency %2 is still defined as the credit currency for one or more companies. Use the following <a href=""%3"" id=""update-credit-link"">link</a> to perform a bulk operation that updates the credit currency for those companies.","La moneda base para %1 se ha actualizado. La moneda %2 todavía se define como la moneda de crédito para una o más empresas. Utilice el siguiente <a href=""%3"" id=""update-credit-link"">enlace</a> para realizar una operación masiva que actualice la moneda de crédito de esas empresas.",module,Magento_CompanyCredit
 "%1 has exceeded its credit limit (%2) by %3. Its outstanding balance, including this order, currently totals %4.","%1 ha excedido su límite de crédito (%2) en %3. Su saldo pendiente, incluido este pedido, asciende actualmente a %4.",module,Magento_CompanyCredit
 "The credit limit for %1 is %2. Its outstanding balance, including this order, currently totals %3","El límite de crédito para %1 es %2. Su saldo pendiente, incluyendo este pedido, asciende actualmente a %3",module,Magento_CompanyCredit
@@ -4577,7 +4577,7 @@ You need to create a simple product for each configuration (Ex: a product for ea
 "If you are a registered VAT customer, please <a href=""%1"">click here</a> to enter your shipping address for proper VAT calculation.","Si eres un cliente registrado de IVA, por favor haga clic <a href=""%1""> aquí</a> para ingresar su dirección de envío para el adecuado cálculo del IVA.",module,Magento_Customer
 "If you are a registered VAT customer, please <a href=""%1"">click here</a> to enter your billing address for proper VAT calculation.","Si eres un cliente registrado de IVA, por favor haga clic <a href=""%1""> aquí</a> para ingresar su dirección de envío para el adecuado cálculo del IVA.",module,Magento_Customer
 "You saved the account information.","Ha guardado la información de cuenta.",module,Magento_Customer
-"The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.","The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.",module,Magento_Customer
+"The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.","El inicio de sesión de la cuenta fue incorrecto o su cuenta está deshabilitada temporalmente. Por favor, espere y vuelva a intentarlo más tarde.",module,Magento_Customer
 "Password confirmation doesn't match entered password.","La confirmación de la contraseña no coincide con la contraseña introducida.",module,Magento_Customer
 "The password doesn't match this account. Verify the password and try again.","The password doesn't match this account. Verify the password and try again.",module,Magento_Customer
 "The email address is incorrect. Verify the email address and try again.","The email address is incorrect. Verify the email address and try again.",module,Magento_Customer
@@ -7233,7 +7233,7 @@ Email template chosen based on theme fallback when ""Default"" option is selecte
 "Integration '%1' has been sent for activation.","Integración '%1' ha sido enviado para la activación.",module,Magento_Integration
 "A consumer with ""%1"" ID doesn't exist. Verify the ID and try again.","A consumer with ""%1"" ID doesn't exist. Verify the ID and try again.",module,Magento_Integration
 "title","título",module,Magento_Integration
-"The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.","The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.",module,Magento_Integration
+"The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.","El inicio de sesión de la cuenta fue incorrecto o su cuenta está deshabilitada temporalmente. Por favor, espere y vuelva a intentarlo más tarde.",module,Magento_Integration
 "The tokens couldn't be revoked.","The tokens couldn't be revoked.",module,Magento_Integration
 "An error occurred during the attempt to grant permissions. For details, see the exceptions log.","An error occurred during the attempt to grant permissions. For details, see the exceptions log.",module,Magento_Integration
 "Something went wrong while deleting roles and permissions. You can find out more in the exceptions log.","Algo salió mal al eliminar roles y permisos. Usted puede encontrar más información en el registro de excepciones.",module,Magento_Integration
@@ -7518,7 +7518,7 @@ it will make no affect on Price filter.",module,Magento_LayeredNavigation
 "Cache types: %1 ","Tipos de caché: %1 ",module,Magento_Logging
 "Tax Rates Export","Reporte de tarifas de impuestos",module,Magento_Logging
 "Unknown callback function: %1::%2","Función de callback desconocida: %1::%2",module,Magento_Logging
-"More permissions are needed to access this.","More permissions are needed to access this.",module,Magento_Logging
+"More permissions are needed to access this.","Se necesitan más permisos para acceder",module,Magento_Logging
 "Success","Se realizó exitosamente",module,Magento_Logging
 "Failure","Error",module,Magento_Logging
 "Daily","Diario",module,Magento_Logging
@@ -7840,7 +7840,7 @@ it will make no affect on Price filter.",module,Magento_LayeredNavigation
 "Review Order - %1","Revisar pedido - %1",module,Magento_Multishipping
 "Total","Totals",module,Magento_Multishipping
 "Total for this address","Total para esta dirección",module,Magento_Multishipping
-"Shipping Methods","Distribuidores",module,Magento_Multishipping
+"Shipping Methods","Métodos de envío",module,Magento_Multishipping
 "Edit Address","Editar dirección",module,Magento_Multishipping
 "Edit Billing Address","Modificar dirección de facturación",module,Magento_Multishipping
 "Edit Shipping Address","Modificar dirección de envío",module,Magento_Multishipping
@@ -8313,11 +8313,11 @@ Ahora puede seleccionar la fecha de caducidad que desee.",module,Magento_Negotia
 "Current Balance: ","Saldo actual: ",module,Magento_NegotiableQuote
 "Apply","Aplicar",module,Magento_NegotiableQuote
 "See Balance","Ver Saldo",module,Magento_NegotiableQuote
-"Show All Quotes","Show All Quotes",module,Magento_NegotiableQuote
-"Show My Quotes","Show My Quotes",module,Magento_NegotiableQuote
-"Edit","Edit",module,Magento_NegotiableQuote
-"Ship Here","Ship Here",module,Magento_NegotiableQuote
-"The shipping address specified on the quote was deleted from your Address Book.","The shipping address specified on the quote was deleted from your Address Book.",module,Magento_NegotiableQuote
+"Show All Quotes","Ver todos los presupuestos",module,Magento_NegotiableQuote
+"Show My Quotes","Ver mis presupuestos",module,Magento_NegotiableQuote
+"Edit","Editar",module,Magento_NegotiableQuote
+"Ship Here","Enviar aquí",module,Magento_NegotiableQuote
+"The shipping address specified on the quote was deleted from your Address Book.","Esta direcciónfue eliminada de tu Libreta de Direcciones",module,Magento_NegotiableQuote
 "To proceed with the checkout, go ","To proceed with the checkout, go ",module,Magento_NegotiableQuote
 "back to the quote","back to the quote",module,Magento_NegotiableQuote
 " and update the shipping address."," and update the shipping address.",module,Magento_NegotiableQuote
@@ -10126,7 +10126,7 @@ target=""_blank"">DevDocs' Release Information</a>.,module,Magento_ReleaseNotifi
 "Product %1 has been added to the requisition list %2.","El producto %1 se ha agregado a la Lista de reposición %2.",module,Magento_RequisitionList
 "Options were updated. Please review available configurations.","Las opciones fueron actualizadas. Por favor revise las configuraciones disponibles.",module,Magento_RequisitionList
 "The SKU is out of stock.","El SKU está fuera de stock.",module,Magento_RequisitionList
-"The requested qty is not available","The requested qty is not available",module,Magento_RequisitionList
+"The requested qty is not available","La cantidad solicitada no se encuentra disponible",module,Magento_RequisitionList
 "Could not save Requisition List. Maximum number of requisition lists was exceeded.","No se pueden guardar la Lista de reposición. Se superó el número máximo de listas.",module,Magento_RequisitionList
 "Could not save requisition list. Invalid data provided","Could not save requisition list. Invalid data provided",module,Magento_RequisitionList
 "Exception","Excepción",module,Magento_RequisitionList
@@ -12281,7 +12281,7 @@ Se aplica un límite de uso únicamente para los usuarios que inician sesión.,m
 "All Websites","Todos los sitios web",module,Magento_Search
 "    All Store Views","    Todas las vistas de la tienda",module,Magento_Search
 "All Store Views","Todas las vistas de tienda",module,Magento_Search
-"Search entire store here...","Buscar producto por monodroga, nombre comercial, laboratorio o código de barra",module,Magento_Search
+"Search entire store here...","¿Qué estás buscando?",module,Magento_Search
 "There are no search terms available.","No hay términos de búsqueda disponibles.",module,Magento_Search
 "Search Engine","Motor de búsqueda",module,Magento_Search
 "CSV","CSV",module,Magento_Search
@@ -12744,7 +12744,7 @@ no es restringido a los clientes.",module,Magento_SharedCatalog
 "Shipping Policy Parameters","Parámetros de la política de envío",module,Magento_Shipping
 "Apply custom Shipping Policy","Aplicar política de envío personalizada",module,Magento_Shipping
 "Shipping Policy","Política de Envío",module,Magento_Shipping
-"Shipping Methods","Distribuidores",module,Magento_Shipping
+"Shipping Methods","Métodos de envío",module,Magento_Shipping
 "Track your order","Seguí tu pedido",module,Magento_Shipping
 "Track All Shipments","Seguí todos los envíos",module,Magento_Shipping
 "Approved","Aprobado",module,Magento_Signifyd
@@ -13119,7 +13119,7 @@ Respaldamos nuestras aprobaciones con una protección de devolución de cargo de
 "Partial Refund Offline","Reembolso parcial fuera de línea",module,Magento_Support
 "Payments Functionality Matrix","Matriz de funcionalidad de pagos",module,Magento_Support
 "Payment Methods","Métodos de pago",module,Magento_Support
-"Shipping Methods","Distribuidores",module,Magento_Support
+"Shipping Methods","Métodos de envío",module,Magento_Support
 "Job Code","Código de trabajo",module,Magento_Support
 "Cron Expression","Expresión cron",module,Magento_Support
 "Run Class","Ejecutar la clase",module,Magento_Support
@@ -13843,7 +13843,7 @@ Respaldamos nuestras aprobaciones con una protección de devolución de cargo de
 "Options","Opciones",module,Magento_Ui
 "Assign","Asignar",module,Magento_Ui
 "Save View As...","Save View As...",module,Magento_Ui
-"Submit","Submit",module,Magento_Ui
+"Submit","Enviar",module,Magento_Ui
 "Edit","Edit",module,Magento_Ui
 "Columns","Columns",module,Magento_Ui
 "Reset","Reset",module,Magento_Ui
@@ -14314,17 +14314,17 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "email","correo electrónico",module,Magento_User
 "password","contraseña",module,Magento_User
 "username","usuario",module,Magento_User
-"The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.","The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.",module,Magento_User
-"More permissions are needed to access this.","More permissions are needed to access this.",module,Magento_User
+"The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.","El inicio de sesión de la cuenta fue incorrecto o su cuenta está deshabilitada temporalmente. Por favor, espere y vuelva a intentarlo más tarde.",module,Magento_User
+"More permissions are needed to access this.","Se necesitan más permisos para acceder",module,Magento_User
 "The password reset token is incorrect. Verify the token and try again.","The password reset token is incorrect. Verify the token and try again.",module,Magento_User
-"Your account is temporarily disabled. Please try again later.","Your account is temporarily disabled. Please try again later.",module,Magento_User
-"""User Name"" is required. Enter and try again.","""User Name"" is required. Enter and try again.",module,Magento_User
-"""First Name"" is required. Enter and try again.","""First Name"" is required. Enter and try again.",module,Magento_User
-"""Last Name"" is required. Enter and try again.","""Last Name"" is required. Enter and try again.",module,Magento_User
+"Your account is temporarily disabled. Please try again later.","Su cuenta se encuentra deshabilitada temporalmente. Por favor, vuelva a intentarlo más tarde.",module,Magento_User
+"""User Name"" is required. Enter and try again.","Se requiere un Nombre de usuario. Ingréselo e intente nuevamente.",module,Magento_User
+"""First Name"" is required. Enter and try again.","Se requiere un Nombre. Ingréselo e intente nuevamente.",module,Magento_User
+"""Last Name"" is required. Enter and try again.","Se requiere un Apellido. Ingréselo e intente nuevamente.",module,Magento_User
 "Please enter a valid email.","Por favor ingrese un email válido.",module,Magento_User
 "Password is required field.","Se requiere contraseña.",module,Magento_User
 "Your password must be at least %1 characters.","Tu contraseña debe tener al menos caracteres %1.",module,Magento_User
-"Your password must include both numeric and alphabetic characters.","Passwort muss sowohl numerische als auch alphabetische Zeichen enthalten.",module,Magento_User
+"Your password must include both numeric and alphabetic characters.","La contraseña debe contener caracteres numéricos y alfanuméricos.",module,Magento_User
 "Your password confirmation must match your password.","La confirmación de su contraseña debe coincidir con la contraseña.",module,Magento_User
 "It's time to change your password.","Es hora de cambiar la contraseña.",module,Magento_User
 "It's time to <a href=""%1"">change your password</a>.","Es hora de <a href=\"%1\"> cambiar la contraseña</a>.",module,Magento_User
@@ -14539,7 +14539,7 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "Edit Variable","Edit Variable",module,Magento_Variable
 "Insert Variable","Insert Variable",module,Magento_Variable
 "The variable %1 is no longer available. Select a different variable.","The variable %1 is no longer available. Select a different variable.",module,Magento_Variable
-"Cancel","Cancel",module,Magento_Variable
+"Cancel","Cancelar",module,Magento_Variable
 "Save","Save",module,Magento_Variable
 "Variable ID","Variable ID",module,Magento_Variable
 "Name","Nombre",module,Magento_Variable
@@ -14859,7 +14859,7 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "Include FPT In Subtotal","Includir impuestos en el subtotal",module,Magento_Weee
 "Widget Insertion","Inserción del widget",module,Magento_Widget
 "Insert Widget","Insertar widget",module,Magento_Widget
-"Cancel","Cancel",module,Magento_Widget
+"Cancel","Cancelar",module,Magento_Widget
 "label","etiqueta",module,Magento_Widget
 "Choose...","Seleccionar...",module,Magento_Widget
 "Close","Cerrar",module,Magento_Widget
@@ -15315,9 +15315,9 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "custom.definition","custom.definition",lib,web
 "component.behaviours","component.behaviours",lib,web
 "Create New Customer Account","Crear una nueva Cuenta"
-"Show Password","Mostrar Contraseña"
+"Show Password","Mostrar contraseña"
 "Allow remote shopping assistance","Permitir asistencia de compra remota"
-'This allows merchants to "see what you see" and take actions on your behalf in order to provide better assistance.',"Esto permite a los comerciantes 'ver lo que usted ve' y tomar medidas en su nombre para brindarle una mejor asistencia."
+'This allows merchants to "see what you see" and take actions on your behalf in order to provide better assistance.',"Esto permite a los comerciantes ""ver lo que usted ve"" y tomar medidas en su nombre para brindarle una mejor asistencia."
 "Customer Login","Inicio de sesión"
 "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.","El inicio de sesión de la cuenta fue incorrecto o su cuenta está deshabilitada temporalmente. Espere y vuelva a intentarlo más tarde."
 "My Account", "Mi Cuenta"
@@ -15375,384 +15375,12 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "You do not have permissions to view this page. If you believe this is a mistake, please contact your company administrator.","No tienes los permisos para ver esta página. Si crees que se trata de un error, por favor ponte en contacto con el administrador de tu compañía."
 "Please select user or team","Por favor seleccione usuario o equipo"
 "Please select a user or team first.","Por favor seleccione un usuario o equipo primero"
-"The requested qty is not available","The requested qty is not available"
-"Save and Continue Edit","Guardar y continuar Editar"
-"Edit","Editar"
-"Manage Labels","Administrar etiquetas"
-"Label","Etiqueta"
-"Properties","Propiedades"
-"Attribute Properties","Propiedades de atributo"
-"Attribute Code","Código de atributo"
-"The code is used internally. Make sure you don't use spaces or more than %1 symbols.","El código se usa internamente. Asegúrese de no usar espacios o más de %1 símbolos."
-"Default Label","Etiqueta predeterminada"
-"Default label","Etiqueta predeterminada"
-"Catalog Input Type for Store Owner","Tipo de entrada de catálogo para el propietario de la tienda"
-"Manage Options (Values of Your Attribute)","Administrar opciones (valores de su atributo)"
-"Options","Opciones"
-"Text Field","Campo de texto"
-"Yes/No","Sí No"
-"Multiple Select","Selección múltiple"
-"Dropdown","Desplegable"
-"Attribute Information","Información de atributo"
-"Location Management","Gestión de ubicación"
-"Add Location","Añade una ubicación"
-"Are you sure you want to do this?","¿Seguro que quieres hacer esto?"
-"Delete","Borrar"
-"Disabled","Desactivado"
-"Enabled","Activado"
-"Reset","Reiniciar"
-"Save","Ahorrar"
-"Available Products","Productos disponibles"
-"Apply the rule only if the following conditions are met (leave blank for all products).","Aplique la regla solo si se cumplen las siguientes condiciones (deje en blanco para todos los productos)."
-"Conditions","Condiciones"
-"Location Attributes","Atributos de ubicación"
-"Please Select","Seleccione"
-"All Store Views","Todas las vistas de la tienda"
-"Edit Review","Editar revisión"
-"Reviews","Reseñas"
-"Review Details","Revisar detalles"
-""<a href=""%1"" onclick=""this.target='blank'"">%2 %3</a>"",""<a href=""%1"" onclick=""this.target='blank'"">%2 %3</a>""
-"Author","Autor"
-"Rating","Clasificación"
-"Status","Estado"
-"Review","Revisar"
-"mi","mi"
-"km","kilómetros"
-"Attribute has been deleted.","El atributo ha sido eliminado."
-"This item no longer exists.","Este artículo ya no existe."
-"Edit Attribute","Editar atributo"
-"New Attribute","Nuevo atributo"
-"A total of %1 record(s) have been deleted.","Se ha eliminado un total de %1 registros."
-"Attribute with the same attribute code exists.","Existe un atributo con el mismo código de atributo."
-"The wrong data is specified.","Se especifican datos incorrectos."
-"Record has been successfully saved","El registro se ha guardado con éxito"
-"Something went wrong while saving data. Please review the error log.","Algo salió mal al guardar los datos. Revise el registro de errores."
-"Store Locator","Localizador de tiendas"
-"You deleted the item.","Borraste el elemento."
-"We can't delete item right now. Please review the log and try again.","No podemos eliminar el elemento en este momento. Revise el registro y vuelva a intentarlo."
-"We can't find a item to delete.","No podemos encontrar un elemento para eliminar."
-"Please select a location to duplicate.","Seleccione una ubicación para duplicar."
-"The location has been duplicated. Please feel free to activate it.",""La ubicación ha sido duplicada. Por favor, siéntase libre de activarlo.""
-"Something went wrong while saving the item data. Please review the error log.","Algo salió mal al guardar los datos del artículo. Revise el registro de errores."
-"Edit Location","Editar ubicación"
-"New Location","Nueva ubicacion"
-"Locations","Ubicaciones"
-"Please correct the data sent.","Corrija los datos enviados."
-"Something went wrong while saving the location.","Algo salió mal al guardar la ubicación."
-"You deleted the location(s).","Borraste la(s) ubicación(es)."
-"You changed the location(s).","Cambió la(s) ubicación(es)."
-"We can't delete location(s) right now. Please review the log and try again.","No podemos eliminar ubicaciones en este momento. Revise el registro y vuelva a intentarlo."
-"We can't find a location(s) to delete.","No podemos encontrar una(s) ubicación(es) para eliminar."
-"The wrong item is specified.","Se especifica el elemento incorrecto."
-"You saved the item.","Guardaste el artículo."
-"You deleted the review.","Borraste la reseña."
-"We can't delete review right now. Please review the log and try again.","No podemos eliminar la reseña en este momento. Revise el registro y vuelva a intentarlo."
-"Location Reviews","Reseñas de ubicación"
-"Edit Location Review","Editar revisión de ubicación"
-"Locations Reviews","Reseñas de ubicaciones"
-"Changes Saved","Cambios guardados"
-"%1 review(s) was deleted","Se eliminaron %1 reseñas"
-"%1 review(s) was failed to delete","No se pudieron eliminar %1 reseñas"
-"Status was changed for %1 review(s)","Se cambió el estado de %1 revisión(es)"
-"Failed to change status for %1 review(s)","No se pudo cambiar el estado de %1 revisión(es)"
-"An error has occured","Ha ocurrido un error"
-"Review has been saved.","La reseña se ha guardado."
-"You deleted the schedule.","Borraste el horario."
-"We can't delete schedule right now. Please review the log and try again.","No podemos eliminar la programación en este momento. Revise el registro y vuelva a intentarlo."
-"We can't find a schedule to delete.","No podemos encontrar un horario para eliminar."
-"Edit Location Schedule","Editar horario de ubicación"
-"New Location Schedule","Nuevo horario de ubicación"
-"Location Schedules","Horarios de ubicación"
-"You saved the schedule.","Guardaste el horario."
-"Review has been placed","Se ha colocado la reseña"
-"Monday","Lunes"
-"Tuesday","martes"
-"Wednesday","miércoles"
-"Thursday","jueves"
-"Friday","Viernes"
-"Saturday","sábado"
-"Sunday","Domingo"
-"No Conditions","Sin condiciones"
-"Product Attribute","Atributo del producto"
-"Kilometers","Kilómetros"
-"Miles","Millas"
-"Allow User To Choose","Permitir que el usuario elija"
-"Slider","Deslizador"
-"Pending","Pendiente"
-"Approved","Aprobado"
-"Declined","Rechazado"
-"24h","24h"
-"12h","12h"
-"Read More","Lee mas"
-"Closed","Cerrado"
-"Break Time","Descanso"
-"Available In Stores","Disponible en tiendas"
-"File directory '%1' is not readable.","El directorio de archivos '%1' no se puede leer."
-"File directory '%1' is not writable.","No se puede escribir en el directorio de archivos '%1'."
-"An error has happened while detecting geo-position data by Google. The error is: status","Ha ocurrido un error al detectar datos de posición geográfica por parte de Google. El error es: estado"
-"Unable to save review with ID %1. Error: %2","No se puede guardar la reseña con el ID %1. Error: %2"
-"Unable to save new review. Error: %1","No se puede guardar la nueva reseña. Error: %1"
-""Review with specified ID ""%1"" not found."",""No se encontró la revisión con el ID especificado ""%1"".""
-"Unable to remove review with ID %1. Error: %2","No se puede eliminar la revisión con ID %1. Error: %2"
-"Unable to remove review. Error: %1","No se puede eliminar la reseña. Error: %1"
-"No","No"
-"Yes","Sí"
-"There is no sample file for this entity.","No hay un archivo de muestra para esta entidad."
-"Open","Abierto"
-"Open Time","tiempo abierto"
-"Start of Break","Inicio de descanso"
-"End of Break","fin de descanso"
-"Close Time","Hora de cierre"
-"Add Option","Añadir opción"
-"Sort Option","Opción de clasificación"
-" can be found at the following stores:&nbsp;"," se puede encontrar en las siguientes tiendas:&nbsp;"
 "Current location","Ubicación actual"
-"Search Radius","Radio de búsqueda"
-"Locate Nearby","Ubicar cerca"
-"Filter","Filtrar"
-"Distance:","Distancia:"
-"Additional Information","Información Adicional"
-"Directions","Direcciones"
-"Zip: ","Cremallera:"
-"Country: ","País:"
-"State: ","Estado:"
-"City: ","Ciudad:"
-"Address: ","Dirección:"
-"Photos","Fotos"
-" reviews"," reseñas"
-"Write a review","Escribe una reseña"
-"See full review","Ver reseña completa"
-"You're reviewing:","Estás revisando:"
-"* Required Fields","* Campos requeridos"
-"Your Rating","Tu clasificación"
-"%1 %2","%1 %2"
-"Submit Review","Enviar opinión"
-"Work Time Today:","Tiempo de trabajo hoy:"
-"Make base","hacer base"
-"Delete image","Eliminar Imagen"
-"Collapse","Colapsar"
-""Sorry, Google failed to get directions and answered with status: "",""Lo sentimos, Google no pudo obtener indicaciones y respondió con el estado:""
-""Sorry, there is no available view of the street yet."",""Lo sentimos, todavía no hay una vista disponible de la calle.""
-""Sorry we're unable to display the nearby stores because the ""Use browser location"" option is disabled in the module settings. Please, contact the administrator."",""Lo sentimos, no podemos mostrar las tiendas cercanas porque la opción ""Usar ubicación del navegador"" está deshabilitada en la configuración del módulo. Por favor, póngase en contacto con el administrador.""
-"You need to choose address from the dropdown with suggestions.","Debe elegir la dirección del menú desplegable con sugerencias."
-"Select Some Options","Seleccionar algunas opciones"
-""Sorry, no locations were found."",""Lo sentimos, no se encontraron ubicaciones.""
-"Please select one of each of the ratings above.","Seleccione una de cada una de las calificaciones anteriores."
-"General","General"
-"Google API Key","Clave API de Google"
-"Enable Location Pages","Habilitar páginas de ubicación"
-"Enable Customers Reviews for Locations","Habilitar reseñas de clientes para ubicaciones"
-"Show Store Locator's Link on Product Pages","Mostrar el enlace del localizador de tiendas en las páginas de productos"
-"'Available in Stores' Link Text",""Texto del vínculo ""Disponible en tiendas""""
-"Open 'Available in Stores' Page in a New Tab","Abra la página 'Disponible en tiendas' en una pestaña nueva"
-"Title","Título"
-"Add Store Locator Link to the Toolbar","Agregar enlace del localizador de tiendas a la barra de herramientas"
-"Add Store Locator Link to the Footer","Agregar enlace del localizador de tiendas al pie de página"
-"Map and Customer's Geolocation","Mapa y Geolocalización del Cliente"
-"Use Browser Location","Usar la ubicación del navegador"
-"Use Geo IP","Usar IP geográfica"
-"Show Nearest Location by Default","Mostrar la ubicación más cercana por defecto"
-"Map Zoom","Zoom del mapa"
-"Enable Clustering","Habilitar agrupación"
-"Autosuggestions Click Search","Sugerencias automáticas Haga clic en Buscar"
-""Search locations by clicking on the suggestions item.
-                        If set to NO search occurs after pressing an ""Enter"" button."",""Busque ubicaciones haciendo clic en el elemento de sugerencias. Si se establece en NO, la búsqueda ocurre después de presionar el botón ""Enter"".""
-"Store Locator Page","Página del localizador de tiendas"
-"Main Settings","Ajustes principales"
-"URL Key","Clave URL"
-"Meta Title","Metatítulo"
-"Meta Description","Metadescripción"
-"Number of Locations on a Page","Número de ubicaciones en una página"
-"Description Length Limit","Descripción Límite de longitud"
-"Address Autosuggestion Restrictions","Restricciones de la autosugestión de direcciones"
-""Please use the field if you need to show only specific countries in the list of offered addresses for the 'Current Location' field on the Store locator's page.
-                            Please mind that Google Service allows to choose no more than 5 countries (you can find more information <a href=""https://developers.google.com/maps/documentation/javascript/places-autocomplete#add_autocomplete"" target=""_blank"">here</a>).
-                            Or leave the field blank to show all possible countries in the list of offered addresses."",""Utilice el campo si necesita mostrar solo países específicos en la lista de direcciones ofrecidas para el campo ""Ubicación actual"" en la página del localizador de tiendas. Tenga en cuenta que e el campo en blanco para mostrar todos los países posibles en la lista de direcciones ofrecidas. Google Service permite elegir no más de 5 países (puede encontrar más información <a href=""https://developers.google.com/maps/documentation/javascript/places-autocomplete#add_autocomplete"" target=""_blank "">aquí</a>). o dejar""
-"General Visual Settings","Configuración visual general"
-"Distance Units","Unidades de distancia"
-"Radius Type","Tipo de radio"
-"Minimum Value for Radius Range","Valor mínimo para rango de radio"
-"Maximum Value for Radius Range","Valor máximo para rango de radio"
-""If you would like to use other search radius, you may list them above, separated with comma"",""Si desea utilizar otro radio de búsqueda, puede enumerarlos arriba, separados por comas""
-"Google Mark Template","Plantilla de marca de Google"
-"Store List Template","Plantilla de lista de tiendas"
-"Sidebar Store List Visual Configuration","Configuración visual de la lista de tiendas de la barra lateral"
-"Day Off Text","Texto de día libre"
-"Break Time Text","Texto de tiempo de descanso"
-"Time Format","Formato de tiempo"
-"Show Distance to the Location","Mostrar distancia a la ubicación"
-"Collapse Locations Filter by Default","Ocultar filtro de ubicaciones por defecto"
-"Amasty Store Locator","Localizador de tiendas Amasty"
-"Show Store List On Widget","Mostrar lista de tiendas en el widget"
-"Show NearBy And Radius Filter","Mostrar filtro cercano y de radio"
-"Automatic positioning to the nearest location","Posicionamiento automático a la ubicación más cercana"
-"Widget Description","Descripción del widget"
-"Enable Widget Block Wrapping","Habilitar ajuste de bloques de widgets"
-"Set 'No' to disable the map block wrapping with the page content","Establezca 'No' para deshabilitar el ajuste del bloque de mapa con el contenido de la página"
-"Add New Attribute","Agregar nuevo atributo"
-"Delete selected items?","¿Eliminar elementos seleccionados?"
-"ID","IDENTIFICACIÓN"
-"Input Type","Tipo de entrada"
-"Store Locator Location","Ubicación del localizador de tiendas"
-"Back","atrás"
-"General Information","Información general"
-"Location Name","Nombre del lugar"
-"Store View","Vista de la tienda"
-"Position","Posición"
-"Short Description","Breve descripción"
-""
-                        If set, a pop-up and a store list on the store locator's page will show the short description.
-                    "",""                         Si se establece, una ventana emergente y una lista de tiendas en la página del localizador de tiendas mostrarán la breve descripción.""
-"Description","Descripción"
-"Address","Dirección"
-"Country","País"
-"State/Province","Provincia del estado"
-"City","Ciudad"
-"Zip","Código Postal"
-"Phone Number","Número de teléfono"
-"E-mail Address","Dirección de correo electrónico"
-"Website URL","URL del sitio web"
-"Please set the URL to the external websites in the format: http://www.example.com","Establezca la URL de los sitios web externos en el formato: http://www.example.com"
-"Location On Map","Ubicación en el mapa"
-"Latitude","Latitud"
-"Valid latitudes values are from -85 to 85 degrees.","Los valores de latitud válidos son de -85 a 85 grados."
-"Longitude","Longitud"
-"Valid longitudes values are from -180 to 180 degrees.","Los valores de longitud válidos son de -180 a 180 grados."
-"Marker Image","Imagen de marcador"
-""
-                        Image will be resized to 27x43 px. Allowed file types : jpg jpeg gif png. Gif can have only one frame
-                    "",""                         La imagen se redimensionará a 27x43 px. Tipos de archivos permitidos: jpg, jpeg, gif, png. Gif solo puede tener un marco""
-"Preview","Avance"
-"Image Gallery","galería de imágenes"
-"Images of Location","Imágenes de Ubicación"
-""
-                        Allowed file types : jpg jpeg gif png. Gif can have only one frame
-                    "",""                         Tipos de archivos permitidos: jpg, jpeg, gif, png. Gif solo puede tener un marco""
-"Product Conditions","Condiciones del producto"
-"Choose Condition Type","Elija el tipo de condición"
-"Meta Information","Meta informacion"
-"Meta Robots","Metarobots"
-"Canonical","Canónico"
-"Store Schedule","Horario de la tienda"
-"Show Schedule","Mostrar horario"
-"-- Please Select --","-- Seleccione --"
-"Add New","Agregar nuevo"
-"Enable","Habilitar"
-"Disable","Deshabilitar"
-"Delete items","Eliminar objetos"
-"Are you sure you want to delete selected items?","¿Está seguro de que desea eliminar los elementos seleccionados?"
-"Store Views","Vistas de la tienda"
-"Name","Nombre"
-"Approve","Aprobar"
-"Decline","Rechazar"
-"Id","Identificación"
-"Location Id","Identificación de la ubicación"
-"Customer Name","Nombre del cliente"
-"Customer Email","Correo electrónico del cliente"
-"Date Placed","Fecha de colocación"
-"Date Published","Fecha de publicación"
-"Store Locator Schedule","Horario del localizador de tiendas"
-"Schedule Name","Nombre del programa"
-"Add New Schedule","Agregar nuevo horario"
-"Schedule","Calendario"
-"Please select a store.","Seleccione una tienda."
-"Please select time interval.","Seleccione el intervalo de tiempo."
-"Store Pickup With Locator Data","Recogida en tienda con datos del localizador"
-"Select Store To Collect Your Order","Seleccione la tienda para recoger su pedido"
-"Pickup Date","Fecha de recogida"
-"Pickup Time","Hora de recogida"
-"by","por"
-""Confused with configuration? No worries, please consult the <a target=""_blank"" href=""%1"">user guide</a> to properly configure the extension."",""¿Confundido con la configuración? No se preocupe, consulte la <a target=""_blank"" href=""%1"">guía del usuario</a> para configurar correctamente la extensión.""
-"Please update Amasty Base module. Re-upload it and replace all the files.","Actualice el módulo Amasty Base. Vuelva a cargarlo y reemplace todos los archivos."
-"Choose a Pickup Date","Elija una fecha de recogida"
-"Choose a Time Slot","Elige una franja horaria"
-"Shipping Address Area","Área de dirección de envío"
-"Shipping Methods Area","Área de Métodos de Envío"
-"Store Pickup Date/Time is not valid.","La fecha/hora de recogida en tienda no es válida."
-"Unable to save model %1","No se puede guardar el modelo %1"
-""Entity with specified ID ""%1"" not found."",""No se encontró la entidad con el ID especificado ""%1"".""
-"Unable to remove entity with ID%","No se puede eliminar la entidad con ID%"
-"Comment length limit is exceeded. Please keep it less than %1 symbols.","Se excedió el límite de longitud del comentario. Manténgalo en menos de %1 símbolos."
-"Please fill in the comment field.",""Por favor, rellene el campo de comentarios.""
-". ':'",". ':'"
-". ' - ' .",". '-'."
-""If you select Store Pickup With Locator shipping method, 
-                        please insert data to additional fields for save."",""Si selecciona el método de envío Recogida en tienda con localizador, inserte datos en campos adicionales para guardar.""
-""Store ID is not specified. Please, choose a store for pickup."",""No se especifica el ID de la tienda. Por favor, elija una tienda para la recogida.""
-""Pickup data is empty. Please, specify pickup info."",""Los datos de recogida están vacíos. Por favor, especifique la información de recogida.""
-"Pickup Details","Detalles de recogida"
-"Store Pickup With Locator","Recogida en tienda con localizador"
-"Please Select","Seleccione"
-"Pick up here","recoger aquí"
-" can be found at the following stores:&nbsp;"," se puede encontrar en las siguientes tiendas:&nbsp;"
-"Current location","Ubicación actual"
-"Search Radius","Radio de búsqueda"
-"km","kilómetros"
-"mi","mi"
-"Locate Nearby","Ubicar cerca"
-"Filter","Filtrar"
-"Reset","Reiniciar"
-"We regret to inform you that products you'd like to buy can't be received at single pickup location. Please consider ","Lamentamos informarle que los productos que desea comprar no se pueden recibir en un único lugar de recogida. Por favor considera"
-"splitting your Order","dividir su pedido"
-"", using alternative shipping method (if available) or "","", utilizando un método de envío alternativo (si está disponible) o""
-"contacting store owner","contactar al dueño de la tienda"
-" for negotiating other options"," para negociar otras opciones"
-"Choose on map","elegir en el mapa"
-"Pickup Point Details","Detalles del punto de recogida"
-"Choose a Store","Elige una tienda"
-"Editing is not applicable for the selected shipping method","La edición no es aplicable para el método de envío seleccionado"
-"Please, choose a store where you would like to pick up your order","Por favor, elige un distribudor para hacer tu pedido"
-"Please fill in the comment field","Por favor complete el campo de comentarios"
-"Comment length limit is exceeded. Please keep it less than {length} symbols","Se excedió el límite de longitud del comentario. Manténgalo en menos de {longitud} símbolos"
-"Choose a store...","Elige una tienda..."
-"Information","Información"
-"General","General"
-"Extension Enabled","Extensión habilitada"
-"Check Product Availability in Stores on Checkout and Cart","Verifique la disponibilidad del producto en las tiendas al finalizar la compra y en el carrito"
-"Store Details Description Template","Tienda Detalles Descripción Plantilla"
-"Where to Display Store Details","Dónde mostrar los detalles de la tienda"
-"Date Settings","Ajustes de fecha"
-"Allow Customers to Choose Pickup Date","Permitir que los clientes elijan la fecha de recogida"
-"Allow Same Day Pickup","Permitir recogida el mismo día"
-"Time Settings","Ajustes de hora"
-"Allow Customers to Choose Pickup Time","Permitir que los clientes elijan la hora de recogida"
-"Same Day Pickup Cut-off Time","Hora límite de recogida el mismo día"
-"Min. Time Required to Handle Order (Hours)","mín. Tiempo necesario para gestionar el pedido (horas)"
-"Works based on calendar days.","Trabajos en base a días naturales."
-"Min. Time Required to Handle Backorder (Hours)","mín. Tiempo requerido para manejar pedidos pendientes (horas)"
-"Works based on calendar days.<br/><strong>Note:</strong> the current setting is non-applicable for Magento 2.3.* versions due to MSI peculiarities.","Funciona en días naturales.<br/><strong>Nota:</strong> la configuración actual no se aplica a las versiones de Magento 2.3.* debido a las peculiaridades de MSI."
-""Pickup Options (Curbside Pickup, Non-contact Delivery, Pandemic Conditions, etc)"",""Opciones de recogida (recogida en la acera, entrega sin contacto, condiciones de pandemia, etc.)""
-"Pickup Option Checkbox Enabled","Casilla de verificación de opción de recogida habilitada"
-"Pickup Option Label","Etiqueta de opción de recogida"
-"Display Pickup Option Conditions on the Storefront","Mostrar las condiciones de la opción de recogida en el escaparate"
-""Adds a static text to checkout if the location has Pickup Option enabled. It may be used to tell customers about pickup procedure. If Pickup Option Checkbox Enabled = No and Display Pickup Option Conditions on the Storefront = Yes, than Pickup Option Conditions field is displayed on storefront while Store Pickup method is chosen."",""Agrega un texto estático para pagar si la ubicación tiene habilitada la opción de recogida. Puede usarse para informar a los clientes sobre el procedimiento de recogida. Si la casilla de verificación de la opción de recolección está habilitada = No y Mostrar las condiciones de la opción de recolección en el escaparate = Sí, el campo Condiciones de la opción de recolección se muestra en el escaparate mientras se elige el método de recolección en la tienda.""
-"Pickup Option Conditions Label","Etiqueta de condiciones de la opción de recogida"
-"Is used as a label for Pickup Option Conditions on the Storefront","Se usa como una etiqueta para las condiciones de la opción de recogida en el escaparate"
-"Allow Customers Leave Comments","Permitir que los clientes dejen comentarios"
-""Adds a text area to checkout if the location has Pickup Option enabled. It may be used to gather information from customers that will help you to identify them. If Pickup Option Checkbox Enabled = No and Allow Customers Leave Comments = Yes, than Comments field is displayed on storefront while Store Pickup method is chosen."",""Agrega un área de texto para pagar si la ubicación tiene habilitada la opción de recogida. Se puede utilizar para recopilar información de los clientes que le ayudará a identificarlos. Si la casilla de verificación Opción de recogida está habilitada = No y Permitir que los clientes dejen comentarios = Sí, el campo Comentarios se muestra en el escaparate mientras se elige el método de Recogida en tienda.""
-"Placeholder for Customer Comments Field","Marcador de posición para el campo de comentarios del cliente"
-"Customer Comments Field Value Is Required","Comentarios del cliente El valor del campo es obligatorio"
-"Labels Enabled","Etiquetas habilitadas"
-""Adds labels to ""Pickup is available"" section on product pages and to location description at store locator. You may need to manually add {{curbside_available_label}} to List Template and Google Mark Template. Please, see User Guide.<br>
-                        To use the functionality of this setting to the max, please upgrade the module-store-pickup-with-locator-msi to version 1.0.3 or above."",""Agrega etiquetas a la sección ""Recogida disponible"" en las páginas de productos y a la descripción de la ubicación en el localizador de tiendas. Es posible que deba agregar manualmente {{curbside_disponible_label}} a la plantilla de lista y la plantilla de marca de Google. Consulte la Guía del usuario.<br> Para usar la funcionalidad de esta configuración al máximo, actualice el módulo-recogida-en-la-tienda-con-localizador-msi a la versión 1.0.3 o superior.""
-"Label Text","Texto de la etiqueta"
-"Pickup Option Banner","Banner de opción de recogida"
-""Places banner on product page. To enable/disable appropriate CMS block on Product Pages or edit its content please go to Content -> Blocks -> ""Selected Block Name"""",""Coloca el banner en la página del producto. Para habilitar/deshabilitar el bloque de CMS apropiado en las páginas de productos o editar su contenido, vaya a Contenido -> Bloques -> ""Nombre de bloque seleccionado""""
-"In-Store Pickup","Recogida en tienda"
-"Enabled","Activado"
-"Title","Título"
-"Method Name","Nombre del método"
-"Price","Precio"
-"Calculate Handling Fee","Calcular tarifa de manejo"
-"Default Handling Fee","Tarifa de manejo predeterminada"
-"Show Method if Not Applicable","Mostrar método si no corresponde"
-"Displayed Error Message","Mensaje de error mostrado"
-"Sort Order","Orden de clasificación"
-"Pickup Option","Opción de recogida"
-"Applicable for this Location","Aplicable para esta ubicación"
-"Enables Pickup Option for this location.","Habilita la opción de recogida para esta ubicación."
-"Pickup Option Conditions Text","Texto de las condiciones de la opción de recogida"
-"Select a store to collect your order:","Selecciona un distribuidor para hacer tu pedido:"
-"Pickup Date:","Fecha de recogida:"
-"Pickup Time:","Hora de recogida:"
-"Everywhere","En todas partes"
+"Search radius","Radio de búsqueda"
+"Locate Nearby","Buscar en alrededores"
+"Submit","Enviar"
+"Approve Purchase Order","Aprobar Orden de Compra"
+"Reject Purchase Order","Rechazar Orden de Compra"
+"Cancel Purchase Order","Cancelar Orden de Compra"
+"Validate Purchase Order","Validar Orden de Compra"
+"Available Shipping Methods","Metodos de envío disponibles"

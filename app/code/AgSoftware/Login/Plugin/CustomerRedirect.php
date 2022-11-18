@@ -7,34 +7,24 @@ declare(strict_types=1);
 
 namespace AgSoftware\Login\Plugin;
 
-class CustomerRedirect extends \Magento\Customer\Controller\Account\LoginPost
+use Magento\Framework\App\Request\DataPersistorInterface;
+
+class CustomerRedirect
 {
-    public function execute()
+    public function __construct(
+        \Magento\Customer\Model\Session $session,
+        DataPersistorInterface $dataPersistor
+    ){
+        $this->session = $session;
+        $this->dataPersistor = $dataPersistor;
+    }
+    public function beforeExecute($subject)
     {
-        if ($this->session->isLoggedIn() || !$this->formKeyValidator->validate($this->getRequest())) {
-            $resultRedirect = $this->resultRedirectFactory->create();
-            $resultRedirect->setPath('*/*/');
-            return $resultRedirect;
-        }
-        if ($this->getRequest()->isPost()) {
-            $login = $this->getRequest()->getPost('login');
-            if (!empty($login['username']) && !empty($login['password'])) {
-                try {
-                    $customer = $this->customerAccountManagement->authenticate($login['username'], $login['password']);
-                    $this->session->setCustomerDataAsLoggedIn($customer);
-                    $redirectUrl = "/home-commerce-logged";//$this->scopeConfig->getValue('customer/startup/redirect_dashboard')
-
-                    if($redirectUrl) {
-                        /** @var \Magento\Framework\Controller\Result\Redirect $resultRedirect */
-                        $resultRedirect = $this->resultRedirectFactory->create();
-                        $resultRedirect->setUrl($redirectUrl);
-                        return $resultRedirect;
-                    }
-                } catch (\Exception $e) {}
-            } else {
-            }
-        }
-
-        return parent::execute();
+        $customer = $this->session->getCustomer();
+        $this->dataPersistor->set('customer',[
+            'firstname' =>   $customer->getfirstname(),
+            'lastname'  =>    $customer->getLastname(),
+            'email'  =>    $customer->getEmail()
+            ]);
     }
 }
