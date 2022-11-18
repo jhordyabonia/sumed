@@ -64,17 +64,23 @@
         top: 15px;
         .pages {
             left: e('calc(45% - 25px)');
+            margin-bottom: 25px!important;
             position: relative;
             .action.next:before{
                 color: #0D717F!important;
             }
             > ul > li.item {
                 background: white;
-                border-radius: 8px;
+                border: 0;
                 &.pages-item-previous,
                 &.pages-item-next {
                     display: block;
                     border: 0;
+                }
+                span{
+                    color: black;
+                    font-weight: 600;
+                    font-size: 14px;
                 }
                 &.current {
                     background: #0D717F;
@@ -93,7 +99,7 @@
         padding: 0px 6px;
         margin: 0 8px 0 0!important;
         span{
-            color: #E6EFFB;
+            color: #0D717F;
         }
         &.pages-item-previous,
         &.pages-item-next {
