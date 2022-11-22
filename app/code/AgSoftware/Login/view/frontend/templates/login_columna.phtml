@@ -2,7 +2,7 @@
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $dataPersistor = $objectManager->get(Magento\Framework\App\Request\DataPersistor::class);
 $customer = $dataPersistor->get('customer');
-if ($customer['email']):?>
+if (isset($customer['email']) && $customer['email']):?>
 <script type="text/javascript">
     require(['jquery'],function($) {
         $('body').addClass('logged');
