@@ -38,7 +38,7 @@ if ($customer['email']):?>
             <span class="text">
                <?=__("Hola,");?>
             </span>
-            <span class="text-description" data-bind="text:getFullName()">
+                <span class="text-description"><?=$customer['firstname']." ".$customer['lastname']?></span>
             </span>
             </div>
 
