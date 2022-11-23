@@ -177,32 +177,13 @@ class Indexer extends Command
         $sku = $input->getOption('sku');
         $all = $input->getOption('all');
         $countSuccess = $countError = 0;
-        $skuSuccess = $skuError = [];
         if($all){
-            $collectionProduct = $this->_productFactory->create()->getCollection();
-            foreach ($collectionProduct->load() as $product){
-                $value = $product->getData('segment_1');
-                if(!is_int($value) && $value) {
-                    $product->setData('Segmento_1', $this->createOrGetId('Segmento_1', $value));
-                }
-                $value = $product->getData('segment_2');
-                if(!is_int($value) && $value) {
-                    $product->setData('Segmento_2', $this->createOrGetId('Segmento_2', $value));
-                }
-                $value = $product->getData('brand');
-                if(!is_int($value) && $value) {
-                    $product->setData('Proveedor', $this->createOrGetId('Proveedor', $value));
-                }
-                $value = $product->getData('ansiolitico');
-                if(!is_int($value) && $value) {
-                    $product->setData('Rubro', $this->createOrGetId('Rubro', $value));
-                }
-                $coberture = $product->getData('ioma')?'IOMA':($product->getData('pami')?'PAMI':false);
-                if($coberture) {
-                    $product->setData('Cobertura', $this->createOrGetId('Cobertura', $coberture));
-                }
+            $collectionProduct = $this->_productFactory->create()->getCollection()
+                                    ->addAttributeToSelect(["segment_1","segment_2","brand","ansiolitico","ioma","pami","name"]);
+
+            foreach ($collectionProduct->load() as $product){;
                 try {
-                    $this->_productRepository->save($product);
+                    $this->updateProduct($product);
                     $countSuccess++;
                 }catch (\Exception $e){
                     $countError++;
@@ -216,15 +197,36 @@ class Indexer extends Command
 
         }elseif($sku){
             $product = $this->_productRepository->get("$sku");
-            $value = $product->getData('segment_1') ;
-            if(!is_int($value) && $value){
-                $product->setData('Segmento_1',$this->createOrGetId('Segmento_1',$value),0);
-                if($this->_productRepository->save($product)){
-                    echo "$sku Update!\n";
-                }
+            if($this->updateProduct($product)){
+                echo "$sku Update!\n";
             }
         }else{
             throw new \Exception("SKU is required!");
         }
+    }
+
+    private function updateProduct($product){
+        $value = $product->getData('segment_1');
+        if(intval($value) <= 0 && $value) {
+            $product->setData('Segmento_1', $this->createOrGetId('Segmento_1', $value));
+        }
+        $value = $product->getData('segment_2');
+        if(intval($value) <= 0 && $value) {
+            $product->setData('Segmento_2', $this->createOrGetId('Segmento_2', $value));
+        }
+        $value = $product->getData('brand');
+        if(intval($value) <= 0 && $value) {
+            $product->setData('Proveedor', $this->createOrGetId('Proveedor', $value));
+        }
+        $value = $product->getData('ansiolitico');
+        if(intval($value) <= 0 && $value) {
+            $product->setData('Rubro', $this->createOrGetId('Rubro', $value));
+        }
+        $coberture = $product->getData('ioma')?'IOMA':($product->getData('pami')?'PAMI':false);
+        if($coberture) {
+            $product->setData('Cobertura', $this->createOrGetId('Cobertura', $coberture));
+        }
+
+       return $this->_productRepository->save($product);
     }
 }
