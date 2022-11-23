@@ -49,9 +49,28 @@ $_helper = $block->getData('outputHelper');
 
     $StockState = $objectManager->get('\Magento\CatalogInventory\Api\StockStateInterface');
 
-    echo  $block->getLayout()->getBlock('product_list_toolbar')
-                ->getPagerHtml();
     ?>
+    <div class="pages">
+        <strong  id="paging-label"><?=__('Productos por página:')?></strong>
+        <ul class="items pages-items" aria-labelledby="paging-label">
+            <li class="item current">
+                <strong class="page">
+                    <span>9</span>
+                </strong>
+            </li>
+            <li class="item">
+                <a href="<?=$block->getUrl()?>/?product_list_limit=27" class="page">
+                    <span class="label">Estás leyendo la página</span>
+                    <span>27</span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="<?=$block->getUrl()?>/?product_list_limit=27" class="page">
+                    <span>72</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     <div class="products wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
         <ol class="products list items product-items">
@@ -71,10 +90,13 @@ $_helper = $block->getData('outputHelper');
                     <?php // Product Image ?>
 
                     <?php if($customer['email']):?>
-                    <!-- Etiqueta de descuento -->
-                    <div class="discount-content">
-                        <p class="discount-text"><?=$_product->getData('price_incl_tax')*$_product->getData('public_price')/100?>%</p>
-                    </div>
+                    <?php $discount =$_product->getData('price_incl_tax')*$_product->getData('public_price')/100;
+                            if($discount>0):?>
+                                <!-- Etiqueta de descuento -->
+                                <div class="discount-content">
+                                    <p class="discount-text"><?=$didcount?>%</p>
+                                </div>
+                            <?php endif;?>
                     <?php endif;?>
 
                     <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
