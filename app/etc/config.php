@@ -499,6 +499,7 @@ return [
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Sumed_Attributes' => 1,
+        'Sumed_Catalog' => 1,
         'Temando_ShippingRemover' => 1,
         'WeSupply_Toolbox' => 1,
         'WeltPixel_Backend' => 1,

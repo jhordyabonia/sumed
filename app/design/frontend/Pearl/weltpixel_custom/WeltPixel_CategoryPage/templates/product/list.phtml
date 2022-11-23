@@ -73,7 +73,7 @@ $_helper = $block->getData('outputHelper');
                     <?php if($customer['email']):?>
                     <!-- Etiqueta de descuento -->
                     <div class="discount-content">
-                        <p class="discount-text"><?=__("-30%")?></p>
+                        <p class="discount-text"><?=$_product->getData('price_incl_tax')*$_product->getData('public_price')/100?>%</p>
                     </div>
                     <?php endif;?>
 
@@ -121,7 +121,7 @@ $_helper = $block->getData('outputHelper');
                                 <?php endif;?>
                                 <?php if($_product->getData('ioma')):?>
                                 <div class="container-details details-content">
-                                    <p class="details-text"><?=__("PAMI 6")?></p>
+                                    <p class="details-text"><?=__("PAMI")?></p>
                                     <p class="details-value"><?=$_product->getData('pami')?></p>
                                 </div>
                                 <?php endif;?>
@@ -131,19 +131,19 @@ $_helper = $block->getData('outputHelper');
                                 </div>
                                 <div class="container-details details-content">
                                     <p class="details-text"><?=__("expiration")?></p>
-                                    <p class="details-value"><?=__("N/A")?></p>
+                                    <p class="details-value"><?=$_product->getData('valid_to')?></p>
                                 </div>
                                 <div class="container-details details-content detail-gray">
                                     <p class="details-text"><?=__("VAT")?></p>
-                                    <p class="details-value"><?=__("No")?></p>
+                                    <p class="details-value"><?=$_product->getData('tax_code')?__("Si"):__("No")?></p>
                                 </div>
                                 <div class="container-details details-content">
                                     <p class="details-text"><?=__("Pharmacy cost with tax")?></p>
-                                    <p class="details-value"><?=__("$40.00")?></p>
+                                    <p class="details-value">$<?=number_format($_product->getData('price'),2,'.',',')?></p>
                                 </div>
                                 <div class="container-details details-content detail-sku">
                                     <p class="details-text"><?=__("SKU")?></p>
-                                    <p class="details-value"><?=__("IOSB00-776-3234MA")?></p>
+                                    <p class="details-value"><?=$_product->getSku()?></p>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +213,8 @@ $_helper = $block->getData('outputHelper');
                                 <div class="price-details discount-price-details">
                                     <div class="price-details-content">
                                         <p class="price-title public-price-title"><?=__("Public price")?></p>
-                                        <p class="public-price-content price-content">$<?=number_format($_product->getData('price'),2,'.',',')?></p>
+                                        <?php $price = $_product->getData('public_price')?$_product->getData('price_incl_tax'):$_product->getData('price');?>
+                                        <p class="public-price-content price-content">$<?=number_format($price,2,'.',',')?></p>
                                     </div>
                                     <?php if($_product->getData('dicount')):?>
                                     <div class="price-details-content">
@@ -224,7 +225,7 @@ $_helper = $block->getData('outputHelper');
                                     <div class="price-details-content">
                                         <p class="price-title-total price-title"><?=__("Price")?></p>
                                         <p class="price-content-total price-content">$<?php
-                                            $price= $_product->getData('public_price')?$_product->getData('public_price'):$_product->getData('price');
+                                            $price= $_product->getData('price');
                                             echo number_format($price,2,'.',',')?></p>
                                     </div>
                                 </div>
@@ -296,9 +297,11 @@ $_helper = $block->getData('outputHelper');
                                 <div class="actions-primary">
                                         <?php $postParams = $block->getAddToCartPostParams($_product); ?>
                                         <form data-role="tocart-form"
-                                              data-product-sku="<?= $escaper->escapeHtml($_product->getSku()) ?>"
-                                              action="<?= $escaper->escapeUrl($postParams['action']) ?>"
-                                              method="post">
+                                              <?php if (!$customer['email']):?>
+                                                  data-product-sku="<?= $escaper->escapeHtml($_product->getSku()) ?>"
+                                                  action="<?= $escaper->escapeUrl($postParams['action']) ?>"
+                                                  method="post"
+                                                <?php endif;?>>
                                             <?php $options = $block->getData('viewModel')->getOptionsData($_product); ?>
                                             <?php foreach ($options as $optionItem): ?>
                                                 <input type="hidden"

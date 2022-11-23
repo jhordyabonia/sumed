@@ -1,4 +1,4 @@
 <?php
-    $cmsBlock = $block->getLayout()->createBlock(\Magento\Cms\Block\Block::class,'offert-block-cms');
+    $cmsBlock = $block->getLayout()->createBlock(\Magento\Cms\Block\Block::class,$block->getData('_name'));
     echo $cmsBlock->setBlockId('catalogsearch-add-block-fabogesic')->toHtml();
 ?>

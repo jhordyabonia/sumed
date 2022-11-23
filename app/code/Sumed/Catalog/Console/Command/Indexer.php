@@ -23,6 +23,8 @@ class Indexer extends Command
      */
     protected $_productFactory;
 
+    protected $_cached;
+
     /**
      * @param ProductFactory $productFactory
      * @param string|null $name
@@ -47,6 +49,7 @@ class Indexer extends Command
         $this->attributeOptionManagement = $attributeOptionManagement;
         $this->optionLabelFactory = $optionLabelFactory;
         $this->optionFactory = $optionFactory;
+        $this->_cached = [];
         parent::__construct($name);
         $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_ADMINHTML); // or \Magento\Framework\App\Area::AREA_FRONTEND, depending on your needs
 
@@ -114,31 +117,28 @@ class Indexer extends Command
      */
     public function getOptionId($attributeCode, $label, $force = false)
     {
+        if (isset($this->attributeValues[$attributeCode][ $label ])) {
+            return $this->attributeValues[$attributeCode][ $label ];
+        }
         /** @var \Magento\Catalog\Model\ResourceModel\Eav\Attribute $attribute */
         $attribute = $this->getAttribute($attributeCode);
 
-        // Build option array if necessary
-        if ($force === true || !isset($this->attributeValues[ $attribute->getAttributeId() ])) {
-            $this->attributeValues[ $attribute->getAttributeId() ] = [];
-
-            // We have to generate a new sourceModel instance each time through to prevent it from
-            // referencing its _options cache. No other way to get it to pick up newly-added values.
+        if ($force === true || !isset($this->attributeValues[$attributeCode])) {
+            $this->attributeValues[$attributeCode] = [];
 
             /** @var \Magento\Eav\Model\Entity\Attribute\Source\Table $sourceModel */
             $sourceModel = $this->tableFactory->create();
             $sourceModel->setAttribute($attribute);
 
             foreach ($sourceModel->getAllOptions() as $option) {
-                $this->attributeValues[ $attribute->getAttributeId() ][ $option['label'] ] = $option['value'];
+                $this->attributeValues[$attributeCode][ $option['label'] ] = $option['value'];
             }
         }
 
-        // Return option ID if exists
-        if (isset($this->attributeValues[ $attribute->getAttributeId() ][ $label ])) {
-            return $this->attributeValues[ $attribute->getAttributeId() ][ $label ];
+        if (isset($this->attributeValues[$attributeCode][ $label ])) {
+            return $this->attributeValues[$attributeCode][ $label ];
         }
 
-        // Return false if does not exist
         return false;
     }
 
@@ -161,12 +161,6 @@ class Indexer extends Command
                 'a',
                 InputOption::VALUE_NONE,
                 __('All products')
-            ),
-            new InputOption(
-                'file',
-                'f',
-                InputOption::VALUE_NONE,
-                __('json-file sku-list: '.self::FILE_FIX)
             )
         ]);
         parent::configure();
@@ -182,16 +176,10 @@ class Indexer extends Command
     {
         $sku = $input->getOption('sku');
         $all = $input->getOption('all');
-        $file = $input->getOption('file');
         $countSuccess = $countError = 0;
         $skuSuccess = $skuError = [];
         if($all){
             $collectionProduct = $this->_productFactory->create()->getCollection();
-            if($file){
-                $skulist = json_decode(file_get_contents(self::FILE_FIX),true);
-                $skulist = $skulist['data'];
-                $collectionProduct->addFieldToFilter('sku',['in'=>$skulist]);
-            }
             foreach ($collectionProduct->load() as $product){
                 $value = $product->getData('segment_1');
                 if(!is_int($value) && $value) {
@@ -201,10 +189,17 @@ class Indexer extends Command
                 if(!is_int($value) && $value) {
                     $product->setData('Segmento_2', $this->createOrGetId('Segmento_2', $value));
                 }
-
-                $coberture = $product->getData('ioma')?'IOMA':($product->getData('pami')?'PAMI':'');
+                $value = $product->getData('brand');
+                if(!is_int($value) && $value) {
+                    $product->setData('Proveedor', $this->createOrGetId('Proveedor', $value));
+                }
+                $value = $product->getData('ansiolitico');
+                if(!is_int($value) && $value) {
+                    $product->setData('Rubro', $this->createOrGetId('Rubro', $value));
+                }
+                $coberture = $product->getData('ioma')?'IOMA':($product->getData('pami')?'PAMI':false);
                 if($coberture) {
-                    $product->setData('COBERTURA', $this->createOrGetId('COBERTURA', $coberture));
+                    $product->setData('Cobertura', $this->createOrGetId('Cobertura', $coberture));
                 }
                 try {
                     $this->_productRepository->save($product);
@@ -213,7 +208,6 @@ class Indexer extends Command
                 }catch (\Exception $e){
                     $countError++;
                     $skuError[] = $product->getSku();
-
                 }
             }
 
