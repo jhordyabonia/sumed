@@ -17,7 +17,7 @@
                 <height>300</height>
             </image>
             <image id="pagebuilder_page_list" type="small_image">
-                <width>240</width>
+                <width>200</width>
                 <height>300</height>
             </image>
         </images>
@@ -36,7 +36,7 @@
                 <var name="options">
                     <var name="products">
                         <var name="default">
-                            <var name="slidesToShow">2</var>
+                            <var name="slidesToShow">3</var>
                         </var>
                     </var>
                 </var>
