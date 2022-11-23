@@ -203,30 +203,21 @@ class Indexer extends Command
                 }
                 try {
                     $this->_productRepository->save($product);
-                    $skuSuccess[] = $product->getSku();
                     $countSuccess++;
                 }catch (\Exception $e){
                     $countError++;
-                    $skuError[] = $product->getSku();
                 }
             }
 
             $textSucces = "$countSuccess products updated!\n";
             $textError = "$countError products no updated!\n";
-            $nameLog =  self::FILE_FIX;
-            $content = ['message'=>$countError<$countSuccess?$textError:$textSucces];
-            $content['data'] = $countError<$countSuccess?$skuError:$skuSuccess;
-            file_put_contents($nameLog,json_encode($content));
-
             echo $textSucces;
             echo $textError;
-            echo "See report on $nameLog\n";
 
         }elseif($sku){
             $product = $this->_productRepository->get("$sku");
             $value = $product->getData('segment_1') ;
             if(!is_int($value) && $value){
-//                $product->addAttributeUpdate('Segmento_1',$this->createOrGetId('Segmento_1',$value),0);
                 $product->setData('Segmento_1',$this->createOrGetId('Segmento_1',$value),0);
                 if($this->_productRepository->save($product)){
                     echo "$sku Update!\n";
