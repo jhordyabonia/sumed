@@ -203,7 +203,9 @@ class Indexer extends Command
                 }
 
                 $coberture = $product->getData('ioma')?'IOMA':($product->getData('pami')?'PAMI':'');
-                $product->setData('COBERTURA', $this->createOrGetId('COBERTURA', $coberture));
+                if($coberture) {
+                    $product->setData('COBERTURA', $this->createOrGetId('COBERTURA', $coberture));
+                }
                 try {
                     $this->_productRepository->save($product);
                     $skuSuccess[] = $product->getSku();
