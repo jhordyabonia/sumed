@@ -89,11 +89,11 @@ $_helper = $block->getData('outputHelper');
                     <?php // Product Image ?>
 
                     <?php if($customer['email']):?>
-                    <?php $discount =$_product->getData('price_incl_tax')*$_product->getData('public_price')/100;
+                    <?php $discount = floatval($_product->getData('price_incl_tax'))*floatval($_product->getData('public_price'))/100;
                             if($discount>0):?>
                                 <!-- Etiqueta de descuento -->
                                 <div class="discount-content">
-                                    <p class="discount-text"><?=$didcount?>%</p>
+                                    <p class="discount-text"><?=intval($discount)?>%</p>
                                 </div>
                             <?php endif;?>
                     <?php endif;?>
@@ -234,19 +234,19 @@ $_helper = $block->getData('outputHelper');
                                 <div class="price-details discount-price-details">
                                     <div class="price-details-content">
                                         <p class="price-title public-price-title"><?=__("Public price")?></p>
-                                        <?php $price = $_product->getData('public_price')?$_product->getData('price_incl_tax'):$_product->getData('price');?>
+                                        <?php $price = $_product->getData('public_price')?$_product->getData('public_price'):$_product->getData('price');?>
                                         <p class="public-price-content price-content">$<?=number_format($price,2,'.',',')?></p>
                                     </div>
-                                    <?php if($_product->getData('dicount')):?>
+                                    <?php if($_product->getData('discount') || $discount):?>
                                     <div class="price-details-content">
                                         <p class="price-title discount-price-title"><?=__("Discount")?></p>
-                                        <p class="discount-price-content price-content"><?=$_product->getData('dicount')?>%</p>
+                                        <p class="discount-price-content price-content"><?=$_product->getData('discount')?>%</p>
                                     </div>
                                     <?php endif;?>
                                     <div class="price-details-content">
                                         <p class="price-title-total price-title"><?=__("Price")?></p>
                                         <p class="price-content-total price-content">$<?php
-                                            $price= $_product->getData('price');
+                                            $price= $_product->getData('price_incl_tax');
                                             echo number_format($price,2,'.',',')?></p>
                                     </div>
                                 </div>
