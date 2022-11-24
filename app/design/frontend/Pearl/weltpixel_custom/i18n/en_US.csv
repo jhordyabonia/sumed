@@ -2808,7 +2808,7 @@ Time in seconds between the widget updates.,module,Magento_Catalog
 "List","Lista",module,Magento_CatalogSearch
 "Search Weight","Buscar por peso",module,Magento_CatalogSearch
 "Relevance","Relevancia",module,Magento_CatalogSearch
-"Search results for: '%1'","Resultados de búsqueda para: '%1'",module,Magento_CatalogSearch
+"Search results for: '%1'","Resultados de búsqueda para:<br/><span id='qtext'>'%1'</span>",module,Magento_CatalogSearch
 "Minimum Search query length is %1","Longitud mínima de consulta de búsqueda es %1",module,Magento_CatalogSearch
 "Search term is empty","Search term is empty",module,Magento_CatalogSearch
 "Enter a search term and try again.","Enter a search term and try again.",module,Magento_CatalogSearch
