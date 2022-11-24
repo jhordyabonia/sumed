@@ -3,6 +3,7 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $dataPersistor = $objectManager->get(Magento\Framework\App\Request\DataPersistor::class);
 $customer = $dataPersistor->get('customer');
 if (isset($customer['email']) && $customer['email']):?>
+<body class="logged">
 <script type="text/javascript">
     require(['jquery'],function($) {
         $('body').addClass('logged');
@@ -20,6 +21,7 @@ if (isset($customer['email']) && $customer['email']):?>
             }
         );
     });
+    jQuery.addClass('logged');
 </script>
 <div id="login-column" class="display-sidebar-login" data-bind="scope:'login-column'">
 <!-- ko if: getFullName() -->
