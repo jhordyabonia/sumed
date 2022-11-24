@@ -22,6 +22,11 @@ if (isset($customer['email']) && $customer['email']):?>
         );
         $('.content-column-login').hover()
     });
+    jQuery(document).ready(function(){
+            jQuery('#abierto').hide();
+            jQuery('#cerrado').show();
+            jQuery('.page-wrapper').attr('style', 'margin-left:72px');
+    })
     jQuery('body').addClass('logged');
     jQuery('.content-column-login').hover()
 </script>
