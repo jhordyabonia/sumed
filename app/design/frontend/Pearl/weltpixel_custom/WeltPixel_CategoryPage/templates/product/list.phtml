@@ -247,7 +247,10 @@ $_helper = $block->getData('outputHelper');
                                         <p class="price-title-total price-title"><?=__("Price")?></p>
                                         <p class="price-content-total price-content">$<?php
                                             $price= $_product->getData('price_incl_tax');
-                                            echo number_format($price,2,'.',',')?></p>
+                                            if($price) {
+                                                echo number_format($price, 2, '.', ',');
+                                            }?></p>
+
                                     </div>
                                 </div>
                                 <div class="price-details price-details-promotions promotions-carries-50-units">
