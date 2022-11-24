@@ -2222,7 +2222,7 @@ y el descriptor del producto puede ser de hasta 18, 14 o 9 caracteres respectiva
 "More Choices:","Más opciones:",module,Magento_Catalog
 "Check items to add to the cart or","Selecciona artículos a añadir al carrito o",module,Magento_Catalog
 "select all","seleccionar todo",module,Magento_Catalog
-"Items %1-%2 of %3","%3 Productos encontrados",module,Magento_Catalog
+"Items %1-%2 of %3","<b>%3</b> Productos encontrados",module,Magento_Catalog
 "%1 Item","%1 artículo",module,Magento_Catalog
 "%1 Items","%1 artículos",module,Magento_Catalog
 "Show","Mostrar",module,Magento_Catalog
