@@ -43,7 +43,7 @@ if (isset($customer['email']) && $customer['email']):?>
             </div>
 
         </li>
-        <li class="list-colunm-nav">
+        <li class="list-colunm-nav" onclick="location.href='<?=$block->getUrl('customer/account/')?>'">
             <div class="container-column">
             <img src="<?= $this->getViewFileUrl('images/column/person_outline.svg') ?>" alt="">
             <span class="list-style-nav">
