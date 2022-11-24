@@ -23,9 +23,15 @@ if (isset($customer['email']) && $customer['email']):?>
         $('.content-column-login').hover()
     });
     jQuery(document).ready(function(){
+        var interval = setInterval(function() {
             jQuery('#abierto').hide();
             jQuery('#cerrado').show();
             jQuery('.page-wrapper').attr('style', 'margin-left:72px');
+        },300);
+
+        setTimeout(function (){
+            clearInterval(interval);
+        },1500);
     })
     jQuery('body').addClass('logged');
     jQuery('.content-column-login').hover()
