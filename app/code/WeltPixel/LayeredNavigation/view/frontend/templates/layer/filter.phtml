@@ -33,14 +33,14 @@
                 <a href="<?= $block->escapeUrl($filterItem->getUrl()) ?>"
                    data-opt-path="<?= /* @escapeNotVerified */ $block->escapeHtmlAttr($dataOptPath) ?>"
                     data-is-multi="<?= $isMulti?>">
-                    <?= /* @escapeNotVerified */ $filterItem->getLabel() ?>
+                    <?= /* @escapeNotVerified */ucwords(strtolower( $filterItem->getLabel() ))?>
                     <?php if ($canShowQty): ?>
                         <span class="count"><?= /* @escapeNotVerified */ $filterItem->getCount() ?><span class="filter-count-label">
                             <?php if ($filterItem->getCount() == 1):?> <?= /* @escapeNotVerified */ __('item') ?><?php else:?> <?= /* @escapeNotVerified */ __('items') ?><?php endif;?></span></span>
                     <?php endif; ?>
                 </a>
             <?php else:?>
-                <a href="#" class="wp-filter-disabled" disabled="disabled"><?= /* @escapeNotVerified */ $filterItem->getLabel() ?></a>
+                <a href="#" class="wp-filter-disabled" disabled="disabled"><?= /* @escapeNotVerified */ ucwords(strtolower($filterItem->getLabel())) ?></a>
                 <?php if ($canShowQty): ?>
                     <span class="count"><?= /* @escapeNotVerified */ $filterItem->getCount() ?><span class="filter-count-label">
                         <?php if ($filterItem->getCount() == 1):?><?= /* @escapeNotVerified */ __('item') ?><?php else:?><?= /* @escapeNotVerified */ __('items') ?><?php endif;?></span></span>
