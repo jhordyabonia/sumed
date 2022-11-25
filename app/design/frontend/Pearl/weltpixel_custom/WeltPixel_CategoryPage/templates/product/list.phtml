@@ -88,8 +88,8 @@ $_helper = $block->getData('outputHelper');
                     ?>
                     <?php // Product Image ?>
 
-                    <?php $discount = 0; if($customer['email'] && $_product->getData('price_incl_tax')):?>
-                    <?php $discount = 100 - (intval($_product->getData('price'))*100)/1+intval($_product->getData('price_incl_tax'));
+                    <?php $discount = 0; if($customer['email'] && intval($_product->getData('price_incl_tax'))!=0):?>
+                    <?php $discount = 100 - (intval($_product->getData('price'))*100)/intval($_product->getData('price_incl_tax'));
                             if($discount != 0):?>
                                 <!-- Etiqueta de descuento -->
                                 <div class="discount-content">
