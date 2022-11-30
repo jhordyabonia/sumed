@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f8a2e1142e14406155bf2e5c43ec10a",
+    "content-hash": "0581246dd393bb53a7ae6708f722a7d3",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -22965,6 +22965,50 @@
             "time": "2022-06-21T01:22:39+00:00"
         },
         {
+            "name": "mercadopago/magento2-plugin",
+            "version": "3.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mercadopago/cart-magento2.git",
+                "reference": "474f7393c2c2aba7b2a586dc43a7a65109d564d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mercadopago/cart-magento2/zipball/474f7393c2c2aba7b2a586dc43a7a65109d564d7",
+                "reference": "474f7393c2c2aba7b2a586dc43a7a65109d564d7",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "src/MercadoPago/Core/registration.php"
+                ],
+                "psr-4": {
+                    "MercadoPago\\Core\\": "src/MercadoPago/Core"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Mercado Pago",
+                    "email": "plugins.dev@mercadopago.com"
+                }
+            ],
+            "description": "Mercado Pago Magento 2 Plugin",
+            "support": {
+                "source": "https://github.com/mercadopago/cart-magento2/tree/v3.18.0"
+            },
+            "time": "2022-11-16T18:32:58+00:00"
+        },
+        {
             "name": "mobiledetect/mobiledetectlib",
             "version": "2.8.39",
             "source": {
@@ -31897,5 +31941,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
