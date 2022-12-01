@@ -496,6 +496,8 @@ return [
         'Amasty_PageSpeedOptimizerPremium' => 1,
         'Amasty_PageSpeedTools' => 1,
         'Amasty_Scroll' => 1,
+        'BalloonGroup_CuentaCorriente' => 1,
+        'MercadoPago_Core' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Sumed_Attributes' => 1,
