@@ -15600,9 +15600,7 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "Store View","Vista de la tienda"
 "Position","Posición"
 "Short Description","Breve descripción"
-""
-                        If set, a pop-up and a store list on the store locator's page will show the short description.
-                    "",""                         Si se establece, una ventana emergente y una lista de tiendas en la página del localizador de tiendas mostrarán la breve descripción.""
+"If set, a pop-up and a store list on the store locator's page will show the short description.","Si se establece, una ventana emergente y una lista de tiendas en la página del localizador de tiendas mostrarán la breve descripción."
 "Description","Descripción"
 "Address","Dirección"
 "Country","País"
@@ -15619,9 +15617,7 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "Longitude","Longitud"
 "Valid longitudes values are from -180 to 180 degrees.","Los valores de longitud válidos son de -180 a 180 grados."
 "Marker Image","Imagen de marcador"
-""
-                        Image will be resized to 27x43 px. Allowed file types : jpg jpeg gif png. Gif can have only one frame
-                    "",""                         La imagen se redimensionará a 27x43 px. Tipos de archivos permitidos: jpg, jpeg, gif, png. Gif solo puede tener un marco""
+"Image will be resized to 27x43 px. Allowed file types : jpg jpeg gif png. Gif can have only one frame","La imagen se redimensionará a 27x43 px. Tipos de archivos permitidos: jpg, jpeg, gif, png. Gif solo puede tener un marco"
 "Preview","Avance"
 "Image Gallery","galería de imágenes"
 "Images of Location","Imágenes de Ubicación"
