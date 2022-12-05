@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<carriers>
+			<sumedenvios>
+				<model>Sumed\Envios\Model\Carrier\SumedEnvios</model>
+				<active>0</active>
+				<title>SumedEnvios</title>
+				<name>SumedEnvios</name>
+				<price>0.00</price>
+				<specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+				<sallowspecific>0</sallowspecific>
+			</sumedenvios>
+		</carriers>
+	</default>
+</config>

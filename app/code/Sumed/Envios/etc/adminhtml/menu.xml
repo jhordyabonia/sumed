@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Sumed::top_level" title="Sumed" module="Sumed_Envios" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Sumed_Envios::sumed_envios_envios" title="envios" module="Sumed_Envios" sortOrder="9999" resource="Magento_Backend::content" parent="Sumed::top_level" action="sumed_envios/envios/index"/>
+	</menu>
+</config>

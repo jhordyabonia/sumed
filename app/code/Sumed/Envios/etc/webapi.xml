@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/sumed-envios/envios" method="POST">
+		<service class="Sumed\Envios\Api\EnviosRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Sumed_Envios::envios_save"/>
+		</resources>
+	</route>
+	<route url="/V1/sumed-envios/envios/search" method="GET">
+		<service class="Sumed\Envios\Api\EnviosRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Sumed_Envios::envios_view"/>
+		</resources>
+	</route>
+	<route url="/V1/sumed-envios/envios/:enviosId" method="GET">
+		<service class="Sumed\Envios\Api\EnviosRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Sumed_Envios::envios_view"/>
+		</resources>
+	</route>
+	<route url="/V1/sumed-envios/envios/:enviosId" method="PUT">
+		<service class="Sumed\Envios\Api\EnviosRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Sumed_Envios::envios_update"/>
+		</resources>
+	</route>
+	<route url="/V1/sumed-envios/envios/:enviosId" method="DELETE">
+		<service class="Sumed\Envios\Api\EnviosRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Sumed_Envios::envios_delete"/>
+		</resources>
+	</route>
+</routes>

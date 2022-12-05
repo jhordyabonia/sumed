@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Sumed\Envios\Api\EnviosRepositoryInterface" type="Sumed\Envios\Model\EnviosRepository"/>
+	<preference for="Sumed\Envios\Api\Data\EnviosInterface" type="Sumed\Envios\Model\Envios"/>
+	<preference for="Sumed\Envios\Api\Data\EnviosSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Sumed\Envios\Model\ResourceModel\Envios\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">sumed_envios_envios</argument>
+			<argument name="resourceModel" xsi:type="string">Sumed\Envios\Model\ResourceModel\Envios\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="sumed_envios_envios_listing_data_source" xsi:type="string">Sumed\Envios\Model\ResourceModel\Envios\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

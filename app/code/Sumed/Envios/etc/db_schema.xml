@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="sumed_envios_envios" resource="default" engine="innodb" comment="sumed_envios_envios Table">
+		<column xsi:type="int" name="envios_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="envios_id"/>
+		</constraint>
+		<column name="Codigo" nullable="true" xsi:type="text" comment="Codigo"/>
+		<column name="Fecha_Incio" nullable="true" xsi:type="text" comment="Fecha_Incio"/>
+		<column name="Dias" nullable="true" xsi:type="text" comment="Dias"/>
+		<column name="Frecuencia" nullable="true" xsi:type="text" comment="Frecuencia"/>
+		<column name="Horas" nullable="true" xsi:type="text" comment="Horas"/>
+	</table>
+</schema>
