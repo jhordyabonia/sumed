@@ -33,6 +33,8 @@ class SumedEnvios extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
      * @param array $data
      */
     public function __construct(
+        \Magento\Customer\Model\Session $session,
+        \Sumed\Envios\Model\EnviosFactory $enviosFactory,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory $rateErrorFactory,
         \Psr\Log\LoggerInterface $logger,
@@ -40,6 +42,8 @@ class SumedEnvios extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
         \Magento\Quote\Model\Quote\Address\RateResult\MethodFactory $rateMethodFactory,
         array $data = []
     ) {
+        $this->session = $session;
+        $this->enviosFactory = $enviosFactory;
         $this->_rateResultFactory = $rateResultFactory;
         $this->_rateMethodFactory = $rateMethodFactory;
         parent::__construct($scopeConfig, $rateErrorFactory, $logger, $data);
@@ -59,13 +63,20 @@ class SumedEnvios extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
         $result = $this->_rateResultFactory->create();
 
         if ($shippingPrice !== false) {
+
+            $customer = $this->session->getCustomer();
+            $codigoEntrega = $customer->getData("u_contraentrega");
+            $datosEnvio = $this->enviosFactory->create()
+                ->load($codigoEntrega,"codigo")
+                ->getData();
+
             $method = $this->_rateMethodFactory->create();
 
             $method->setCarrier($this->_code);
-            $method->setCarrierTitle($this->getConfigData('title'));
+            $method->setCarrierTitle($datosEnvio['Dias']);
 
             $method->setMethod($this->_code);
-            $method->setMethodTitle($this->getConfigData('name'));
+            $method->setMethodTitle($datosEnvio['Frecuencia']);
 
             if ($request->getFreeShipping() === true) {
                 $shippingPrice = '0.00';
