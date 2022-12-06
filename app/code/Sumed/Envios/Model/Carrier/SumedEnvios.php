@@ -76,7 +76,7 @@ class SumedEnvios extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
             $method->setCarrierTitle($datosEnvio['Dias']);
 
             $method->setMethod($this->_code);
-            $method->setMethodTitle($datosEnvio['Frecuencia']);
+            $method->setMethodTitle($datosEnvio['Frecuencia']. " " . __("Horas: ") .$datosEnvio['Horas']);
 
             if ($request->getFreeShipping() === true) {
                 $shippingPrice = '0.00';
