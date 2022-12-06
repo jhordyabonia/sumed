@@ -1,1 +1,344 @@
-Hello account/cuentacorriente.phtml
+<div class="container">
+    <h2>Cuenta Corriente</h2>
+    <div lass="col-md-12">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6">
+                <dl class="m-t-md product-extend">
+                    <dt>Código cliente:</dt>
+                    <dd> C01594</dd>
+                    <br>
+                    <dt>Crédito disponible:</dt>
+                    <dd> $643.147,00</dd>
+                </dl>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <dl class="m-t-md product-extend">
+                    <dt>Condición de Pago:</dt>
+                    <dd> Cuenta corriente - C - CONTADO EFECTIVO</dd>
+                    <br>
+                    <dt>Posnet:</dt>
+                    <dd> Si</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div _ngcontent-c12="" class="m-b-xl" style="background: #f0f0f0; padding: 20px 12px; border-radius: 8px;">
+        <app-current-account-filter _ngcontent-c12="" _nghost-c14="">
+            <div _ngcontent-c14="" class="card__filter-3 filter" id="corr-camcue">
+                <div _ngcontent-c14="" class="col__filter-number"><label _ngcontent-c14="" class="m-b-sm" for="">Número de factura:</label><br _ngcontent-c14="">
+                    <div _ngcontent-c14="" class="container-input"><input _ngcontent-c14="" class="form-numb ng-untouched ng-pristine ng-valid" placeholder="Número" type="text"><button _ngcontent-c14="" class="btn btn-outline btn-link"><i _ngcontent-c14="" class="material-icons-outlined notranslate">close</i></button></div>
+                </div>
+                <div _ngcontent-c14="" class="col__filter-date"><label _ngcontent-c14="" class="m-b-sm" for="">Fecha:</label><br _ngcontent-c14="">
+                    <div _ngcontent-c14="" class="filter-date-range">
+                        <app-datepicker _ngcontent-c14="" placeholder="Desde" _nghost-c9="">
+                            <div _ngcontent-c9="" class="container-datepicker">
+                                <input _ngcontent-c9="" class="datepicker form-numb" type="text" readonly="" placeholder="Desde">
+                                <button _ngcontent-c9="" class="btn btn-outline btn-link">
+                                    <i _ngcontent-c9="" class="material-icons-outlined notranslate">close</i>
+                                </button>
+                            </div>
+                            <div _ngcontent-c9="" aria-hidden="true" aria-labelledby="exampleModalCenterTitle" class="modal centered-modal" role="dialog" tabindex="-1">
+                                <div _ngcontent-c9="" class="modal-dialog modal-dialog-centered" role="document">
+                                    <div _ngcontent-c9="" class="modal-content">
+                                        <div _ngcontent-c9="" class="modal-body m-xl">
+                                            <div _ngcontent-c9=""></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </app-datepicker>
+                        <app-datepicker _ngcontent-c14="" last="true" placeholder="Hasta" _nghost-c9="">
+                            <div _ngcontent-c9="" class="container-datepicker">
+                                <!----><input _ngcontent-c9="" class="datepicker form-numb" type="text" readonly="" placeholder="Hasta">
+                                <!---->
+                                <!----><button _ngcontent-c9="" class="btn btn-outline btn-link"><i _ngcontent-c9="" class="material-icons-outlined notranslate">close</i></button>
+                            </div>
+                            <div _ngcontent-c9="" aria-hidden="true" aria-labelledby="exampleModalCenterTitle" class="modal centered-modal" role="dialog" tabindex="-1">
+                                <div _ngcontent-c9="" class="modal-dialog modal-dialog-centered" role="document">
+                                    <div _ngcontent-c9="" class="modal-content">
+                                        <div _ngcontent-c9="" class="modal-body m-xl">
+                                            <div _ngcontent-c9=""></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </app-datepicker>
+                    </div>
+                </div>
+                <div _ngcontent-c14="" class="col__filter-amount"><label _ngcontent-c14="" class="m-b-sm" for="">Monto total:</label><br _ngcontent-c14="">
+                    <div _ngcontent-c14="" class="container-form">
+                        <div _ngcontent-c14="" class="container-input"><input _ngcontent-c14="" apponlypositivenumbers="" class="form-numb ng-untouched ng-pristine ng-valid" inputmode="numeric" pattern="[0-9]*" placeholder="Desde" type="text"><button _ngcontent-c14="" class="btn btn-outline btn-link"><i _ngcontent-c14="" class="material-icons-outlined notranslate">close</i></button></div>
+                        <div _ngcontent-c14="" class="container-input"><input _ngcontent-c14="" apponlypositivenumbers="" class="form-numb ng-untouched ng-pristine ng-valid" inputmode="numeric" pattern="[0-9]*" placeholder="Hasta" type="text"><button _ngcontent-c14="" class="btn btn-outline btn-link"><i _ngcontent-c14="" class="material-icons-outlined notranslate">close</i></button></div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-c14="" class="row titles m-t-md m-r-xxs" style="margin-top: 20px;">
+                <div _ngcontent-c14="" class="col-sm-12"><button _ngcontent-c14="" class="btn btn-sm btn-sumed pull-right" id="corr-buttcue"> FILTRAR </button></div>
+            </div>
+        </app-current-account-filter>
+    </div>
+    <app-current-account-list _ngcontent-c12="" id="corr-itemcorr" title="Cuentas Corrientes" _nghost-c15="">
+        <div _ngcontent-c15="" class="row titles hidden-xs">
+            <div _ngcontent-c15="" class="col-sm-2">
+                <p _ngcontent-c15="">Fecha</p>
+            </div>
+            <div _ngcontent-c15="" class="col-sm-1">
+                <p _ngcontent-c15="">Tipo</p>
+            </div>
+            <div _ngcontent-c15="" class="col-sm-3">
+                <p _ngcontent-c15="">Número</p>
+            </div>
+            <div _ngcontent-c15="" class="col-sm-1 number-align">
+                <p _ngcontent-c15="">Total de la factura</p>
+            </div>
+            <div _ngcontent-c15="" class="col-sm-1 number-align">
+                <p _ngcontent-c15="">Nota de crédito</p>
+            </div>
+            <div _ngcontent-c15="" class="col-sm-1 number-align">
+                <p _ngcontent-c15="">Pago</p>
+            </div>
+            <div _ngcontent-c15="" class="col-sm-1 number-align">
+                <p _ngcontent-c15="">Pendiente</p>
+            </div>
+            <div _ngcontent-c15="" class="col-sm-1 number-align">
+                <p _ngcontent-c15="">Acumulado</p>
+            </div>
+            <div _ngcontent-c15="" class="col-sm-1 number-align">
+                <p _ngcontent-c15="">Atraso</p>
+            </div>
+        </div>
+        <!---->
+        <div _ngcontent-c15="">
+            <div _ngcontent-c15="" app-current-account-row="" class="row" _nghost-c17="">
+                <div _ngcontent-c17="" class="card-web hidden-xs">
+                    <div _ngcontent-c17="" class="row">
+                        <div _ngcontent-c17="" class="col-sm-2" style="text-align: left"><b _ngcontent-c17="">05-11-2022</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1" style="text-align: left"><b _ngcontent-c17="">FC</b></div>
+                        <div _ngcontent-c17="" class="col-sm-3" style="text-align: left"><b _ngcontent-c17="">A00013-00340212</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"><b _ngcontent-c17="">$9.631,41</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> - </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $8,197.96 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $1,433.45 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $1,433.45 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> 27 </div>
+                    </div>
+                </div>
+                <div _ngcontent-c17="" class="card-mobile hidden-sm hidden-md hidden-lg">
+                    <div _ngcontent-c17="" class="row">
+                        <div _ngcontent-c17="" class="col-xs-6 titles-mobile">
+                            <p _ngcontent-c17="">Fecha</p>
+                            <p _ngcontent-c17="">Número</p>
+                            <p _ngcontent-c17="">Total de la factura</p>
+                            <p _ngcontent-c17="">Nota de crédito</p>
+                            <p _ngcontent-c17="">Pago</p>
+                            <p _ngcontent-c17="">Pendiente</p>
+                            <p _ngcontent-c17="">Acumulado</p>
+                            <p _ngcontent-c17="">Atraso</p>
+                        </div>
+                        <div _ngcontent-c17="" class="col-xs-6 number-align">
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">05-11-2022</b></p>
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">A00013-00340212</b></p>
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">$9.631,41</b></p>
+                            <p _ngcontent-c17="">-</p>
+                            <p _ngcontent-c17="">$8,197.96</p>
+                            <p _ngcontent-c17="">$1,433.45</p>
+                            <p _ngcontent-c17="">$1,433.45</p>
+                            <p _ngcontent-c17="">27</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div _ngcontent-c15="">
+            <div _ngcontent-c15="" app-current-account-row="" class="row" _nghost-c17="">
+                <div _ngcontent-c17="" class="card-web hidden-xs">
+                    <div _ngcontent-c17="" class="row">
+                        <div _ngcontent-c17="" class="col-sm-2" style="text-align: left"><b _ngcontent-c17="">17-11-2022</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1" style="text-align: left"><b _ngcontent-c17="">FC</b></div>
+                        <div _ngcontent-c17="" class="col-sm-3" style="text-align: left"><b _ngcontent-c17="">A00013-00349828</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"><b _ngcontent-c17="">$156.767,82</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> - </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $0.00 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $156,767.82 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $158,201.27 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> 15 </div>
+                    </div>
+                </div>
+                <div _ngcontent-c17="" class="card-mobile hidden-sm hidden-md hidden-lg">
+                    <div _ngcontent-c17="" class="row">
+                        <div _ngcontent-c17="" class="col-xs-6 titles-mobile">
+                            <p _ngcontent-c17="">Fecha</p>
+                            <p _ngcontent-c17="">Número</p>
+                            <p _ngcontent-c17="">Total de la factura</p>
+                            <p _ngcontent-c17="">Nota de crédito</p>
+                            <p _ngcontent-c17="">Pago</p>
+                            <p _ngcontent-c17="">Pendiente</p>
+                            <p _ngcontent-c17="">Acumulado</p>
+                            <p _ngcontent-c17="">Atraso</p>
+                        </div>
+                        <div _ngcontent-c17="" class="col-xs-6 number-align">
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">17-11-2022</b></p>
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">A00013-00349828</b></p>
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">$156.767,82</b></p>
+                            <p _ngcontent-c17="">-</p>
+                            <p _ngcontent-c17="">$0.00</p>
+                            <p _ngcontent-c17="">$156,767.82</p>
+                            <p _ngcontent-c17="">$158,201.27</p>
+                            <p _ngcontent-c17="">15</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div _ngcontent-c15="">
+            <div _ngcontent-c15="" app-current-account-row="" class="row" _nghost-c17="">
+                <div _ngcontent-c17="" class="card-web hidden-xs">
+                    <div _ngcontent-c17="" class="row">
+                        <div _ngcontent-c17="" class="col-sm-2" style="text-align: left"><b _ngcontent-c17="">23-11-2022</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1" style="text-align: left"><b _ngcontent-c17="">FC</b></div>
+                        <div _ngcontent-c17="" class="col-sm-3" style="text-align: left"><b _ngcontent-c17="">A00013-00353028</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"><b _ngcontent-c17="">$79.805,51</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> - </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $0.00 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $79,805.51 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $238,006.78 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> 9 </div>
+                    </div>
+                </div>
+                <div _ngcontent-c17="" class="card-mobile hidden-sm hidden-md hidden-lg">
+                    <div _ngcontent-c17="" class="row">
+                        <div _ngcontent-c17="" class="col-xs-6 titles-mobile">
+                            <p _ngcontent-c17="">Fecha</p>
+                            <p _ngcontent-c17="">Número</p>
+                            <p _ngcontent-c17="">Total de la factura</p>
+                            <p _ngcontent-c17="">Nota de crédito</p>
+                            <p _ngcontent-c17="">Pago</p>
+                            <p _ngcontent-c17="">Pendiente</p>
+                            <p _ngcontent-c17="">Acumulado</p>
+                            <p _ngcontent-c17="">Atraso</p>
+                        </div>
+                        <div _ngcontent-c17="" class="col-xs-6 number-align">
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">23-11-2022</b></p>
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">A00013-00353028</b></p>
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">$79.805,51</b></p>
+                            <p _ngcontent-c17="">-</p>
+                            <p _ngcontent-c17="">$0.00</p>
+                            <p _ngcontent-c17="">$79,805.51</p>
+                            <p _ngcontent-c17="">$238,006.78</p>
+                            <p _ngcontent-c17="">9</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div _ngcontent-c15="">
+            <div _ngcontent-c15="" app-current-account-row="" class="row" _nghost-c17="">
+                <div _ngcontent-c17="" class="card-web hidden-xs">
+                    <div _ngcontent-c17="" class="row">
+                        <div _ngcontent-c17="" class="col-sm-2" style="text-align: left"><b _ngcontent-c17="">01-12-2022</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1" style="text-align: left"><b _ngcontent-c17="">FC</b></div>
+                        <div _ngcontent-c17="" class="col-sm-3" style="text-align: left"><b _ngcontent-c17="">A00013-00359350</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"><b _ngcontent-c17="">$12.160,02</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> - </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $0.00 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $12,160.02 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $250,166.80 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> 1 </div>
+                    </div>
+                </div>
+                <div _ngcontent-c17="" class="card-mobile hidden-sm hidden-md hidden-lg">
+                    <div _ngcontent-c17="" class="row">
+                        <div _ngcontent-c17="" class="col-xs-6 titles-mobile">
+                            <p _ngcontent-c17="">Fecha</p>
+                            <p _ngcontent-c17="">Número</p>
+                            <p _ngcontent-c17="">Total de la factura</p>
+                            <p _ngcontent-c17="">Nota de crédito</p>
+                            <p _ngcontent-c17="">Pago</p>
+                            <p _ngcontent-c17="">Pendiente</p>
+                            <p _ngcontent-c17="">Acumulado</p>
+                            <p _ngcontent-c17="">Atraso</p>
+                        </div>
+                        <div _ngcontent-c17="" class="col-xs-6 number-align">
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">01-12-2022</b></p>
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">A00013-00359350</b></p>
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">$12.160,02</b></p>
+                            <p _ngcontent-c17="">-</p>
+                            <p _ngcontent-c17="">$0.00</p>
+                            <p _ngcontent-c17="">$12,160.02</p>
+                            <p _ngcontent-c17="">$250,166.80</p>
+                            <p _ngcontent-c17="">1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div _ngcontent-c15="">
+            <div _ngcontent-c15="" app-current-account-row="" class="row" _nghost-c17="">
+                <div _ngcontent-c17="" class="card-web hidden-xs">
+                    <div _ngcontent-c17="" class="row">
+                        <div _ngcontent-c17="" class="col-sm-2" style="text-align: left"><b _ngcontent-c17="">02-12-2022</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1" style="text-align: left"><b _ngcontent-c17="">FC</b></div>
+                        <div _ngcontent-c17="" class="col-sm-3" style="text-align: left"><b _ngcontent-c17="">A00013-00359785</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"><b _ngcontent-c17="">$10.374,00</b></div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> - </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $0.00 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $10,374.00 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> $260,540.80 </div>
+                        <div _ngcontent-c17="" class="col-sm-1 number-align"> 0 </div>
+                    </div>
+                </div>
+                <div _ngcontent-c17="" class="card-mobile hidden-sm hidden-md hidden-lg">
+                    <div _ngcontent-c17="" class="row">
+                        <div _ngcontent-c17="" class="col-xs-6 titles-mobile">
+                            <p _ngcontent-c17="">Fecha</p>
+                            <p _ngcontent-c17="">Número</p>
+                            <p _ngcontent-c17="">Total de la factura</p>
+                            <p _ngcontent-c17="">Nota de crédito</p>
+                            <p _ngcontent-c17="">Pago</p>
+                            <p _ngcontent-c17="">Pendiente</p>
+                            <p _ngcontent-c17="">Acumulado</p>
+                            <p _ngcontent-c17="">Atraso</p>
+                        </div>
+                        <div _ngcontent-c17="" class="col-xs-6 number-align">
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">02-12-2022</b></p>
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">A00013-00359785</b></p>
+                            <p _ngcontent-c17=""><b _ngcontent-c17="">$10.374,00</b></p>
+                            <p _ngcontent-c17="">-</p>
+                            <p _ngcontent-c17="">$0.00</p>
+                            <p _ngcontent-c17="">$10,374.00</p>
+                            <p _ngcontent-c17="">$260,540.80</p>
+                            <p _ngcontent-c17="">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </app-current-account-list>
+    <div _ngcontent-c16="" class="row m-b-xl m-t-xl row-mobile" style="margin-bottom: 40px; margin-top: 40px;">
+        <h2 _ngcontent-c16="">Depósitos bancarios</h2>
+        <p _ngcontent-c16="" class="m-t-md">Si deseas hacer un depósito, elegí entre las opciones de bancos para obtener los datos:</p>
+        <div _ngcontent-c16="" class="col-sm-6 p-l-none">
+            <div _ngcontent-c16="" class="form-group"><select _ngcontent-c16="" class="form-control ng-untouched ng-pristine ng-valid">
+                    <!---->
+                    <option _ngcontent-c16="" value="0: Object">Banco de la Provincia de Buenos Aires</option>
+                    <option _ngcontent-c16="" value="1: Object">Banco Credicoop </option>
+                    <option _ngcontent-c16="" value="2: Object">Banco Francés</option>
+                    <option _ngcontent-c16="" value="3: Object">Banco Nación Argentina</option>
+                    <option _ngcontent-c16="" value="4: Object">Banco Ciudad</option>
+                    <option _ngcontent-c16="" value="5: Object">Banco Patagonia</option>
+                    <option _ngcontent-c16="" value="6: Object">Banco HSBC</option>
+                    <option _ngcontent-c16="" value="7: Object">Banco Comafi</option>
+                    <option _ngcontent-c16="" value="8: Object">Banco Galicia</option>
+                    <option _ngcontent-c16="" value="9: Object">Banco Santander Río</option>
+                </select></div>
+            <div _ngcontent-c16="">
+                <p _ngcontent-c16="" id="corr-depo" style="border: 1px solid #d4d4d4; padding: 15px; border-radius: 8px;">Cuenta Corriente 050542/0 (Sucursal 5200 Plaza San Martín). <br> CBU Nº 0140188801520005054204</p>
+            </div>
+        </div>
+        <div _ngcontent-c16="" class="col-sm-1"></div>
+        <div _ngcontent-c16="" class="col-sm-5" style="border: 1px solid #0088a8; padding: 15px; border-radius: 8px;">
+            <p _ngcontent-c16="" style="color: #0088a8">Todas nuestras cuentas bancarias se encuentran a nombre de <b _ngcontent-c16="">Droguería Sumed S.A</b></p>
+            <p _ngcontent-c16="" style="color: #0088a8"><b _ngcontent-c16="">CUIT:</b> 30-70881536-1</p>
+        </div>
+    </div>
+</div>
